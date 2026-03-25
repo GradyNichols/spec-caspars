@@ -1,23 +1,32 @@
-// Show/Hide Sections
-function showSection(sectionId) {
-  // Hide all sections
-  const allSections = document.querySelectorAll(".content-section");
-  allSections.forEach((section) => {
-    section.classList.add("hidden");
-  });
-
-  // Show the selected section
-  const selectedSection = document.getElementById(sectionId);
-  if (selectedSection) {
-    selectedSection.classList.remove("hidden");
+// Load page content dynamically without full page reload
+async function loadPage(pageUrl) {
+  try {
+    const response = await fetch(pageUrl);
+    if (!response.ok) throw new Error('Page not found');
+    
+    const content = await response.text();
+    const contentDiv = document.getElementById('content');
+    contentDiv.innerHTML = content;
+    
+    // Update page title
+    const pageTitle = pageUrl.split('/')[1];
+    document.title = pageTitle.charAt(0).toUpperCase() + pageTitle.slice(1) + ' - Our Restaurant';
+    
+    // Update URL without full page reload
+    window.history.pushState({ page: pageUrl }, '', pageUrl.replace('pages/', ''));
+    
+    // Close mobile menu
+    closeMobileMenu();
+    
     // Scroll to top
     window.scrollTo(0, 0);
-  }
-
-  // Close mobile menu
-  const mobileMenu = document.getElementById("mobileMenu");
-  if (mobileMenu) {
-    mobileMenu.classList.add("hidden");
+    
+    // Setup form handlers for the newly loaded content
+    setupFormHandlers();
+    
+  } catch (error) {
+    console.error('Error loading page:', error);
+    document.getElementById('content').innerHTML = '<p class="text-center text-red-500">Error loading page. Please try again.</p>';
   }
 }
 
@@ -29,8 +38,15 @@ function toggleMobileMenu() {
   }
 }
 
-// Update Form Handlers
-function updateFormHandlers() {
+function closeMobileMenu() {
+  const mobileMenu = document.getElementById("mobileMenu");
+  if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+    mobileMenu.classList.add("hidden");
+  }
+}
+
+// Setup form handlers for dynamically loaded content
+function setupFormHandlers() {
   // Contact Form Submission
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
@@ -89,9 +105,9 @@ function updateFormHandlers() {
       // Reset form
       this.reset();
 
-      // Redirect to home page after a short delay
+      // Load home page after a short delay
       setTimeout(() => {
-        showSection("home");
+        loadPage('pages/home.html');
       }, 2000);
     };
   }
@@ -104,12 +120,18 @@ function updateFormHandlers() {
   }
 }
 
+// Handle browser back/forward buttons
+window.addEventListener('popstate', function(e) {
+  if (e.state && e.state.page) {
+    loadPage(e.state.page);
+  }
+});
+
 // Initialize on page load
 document.addEventListener("DOMContentLoaded", function () {
-  // Update form handlers
-  updateFormHandlers();
+  // Load home page by default
+  loadPage('pages/home.html');
 
   // Bootstrap-specific functionality can be added here
-  // The Bootstrap JS bundle is already included in all HTML files
   console.log("Restaurant website initialized successfully!");
 });
