@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Our Restaurant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-900 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Left Navigation Links -->
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="font-bold text-xl text-orange-500">Restaurant</a>
+                    <div class="hidden md:flex space-x-6">
+                        <a href="index.html" class="hover:text-orange-500 transition">Home</a>
+                        <a href="menu.html" class="hover:text-orange-500 transition">Menu</a>
+                        <a href="events.html" class="hover:text-orange-500 transition">Events</a>
+                        <a href="contact.html" class="hover:text-orange-500 transition">Contact</a>
+                    </div>
+                </div>
+                <!-- Right Navigation - Make a Reservation -->
+                <a href="reservation.html" class="bg-orange-500 hover:bg-orange-600 px-6 py-2 rounded transition">Make a Reservation</a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <div class="md:hidden flex justify-between items-center pb-4">
+                <button onclick="toggleMobileMenu()" class="text-orange-500 text-2xl">☰</button>
+            </div>
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <a href="index.html" class="block py-2 hover:text-orange-500">Home</a>
+                <a href="menu.html" class="block py-2 hover:text-orange-500">Menu</a>
+                <a href="events.html" class="block py-2 hover:text-orange-500">Events</a>
+                <a href="contact.html" class="block py-2 hover:text-orange-500">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Section -->
+    <section class="max-w-7xl mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-gray-900 mb-12 text-center">Our Menu</h1>
+        
+        <!-- Appetizers -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-6 border-b-4 border-orange-500 pb-2">Appetizers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-semibold">Garlic Bread</h3>
+                        <span class="text-orange-500 font-bold">$8.99</span>
+                    </div>
+                    <p class="text-gray-600">Crispy bread with garlic butter and herbs</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-semibold">Calamari</h3>
+                        <span class="text-orange-500 font-bold">$12.99</span>
+                    </div>
+                    <p class="text-gray-600">Perfectly fried squid with marinara sauce</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Courses -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-6 border-b-4 border-orange-500 pb-2">Main Courses</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-semibold">Grilled Salmon</h3>
+                        <span class="text-orange-500 font-bold">$24.99</span>
+                    </div>
+                    <p class="text-gray-600">Fresh salmon fillet with lemon butter sauce</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-semibold">Ribeye Steak</h3>
+                        <span class="text-orange-500 font-bold">$28.99</span>
+                    </div>
+                    <p class="text-gray-600">Premium cut aged 28 days, served with vegetables</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-semibold">Pasta Carbonara</h3>
+                        <span class="text-orange-500 font-bold">$18.99</span>
+                    </div>
+                    <p class="text-gray-600">Traditional Italian pasta with cream and bacon</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-semibold">Herb Chicken</h3>
+                        <span class="text-orange-500 font-bold">$19.99</span>
+                    </div>
+                    <p class="text-gray-600">Roasted chicken breast with herbs and garlic</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desserts -->
+        <div>
+            <h2 class="text-2xl font-semibold text-gray-900 mb-6 border-b-4 border-orange-500 pb-2">Desserts</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-semibold">Tiramisu</h3>
+                        <span class="text-orange-500 font-bold">$7.99</span>
+                    </div>
+                    <p class="text-gray-600">Classic Italian dessert with layers of flavor</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-semibold">Chocolate Lava Cake</h3>
+                        <span class="text-orange-500 font-bold">$8.99</span>
+                    </div>
+                    <p class="text-gray-600">Rich molten chocolate with ice cream</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-6 mt-12">
+        <p>&copy; 2024 Our Restaurant. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
