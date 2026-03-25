@@ -58,33 +58,37 @@ async function loadPage(pageUrl) {
 function toggleMobileMenu() {
   const mobileMenu = document.getElementById("mobileMenu");
   if (mobileMenu) {
-    const isHidden = mobileMenu.classList.contains("hidden");
-    if (isHidden) {
+    if (mobileMenu.classList.contains("menu-open")) {
+      // Close menu
+      mobileMenu.classList.remove("menu-open");
+      mobileMenu.classList.add("hidden");
+    } else {
       // Open menu
       mobileMenu.classList.remove("hidden");
-      setTimeout(() => {
-        mobileMenu.style.maxHeight = "500px";
-        mobileMenu.style.opacity = "1";
-      }, 0);
-    } else {
-      // Close menu
-      mobileMenu.style.maxHeight = "0";
-      mobileMenu.style.opacity = "0";
-      setTimeout(() => {
-        mobileMenu.classList.add("hidden");
-      }, 300);
+      mobileMenu.classList.add("menu-open");
     }
   }
 }
 
 function closeMobileMenu() {
   const mobileMenu = document.getElementById("mobileMenu");
-  if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
-    mobileMenu.style.maxHeight = "0";
-    mobileMenu.style.opacity = "0";
-    setTimeout(() => {
-      mobileMenu.classList.add("hidden");
-    }, 300);
+  if (mobileMenu && mobileMenu.classList.contains("menu-open")) {
+    mobileMenu.classList.remove("menu-open");
+    mobileMenu.classList.add("hidden");
+  }
+}
+
+// Update navigation visibility based on screen width
+function updateNavVisibility() {
+  const reservationBtn = document.querySelector(
+    'button[onclick*="reservation"]',
+  );
+  if (reservationBtn) {
+    if (window.innerWidth < 768) {
+      reservationBtn.style.display = "none";
+    } else {
+      reservationBtn.style.display = "block";
+    }
   }
 }
 
@@ -175,6 +179,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Load home page by default
   loadPage("pages/home.html");
 
+  // Update nav visibility based on screen width
+  updateNavVisibility();
+
+  // Listen for window resize to update nav
+  window.addEventListener("resize", updateNavVisibility);
+
   // Navbar scroll transparency effect on Home only
   window.addEventListener("scroll", function () {
     const navbar = document.getElementById("navbar");
@@ -200,6 +210,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Bootstrap-specific functionality can be added here
+  // Bootstrap JS initialization for any .dropdown-toggle elements
+  if (window.bootstrap && typeof window.bootstrap.Dropdown === "function") {
+    const toggles = document.querySelectorAll(".dropdown-toggle");
+    toggles.forEach((toggle) => new window.bootstrap.Dropdown(toggle));
+  }
+
   console.log("Restaurant website initialized successfully!");
 });
