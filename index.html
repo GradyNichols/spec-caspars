@@ -9,10 +9,10 @@
   </head>
   <body>
     <!-- Navigation Bar -->
-    <nav class="bg-gray-900 text-white shadow-lg sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav id="navbar" class="text-white shadow-lg sticky md:fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background-color: rgba(17, 24, 39, 0);">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:py-2 lg:py-2">
         <div class="flex justify-between items-center h-16">
-          <!-- Left Navigation Links -->
+          <!-- Logo and Desktop Navigation Links -->
           <div class="flex items-center space-x-8">
             <button
               onclick="loadPage('pages/home.html')"
@@ -20,13 +20,9 @@
             >
               Restaurant
             </button>
+            <div class="hidden md:block h-6 border-l border-gray-500"></div>
+            <!-- Desktop Navigation Links -->
             <div class="hidden md:flex space-x-6">
-              <button
-                onclick="loadPage('pages/home.html')"
-                class="hover:text-orange-500 transition cursor-pointer"
-              >
-                Home
-              </button>
               <button
                 onclick="loadPage('pages/menu.html')"
                 class="hover:text-orange-500 transition cursor-pointer"
@@ -47,31 +43,23 @@
               </button>
             </div>
           </div>
-          <!-- Right Navigation - Make a Reservation -->
+          <!-- Right Navigation - Make a Reservation (hidden on mobile) -->
           <button
             onclick="loadPage('pages/reservation.html')"
-            class="bg-orange-500 hover:bg-orange-600 px-6 py-2 rounded transition cursor-pointer"
+            class="hidden md:block bg-orange-500 hover:bg-orange-600 px-6 py-2 rounded transition cursor-pointer"
           >
             Make a Reservation
           </button>
-        </div>
-        <!-- Mobile Menu Toggle -->
-        <div class="md:hidden flex justify-between items-center pb-4">
+          <!-- Mobile Menu Toggle -->
           <button
             onclick="toggleMobileMenu()"
-            class="text-orange-500 text-2xl cursor-pointer"
+            class="md:hidden text-orange-500 text-2xl cursor-pointer"
           >
             ☰
           </button>
         </div>
         <!-- Mobile Navigation -->
         <div id="mobileMenu" class="hidden md:hidden pb-4">
-          <button
-            onclick="loadPage('pages/home.html')"
-            class="block w-full text-left py-2 hover:text-orange-500 cursor-pointer"
-          >
-            Home
-          </button>
           <button
             onclick="loadPage('pages/menu.html')"
             class="block w-full text-left py-2 hover:text-orange-500 cursor-pointer"
@@ -94,7 +82,7 @@
       </div>
     </nav>
 
-    <div id="content" class="max-w-7xl mx-auto px-4 py-16"></div>
+    <div id="content"></div>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white text-center py-6 mt-12">

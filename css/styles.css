@@ -74,20 +74,24 @@ button {
   animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
+/* Smooth content transition */
+#content {
+  animation: fadeIn 0.4s ease-in-out;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
+/* Mobile menu smooth transitions */
+#mobileMenu {
+  transition:
+    max-height 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #f97316;
-  border-radius: 5px;
+#mobileMenu.hidden {
+  max-height: 0 !important;
+  opacity: 0;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #ea580c;
+#mobileMenu:not(.hidden) {
+  max-height: 500px !important;
+  opacity: 1;
 }
