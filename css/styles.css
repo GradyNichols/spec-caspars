@@ -1,8 +1,8 @@
 /* Custom Styles for Restaurant Website */
 
 :root {
-  --primary-color: #f97316;
-  --dark-bg: #111827;
+  --primary-color: #735200;
+  --dark-bg: #463d2e;
   --light-bg: #f3f4f6;
   --border-color: #d1d5db;
   --text-color: #111827;
@@ -12,6 +12,35 @@
   --gray-100: #f3f4f6;
   --gray-200: #e5e7eb;
   --gray-800: #1f2937;
+  --white: #ffffff;
+}
+
+.primary-bg {
+  background-color: var(--primary-color);
+}
+.primary-text {
+  color: var(--primary-color);
+}
+.primary-border {
+  border-color: var(--primary-color);
+}
+.primary-hover-bg:hover {
+  background-color: var(--primary-color);
+}
+.primary-hover-text:hover {
+  color: var(--primary-color);
+}
+.focus-primary-border:focus {
+  border-color: var(--primary-color);
+}
+.focus-primary-ring:focus {
+  box-shadow: 0 0 0 3px rgba(115, 82, 0, 0.2);
+}
+
+@media (max-width: 767px) {
+  .reservation-btn {
+    display: none;
+  }
 }
 
 * {
@@ -45,7 +74,7 @@ select,
 button {
   border: 1px solid var(--border-color);
   border-radius: 0.4rem;
-  background-color: #ffffff;
+  background-color: var(--white);
   color: var(--text-color);
   font-size: 1rem;
   line-height: 1.5;
@@ -71,8 +100,8 @@ textarea:focus,
 select:focus,
 button:focus {
   outline: none;
-  border-color: #f97316;
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(115, 82, 0, 0.2);
 }
 
 textarea {

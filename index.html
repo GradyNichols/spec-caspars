@@ -9,14 +9,20 @@
   </head>
   <body>
     <!-- Navigation Bar -->
-    <nav id="navbar" class="text-white shadow-lg fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background-color: rgba(17, 24, 39, 0);">
-      <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 md:py-2 lg:py-2">
+    <nav
+      id="navbar"
+      class="text-white shadow-lg fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      style="background-color: rgba(70, 61, 46, 0)"
+    >
+      <div
+        class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 md:py-2 lg:py-2"
+      >
         <div class="flex justify-between items-center h-16">
           <!-- Logo and Desktop Navigation Links -->
           <div class="flex items-center space-x-8">
             <button
               onclick="loadPage('pages/home.html')"
-              class="font-bold text-xl text-orange-500 cursor-pointer hover:opacity-80 transition"
+              class="font-bold text-xl primary-text cursor-pointer hover:opacity-80 transition"
             >
               Restaurant
             </button>
@@ -25,19 +31,19 @@
             <div class="hidden md:flex space-x-6">
               <button
                 onclick="loadPage('pages/menu.html')"
-                class="hover:text-orange-500 transition cursor-pointer"
+                class="primary-hover-text transition cursor-pointer"
               >
                 Menu
               </button>
               <button
                 onclick="loadPage('pages/events.html')"
-                class="hover:text-orange-500 transition cursor-pointer"
+                class="primary-hover-text transition cursor-pointer"
               >
                 Events
               </button>
               <button
                 onclick="loadPage('pages/contact.html')"
-                class="hover:text-orange-500 transition cursor-pointer"
+                class="primary-hover-text transition cursor-pointer"
               >
                 Contact
               </button>
@@ -46,35 +52,35 @@
           <!-- Right Navigation - Make a Reservation (hidden on mobile) -->
           <button
             onclick="loadPage('pages/reservation.html')"
-            class="hidden md:block bg-orange-500 hover:bg-orange-600 px-6 py-2 rounded transition cursor-pointer"
+            class="reservation-btn hidden md:block primary-bg primary-hover-bg px-6 py-2 rounded transition cursor-pointer"
           >
             Make a Reservation
           </button>
           <!-- Mobile Menu Toggle -->
           <button
             onclick="toggleMobileMenu()"
-            class="md:hidden text-orange-500 text-2xl cursor-pointer"
+            class="md:hidden primary-text text-2xl cursor-pointer"
           >
             ☰
           </button>
         </div>
         <!-- Mobile Navigation -->
-        <div id="mobileMenu" class="hidden md:hidden pb-4">
+        <div id="mobileMenu" class="md:hidden pb-4">
           <button
             onclick="loadPage('pages/menu.html')"
-            class="block w-full text-left py-2 hover:text-orange-500 cursor-pointer"
+            class="block w-full text-left py-2 primary-hover-text cursor-pointer"
           >
             Menu
           </button>
           <button
             onclick="loadPage('pages/events.html')"
-            class="block w-full text-left py-2 hover:text-orange-500 cursor-pointer"
+            class="block w-full text-left py-2 primary-hover-text cursor-pointer"
           >
             Events
           </button>
           <button
             onclick="loadPage('pages/contact.html')"
-            class="block w-full text-left py-2 hover:text-orange-500 cursor-pointer"
+            class="block w-full text-left py-2 primary-hover-text cursor-pointer"
           >
             Contact
           </button>

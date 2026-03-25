@@ -1,4 +1,21 @@
-// Load page content dynamically without full page reload
+// Simple toast notification
+function showToast(message, type = "success") {
+  const toast = document.createElement("div");
+  toast.className = `fixed top-4 right-4 px-4 py-2 rounded-lg text-white z-50 transition-opacity duration-300 ${
+    type === "success" ? "bg-green-500" : "bg-red-500"
+  }`;
+  toast.textContent = message;
+  document.body.appendChild(toast);
+
+  setTimeout(() => {
+    toast.style.opacity = "0";
+    setTimeout(() => document.body.removeChild(toast), 300);
+  }, 3000);
+}
+
+// Current page tracker
+let currentPage = "home";
+
 async function loadPage(pageUrl) {
   try {
     const response = await fetch(pageUrl);
@@ -8,18 +25,21 @@ async function loadPage(pageUrl) {
     const contentDiv = document.getElementById("content");
     contentDiv.innerHTML = content;
 
+    // Update current page
+    currentPage = pageUrl.split("/").pop().replace(".html", "");
+
     // Ensure only non-home gets top padding for fixed navbar overlap
-    if (pageUrl.includes("home.html")) {
+    if (currentPage === "home") {
       contentDiv.classList.remove("pt-20");
     } else {
       contentDiv.classList.add("pt-20");
     }
 
     // Update page title
-    const pageTitle = pageUrl.split("/")[1];
+    const pageName = pageUrl.split("/").pop().replace(".html", "");
     document.title =
-      pageTitle.charAt(0).toUpperCase() +
-      pageTitle.slice(1) +
+      pageName.charAt(0).toUpperCase() +
+      pageName.slice(1) +
       " - Our Restaurant";
 
     // Update URL without full page reload
@@ -38,10 +58,10 @@ async function loadPage(pageUrl) {
     // Navbar style behavior depends on page
     const navbar = document.getElementById("navbar");
     if (navbar) {
-      if (pageUrl.includes("home.html")) {
-        navbar.style.backgroundColor = "rgba(17, 24, 39, 0)";
+      if (currentPage === "home") {
+        navbar.style.backgroundColor = "rgba(70, 61, 46, 0)";
       } else {
-        navbar.style.backgroundColor = "rgba(17, 24, 39, 1)";
+        navbar.style.backgroundColor = "rgba(70, 61, 46, 1)";
       }
     }
 
@@ -58,38 +78,21 @@ async function loadPage(pageUrl) {
 function toggleMobileMenu() {
   const mobileMenu = document.getElementById("mobileMenu");
   if (mobileMenu) {
-    if (mobileMenu.classList.contains("menu-open")) {
-      // Close menu
-      mobileMenu.classList.remove("menu-open");
-      mobileMenu.classList.add("hidden");
-    } else {
-      // Open menu
-      mobileMenu.classList.remove("hidden");
-      mobileMenu.classList.add("menu-open");
-    }
+    mobileMenu.classList.toggle("menu-open");
   }
 }
 
 function closeMobileMenu() {
   const mobileMenu = document.getElementById("mobileMenu");
-  if (mobileMenu && mobileMenu.classList.contains("menu-open")) {
+  if (mobileMenu) {
     mobileMenu.classList.remove("menu-open");
-    mobileMenu.classList.add("hidden");
   }
 }
 
 // Update navigation visibility based on screen width
 function updateNavVisibility() {
-  const reservationBtn = document.querySelector(
-    'button[onclick*="reservation"]',
-  );
-  if (reservationBtn) {
-    if (window.innerWidth < 768) {
-      reservationBtn.style.display = "none";
-    } else {
-      reservationBtn.style.display = "block";
-    }
-  }
+  // This function is no longer needed as CSS handles the visibility
+  return;
 }
 
 // Setup form handlers for dynamically loaded content
@@ -108,7 +111,7 @@ function setupFormHandlers() {
       console.log("Contact Form Data:", data);
 
       // Show success message
-      alert("Thank you for your message! We will get back to you soon.");
+      showToast("Thank you for your message! We will get back to you soon.");
 
       // Reset form
       this.reset();
@@ -131,13 +134,13 @@ function setupFormHandlers() {
       today.setHours(0, 0, 0, 0);
 
       if (selectedDate < today) {
-        alert("Please select a future date for your reservation.");
+        showToast("Please select a future date for your reservation.", "error");
         return;
       }
 
       // Validate time format
       if (!data.time) {
-        alert("Please select a time for your reservation.");
+        showToast("Please select a time for your reservation.", "error");
         return;
       }
 
@@ -145,7 +148,7 @@ function setupFormHandlers() {
       console.log("Reservation Data:", data);
 
       // Show success message
-      alert(
+      showToast(
         `Reservation confirmed for ${data.firstName} ${data.lastName} on ${data.date} at ${data.time} for ${data.guests} guest(s). We look forward to seeing you!`,
       );
 
@@ -179,23 +182,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // Load home page by default
   loadPage("pages/home.html");
 
-  // Update nav visibility based on screen width
-  updateNavVisibility();
-
-  // Listen for window resize to update nav
-  window.addEventListener("resize", updateNavVisibility);
-
   // Navbar scroll transparency effect on Home only
   window.addEventListener("scroll", function () {
     const navbar = document.getElementById("navbar");
     if (!navbar) return;
 
-    const isHomePage =
-      window.location.pathname === "/" ||
-      window.location.pathname.endsWith("home") ||
-      window.location.pathname.endsWith("home.html");
-    if (!isHomePage) {
-      navbar.style.backgroundColor = "rgba(17, 24, 39, 1)";
+    if (currentPage !== "home") {
+      navbar.style.backgroundColor = "rgba(70, 61, 46, 1)";
       return;
     }
 
@@ -204,17 +197,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (scrollPosition < maxScroll) {
       const opacity = scrollPosition / maxScroll;
-      navbar.style.backgroundColor = `rgba(17, 24, 39, ${opacity})`;
+      navbar.style.backgroundColor = `rgba(70, 61, 46, ${opacity})`;
     } else {
-      navbar.style.backgroundColor = "rgba(17, 24, 39, 1)";
+      navbar.style.backgroundColor = "rgba(70, 61, 46, 1)";
     }
   });
-
-  // Bootstrap JS initialization for any .dropdown-toggle elements
-  if (window.bootstrap && typeof window.bootstrap.Dropdown === "function") {
-    const toggles = document.querySelectorAll(".dropdown-toggle");
-    toggles.forEach((toggle) => new window.bootstrap.Dropdown(toggle));
-  }
 
   console.log("Restaurant website initialized successfully!");
 });
