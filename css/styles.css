@@ -117,15 +117,20 @@ textarea {
   h2 {
     font-size: 1.5rem !important;
   }
-}
-/* Mobile Responsive Adjustments */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem !important;
+
+  /* center navbar content vertically on mobile */
+  #navbar .flex {
+    min-height: 56px;
+    align-items: center;
   }
 
-  h2 {
-    font-size: 1.5rem !important;
+  #navbar .flex > div,
+  #navbar button {
+    align-items: center;
+  }
+
+  #navbar button {
+    padding: 0.35rem 0.75rem;
   }
 }
 

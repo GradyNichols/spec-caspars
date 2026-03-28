@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Restaurant</title>
+    <title>Caspar's</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
@@ -20,12 +20,24 @@
         <div class="flex justify-between items-center h-16">
           <!-- Logo and Desktop Navigation Links -->
           <div class="flex items-center space-x-8">
-            <button
+            <img
+              src="logo/Caspars_no_logo_transparent.png"
+              onclick="loadPage('pages/home.html')"
+              alt="Caspar's Logo"
+              class="font-bold cursor-pointer hover:opacity-80 transition"
+              style="
+                display: flex;
+                justify-content: center;
+                height: 60px;
+                width: auto;
+              "
+            />
+            <!-- <button
               onclick="loadPage('pages/home.html')"
               class="font-bold text-xl primary-text cursor-pointer hover:opacity-80 transition"
             >
               Restaurant
-            </button>
+            </button> -->
             <div class="hidden md:block h-6 border-l border-gray-500"></div>
             <!-- Desktop Navigation Links -->
             <div class="hidden md:flex space-x-6">

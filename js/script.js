@@ -14,9 +14,32 @@ function showToast(message, type = "success") {
 }
 
 // Current page tracker
-let currentPage = "home";
+let currentPage = "";
 
-async function loadPage(pageUrl) {
+const routeMap = {
+  "/": "pages/home.html",
+  "/index.html": "pages/home.html",
+  "/menu": "pages/menu.html",
+  "/menu.html": "pages/menu.html",
+  "/events": "pages/events.html",
+  "/events.html": "pages/events.html",
+  "/contact": "pages/contact.html",
+  "/contact.html": "pages/contact.html",
+  "/reservation": "pages/reservation.html",
+  "/reservation.html": "pages/reservation.html",
+};
+
+function getRouteFromPage(pageUrl) {
+  const slug = pageUrl.replace("pages/", "").replace(".html", "");
+  return slug === "home" ? "/" : slug === "index" ? "/" : `/${slug}`;
+}
+
+function getPageFromPath(pathname) {
+  const normalizedPath = pathname.toLowerCase().replace(/\/$/, "") || "/";
+  return routeMap[normalizedPath] || routeMap["/"];
+}
+
+async function loadPage(pageUrl, pushState = true) {
   try {
     const response = await fetch(pageUrl);
     if (!response.ok) throw new Error("Page not found");
@@ -36,18 +59,20 @@ async function loadPage(pageUrl) {
     }
 
     // Update page title
-    const pageName = pageUrl.split("/").pop().replace(".html", "");
-    document.title =
-      pageName.charAt(0).toUpperCase() +
-      pageName.slice(1) +
-      " - Our Restaurant";
+    const pageName =
+      currentPage === "home"
+        ? "Home"
+        : currentPage.charAt(0).toUpperCase() + currentPage.slice(1);
+    document.title = `${pageName} - Our Restaurant`;
 
     // Update URL without full page reload
-    window.history.pushState(
-      { page: pageUrl },
-      "",
-      pageUrl.replace("pages/", ""),
-    );
+    if (pushState) {
+      window.history.pushState(
+        { page: pageUrl },
+        "",
+        getRouteFromPage(pageUrl),
+      );
+    }
 
     // Close mobile menu
     closeMobileMenu();
@@ -173,14 +198,16 @@ function setupFormHandlers() {
 // Handle browser back/forward buttons
 window.addEventListener("popstate", function (e) {
   if (e.state && e.state.page) {
-    loadPage(e.state.page);
+    loadPage(e.state.page, false);
+  } else {
+    loadPage(getPageFromPath(window.location.pathname), false);
   }
 });
 
 // Initialize on page load
 document.addEventListener("DOMContentLoaded", function () {
-  // Load home page by default
-  loadPage("pages/home.html");
+  const route = window.location.pathname;
+  loadPage(getPageFromPath(route), false);
 
   // Navbar scroll transparency effect on Home only
   window.addEventListener("scroll", function () {
