@@ -63,7 +63,7 @@ async function loadPage(pageUrl, pushState = true) {
       currentPage === "home"
         ? "Home"
         : currentPage.charAt(0).toUpperCase() + currentPage.slice(1);
-    document.title = `${pageName} - Our Restaurant`;
+    document.title = `${pageName} - Caspar's`;
 
     // Update URL without full page reload
     if (pushState) {
@@ -84,9 +84,9 @@ async function loadPage(pageUrl, pushState = true) {
     const navbar = document.getElementById("navbar");
     if (navbar) {
       if (currentPage === "home") {
-        navbar.style.backgroundColor = "rgba(70, 61, 46, 0)";
+        navbar.style.backgroundColor = "rgba(255,255,255, 0)";
       } else {
-        navbar.style.backgroundColor = "rgba(70, 61, 46, 1)";
+        navbar.style.backgroundColor = "rgba(255,255,255, 1)";
       }
     }
 
@@ -112,12 +112,6 @@ function closeMobileMenu() {
   if (mobileMenu) {
     mobileMenu.classList.remove("menu-open");
   }
-}
-
-// Update navigation visibility based on screen width
-function updateNavVisibility() {
-  // This function is no longer needed as CSS handles the visibility
-  return;
 }
 
 // Setup form handlers for dynamically loaded content
@@ -215,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!navbar) return;
 
     if (currentPage !== "home") {
-      navbar.style.backgroundColor = "rgba(70, 61, 46, 1)";
+      navbar.style.backgroundColor = "rgba(255, 255, 255, 1)";
       return;
     }
 
@@ -224,9 +218,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (scrollPosition < maxScroll) {
       const opacity = scrollPosition / maxScroll;
-      navbar.style.backgroundColor = `rgba(70, 61, 46, ${opacity})`;
+      navbar.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`;
     } else {
-      navbar.style.backgroundColor = "rgba(70, 61, 46, 1)";
+      navbar.style.backgroundColor = "rgba(255, 255, 255, 1)";
     }
   });
 
