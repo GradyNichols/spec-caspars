@@ -39,6 +39,33 @@ function getPageFromPath(pathname) {
   return routeMap[normalizedPath] || routeMap["/"];
 }
 
+function updateActiveButton() {
+  const currentPath = window.location.pathname;
+
+  const pageMap = {
+    "/menu": "menu-button",
+    "/events": "events-button",
+    "/contact": "contact-button",
+  };
+
+  Object.values(pageMap).forEach((id) => {
+    const button = document.getElementById(id);
+    if (button) {
+      button.style.borderBottom = "none";
+      button.style.fontWeight = "normal";
+    }
+  });
+
+  const activeButtonId = pageMap[currentPath];
+  if (activeButtonId) {
+    const activeButton = document.getElementById(activeButtonId);
+    if (activeButton) {
+      activeButton.style.borderBottom = "2px solid #1F2937";
+      activeButton.style.fontWeight = "bold";
+    }
+  }
+}
+
 async function loadPage(pageUrl, pushState = true) {
   try {
     const response = await fetch(pageUrl);
@@ -85,13 +112,16 @@ async function loadPage(pageUrl, pushState = true) {
     if (navbar) {
       if (currentPage === "home") {
         navbar.style.backgroundColor = "rgba(255,255,255, 0)";
+        navbar.style.color = "white";
       } else {
         navbar.style.backgroundColor = "rgba(255,255,255, 1)";
+        navbar.style.color = "black";
       }
     }
 
     // Setup form handlers for the newly loaded content
     setupFormHandlers();
+    updateActiveButton();
   } catch (error) {
     console.error("Error loading page:", error);
     document.getElementById("content").innerHTML =
@@ -196,6 +226,7 @@ window.addEventListener("popstate", function (e) {
   } else {
     loadPage(getPageFromPath(window.location.pathname), false);
   }
+  updateActiveButton();
 });
 
 // Initialize on page load
@@ -219,10 +250,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (scrollPosition < maxScroll) {
       const opacity = scrollPosition / maxScroll;
       navbar.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`;
+      navbar.style.color = "white";
     } else {
       navbar.style.backgroundColor = "rgba(255, 255, 255, 1)";
+      navbar.style.color = "black";
     }
   });
+
+  updateActiveButton();
 
   console.log("Restaurant website initialized successfully!");
 });

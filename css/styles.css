@@ -37,7 +37,7 @@
   box-shadow: 0 0 0 3px rgba(115, 82, 0, 0.2);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .reservation-btn {
     display: none;
   }
@@ -111,6 +111,10 @@ textarea {
   resize: vertical;
 }
 
+#navbar {
+  overflow-y: hidden;
+}
+
 /* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
   h1 {
@@ -122,7 +126,7 @@ textarea {
   }
 
   /* center navbar content vertically on mobile */
-  /* #navbar .flex {
+  /*#navbar .flex {
     min-height: 56px;
     align-items: center;
   }
@@ -134,7 +138,24 @@ textarea {
 
   #navbar button {
     padding: 0.35rem 0.75rem;
-  } */
+  }*/
+  #navbar .flex {
+    padding-top: 0.5rem;
+  }
+  .logo {
+    max-height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    max-height: 40px;
+  }
+}
+@media (min-width: 768px) {
+  .logo {
+    max-height: 65px;
+  }
 }
 
 /* Animation for hover effects */
@@ -192,13 +213,24 @@ html {
   transform: scaleY(0);
   overflow: hidden;
   transition:
-    max-height 0.3s ease,
-    opacity 0.3s ease,
-    transform 0.3s ease;
+    max-height 0.7s ease,
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
 
 #mobileMenu.menu-open {
   max-height: 500px;
-  opacity: 1;
+  opacity: 0.95;
   transform: scaleY(1);
+  transition: 0.7s ease;
+}
+
+#contact-button,
+#events-button,
+#menu-button {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    borderBottom 2s ease,
+    fontWeight 0.8s ease;
 }
