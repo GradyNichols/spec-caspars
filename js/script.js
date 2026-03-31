@@ -109,9 +109,9 @@ async function loadPage(pageUrl, pushState = true) {
 
     // Ensure only non-home gets top padding for fixed navbar overlap
     if (currentPage === "home") {
-      contentDiv.classList.remove("pt-20");
+      contentDiv.classList.remove("pt-10");
     } else {
-      contentDiv.classList.add("pt-20");
+      contentDiv.classList.add("pt-10");
     }
 
     // Update page title
