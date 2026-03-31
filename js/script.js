@@ -39,6 +39,35 @@ function getPageFromPath(pathname) {
   return routeMap[normalizedPath] || routeMap["/"];
 }
 
+function updateActiveButtonMobile() {
+  const currentPath = window.location.pathname;
+
+  const pageMap = {
+    "/menu": "#mobileMenu > button#menu-button",
+    "/events": "#mobileMenu > button#events-button",
+    "/contact": "#mobileMenu > button#contact-button",
+  };
+
+  Object.values(pageMap).forEach((selector) => {
+    const button = document.querySelector(selector);
+    if (button) {
+      button.style.fontWeight = "normal";
+      button.style.borderLeft = "1px solid transparent";
+      button.style.cursor = "pointer";
+    }
+  });
+
+  const activeButtonSelector = pageMap[currentPath];
+  if (activeButtonSelector) {
+    const activeButton = document.querySelector(activeButtonSelector);
+    if (activeButton) {
+      activeButton.style.fontWeight = "bold";
+      activeButton.style.borderLeft = "1px solid var(--primary-color)";
+      activeButton.style.cursor = "default";
+    }
+  }
+}
+
 function updateActiveButton() {
   const currentPath = window.location.pathname;
 
@@ -51,7 +80,7 @@ function updateActiveButton() {
   Object.values(pageMap).forEach((id) => {
     const button = document.getElementById(id);
     if (button) {
-      button.style.borderBottom = "none";
+      //   button.style.borderBottom = "none";
       button.style.fontWeight = "normal";
     }
   });
@@ -60,7 +89,7 @@ function updateActiveButton() {
   if (activeButtonId) {
     const activeButton = document.getElementById(activeButtonId);
     if (activeButton) {
-      activeButton.style.borderBottom = "2px solid #1F2937";
+      //   activeButton.style.borderBottom = "2px solid #1F2937";
       activeButton.style.fontWeight = "bold";
     }
   }
@@ -122,6 +151,7 @@ async function loadPage(pageUrl, pushState = true) {
     // Setup form handlers for the newly loaded content
     setupFormHandlers();
     updateActiveButton();
+    updateActiveButtonMobile();
   } catch (error) {
     console.error("Error loading page:", error);
     document.getElementById("content").innerHTML =
@@ -227,6 +257,7 @@ window.addEventListener("popstate", function (e) {
     loadPage(getPageFromPath(window.location.pathname), false);
   }
   updateActiveButton();
+  updateActiveButtonMobile();
 });
 
 // Initialize on page load
@@ -258,6 +289,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   updateActiveButton();
+  updateActiveButtonMobile();
 
   console.log("Restaurant website initialized successfully!");
 });

@@ -76,7 +76,7 @@ textarea,
 select,
 button {
   border: 1px solid var(--border-color);
-  border-radius: 0.4rem;
+  border-radius: 0;
   background-color: var(--white);
   color: var(--text-color);
   font-size: 1rem;
@@ -95,7 +95,7 @@ button {
   font-weight: 600;
   letter-spacing: 0.02em;
   border: 1px solid transparent;
-  border-radius: 0.45rem;
+  border-radius: 0;
 }
 
 input:focus,
@@ -181,10 +181,10 @@ textarea {
 }
 
 /* Natural-looking scrollbar (modern) */
-html {
+/* html {
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
-}
+} */
 
 /* Chrome/Safari */
 ::-webkit-scrollbar {
@@ -213,24 +213,18 @@ html {
   transform: scaleY(0);
   overflow: hidden;
   transition:
-    max-height 0.7s ease,
-    opacity 0.7s ease,
-    transform 0.7s ease;
+    max-height 0.35s ease,
+    opacity 0.6s ease,
+    transform 1.3s ease;
 }
 
 #mobileMenu.menu-open {
   max-height: 500px;
   opacity: 0.95;
   transform: scaleY(1);
-  transition: 0.7s ease;
-}
-
-#contact-button,
-#events-button,
-#menu-button {
   transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    borderBottom 2s ease,
-    fontWeight 0.8s ease;
+    max-height 1.2s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease-in-out;
+  /* transition: 0.7s ease; */
 }
