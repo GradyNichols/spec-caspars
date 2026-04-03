@@ -1,17 +1,29 @@
 <!-- Hero Section -->
 <div
-  class="bg-gradient-to-b from-[#000000] to-[#555555] text-white h-screen flex flex-col items-center justify-center text-center w-full"
+  class="bg-gradient-to-b from-[#000000] to-[#666666] text-white h-screen flex flex-col items-center justify-center text-center w-full"
 >
   <h1 class="text-5xl md:text-7xl font-bold mb-4">Welcome to my Restaurant</h1>
   <p class="text-xl md:text-2xl text-gray-300 mb-8">
     Experience culinary excellence with our finest dishes
   </p>
-  <button
+  <!-- <button
     onclick="loadPage('pages/reservation.html')"
     class="primary-bg primary-hover-bg px-8 py-3 rounded-sm text-lg font-semibold transition cursor-pointer"
   >
     Reserve Your Table
+  </button> -->
+  <button
+    onclick="loadPage('pages/reservation.html')"
+    class="px-6 py-3 border border-[#735200] text-[#735200] rounded-sm transition-all duration-300 ease-in-out hover:bg-[#735200] hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+  >
+    Reserve Your Tablerrrr
   </button>
+  <!-- <button
+    onclick="loadPage('pages/reservation.html')"
+    class="px-6 py-3 bg-[#735200] text-white rounded-sm transition-all duration-300 ease-in-out hover:bg-[#463D2E]"
+  >
+    Reserve Your Table
+  </button> -->
 </div>
 
 <!-- Featured Section -->
@@ -43,23 +55,46 @@
 
 <br />
 
-<section
-  class="min-w-full m-0 px-4 py-16 bg-gray-100 border-t-2 border-b-2 mt-2 text-black"
->
-  <div class="flex justify-between items-center max-w-7xl mx-auto">
-    <!-- <button
-      onclick="loadPage('pages/menu.html')"
-      class="primary-bg primary-hover-bg px-8 py-3 rounded-sm text-lg transition cursor-pointer"
-    >
-      View Menu
-    </button>
-    <button
-      onclick="loadPage('pages/events.html')"
-      class="primary-bg primary-hover-bg px-8 py-3 rounded-sm text-lg transition cursor-pointer"
-    >
-      View Events
-    </button> -->
-    Section 2
+<section class="bg-[#f9f7f2] py-20 px-6">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-[#735200] mb-12 tracking-wide">
+        Frequently Asked Questions
+    </h2>
+    <div class="space-y-0" id="faqContainer">
+        <div class="border border-gray-200 rounded-sm overflow-hidden">
+            <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-5 text-left hover:bg-[#f3efe6] transition">
+                <span class="font-medium text-gray-800">Do I need a reservation?</span>
+                <span class="faq-icon text-[#735200] text-xl transition-transform duration-300">+</span>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0 px-5">
+                <p class="py-4 text-gray-600">
+                    While walk-ins are welcome, we recommend making a reservation to ensure availability.
+                </p>
+            </div>
+        </div>
+        <div class="border border-gray-200 rounded-sm overflow-hidden">
+            <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-5 text-left hover:bg-[#f3efe6] transition">
+                <span class="font-medium text-gray-800">Question 2</span>
+                <span class="faq-icon text-[#735200] text-xl transition-transform duration-300">+</span>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0 px-5">
+                <p class="py-4 text-gray-600">
+                    Answer 2
+                </p>
+            </div>
+        </div>
+        <div class="border border-gray-200 rounded-sm overflow-hidden">
+            <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-5 text-left hover:bg-[#f3efe6] transition">
+                <span class="font-medium text-gray-800">Question 3</span>
+                <span class="faq-icon text-[#735200] text-xl transition-transform duration-300">+</span>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0 px-5">
+                <p class="py-4 text-gray-600">
+                    Answer 3
+                </p>
+            </div>
+        </div>
+    </div>
   </div>
 </section>
 
@@ -67,7 +102,8 @@
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
     <div class="w-full md:w-1/2 overflow-hidden rounded-2xl">
       <img
-        src="logo/Caspars_no_logo_transparent.png"
+        src="logo/download.jpeg"
+        alt="photo"
         class="w-full h-[400px] object-cover transition duration-700 hover:scale-105"
       />
     </div>
@@ -87,8 +123,108 @@
   </div>
 </section>
 
-<section
+<section class="bg-gray-100 py-16 px-6 border-t-2 border-b-2 border-gray-300">
+  <div class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+      What Our Customers Say
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <p class="text-gray-600 mb-4">
+          "The food was absolutely amazing! The flavors were perfectly balanced
+          and the presentation was beautiful."
+        </p>
+        <h3 class="text-lg font-semibold">John D.</h3>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <p class="text-gray-600 mb-4">
+          "The ambiance of the restaurant made our dining experience even more
+          enjoyable. Highly recommend!"
+        </p>
+        <h3 class="text-lg font-semibold">Emily R.</h3>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <p class="text-gray-600 mb-4">
+          "Exceptional service and delicious food. We will definitely be coming
+          back!"
+        </p>
+        <h3 class="text-lg font-semibold">Michael S.</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="bg-gradient-to-b from-[#888888] to-[#463D2E] py-16 px-6">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Dine with Us?</h2>
+    <p class="text-xl md:text-2xl text-gray-300 mb-8">
+      Book your table now and experience the best dining in town
+    </p>
+    <button
+      onclick="loadPage('pages/reservation.html')"
+      class="px-6 py-3 border border-[#735200] text-[#735200] rounded-sm transition-all duration-300 ease-in-out hover:bg-[#735200] hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+    >
+      Reserve Your Table
+    </button>
+  </div>
+
+  <div class="max-w-7xl mx-auto text-center mt-8">
+    <p class="text-gray-300">
+      Have questions? Call us at <span class="font-bold">1-800-123-4567</span>
+    </p>
+  </div>
+</section> -->
+
+<section class="relative overflow-hidden">
+    <div id="parallaxBg" class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0" style="background-image:url('logo/download.jpeg');"></div>
+
+    <div class="relative z-10 max-w-3xl md:mt-10 md:mb-10 mt-0 mb-0 mx-auto mt-0 p-10 bg-white/80 backdrop-blur-md rounded-md text-center">
+        <h2 class="text-4xl md:text-5xl font-bold text-[#735200] mb-4">Experience Culinary Magic</h2>
+        <p class="text-gray-800 mb-6">
+            Experience the taste of luxury dining with our exquisite menu, crafted by world-class chefs using the finest ingredients.
+        </p>
+        <button onclick="loadPage('pages/menu.html')" class="px-6 py-3 border border-[#735200] text-[#735200] rounded-sm transition-all duration-300 ease-in-out hover:bg-[#735200] hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+            Explore Our Menu
+        </button>
+    </div>
+</section>
+
+<section class="bg-[#ffffff] py-16 px-6">
+    <div class="max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#735200] mb-4">
+            Stay in the Loop!
+        </h2>
+        <p class="text-gray-700 mb-8">
+            Sign up for our newsletter to receive exclusive offers, event updates, and the latest news from our restaurant.
+        </p>
+        <form class="flex flex-col sm:flex-row gap-4 justify-center">
+            <input
+                type="email"
+                placeholder="Enter your email"
+                class="w-full sm:w-auto flex-1 px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#735200] text-gray-700 "
+            />
+            <button
+                type="submit"
+                class="px-6 py-3 bg-[#735200] text-white rounded-sm shadow-md hover:bg-[#463D2E] transition-all duration-300 ease-in-out uppercase font-semibold tracking-wide"
+            >
+                Subscribe
+            </button>
+    </div>
+</section>
+
+<!-- <section
   class="min-w-full m-0 px-4 py-16 bg-white border-t-2 border-b-2 text-black"
 >
-  Section 3
-</section>
+  <div class="flex justify-between items-center max-w-6xl mx-auto">
+    <input
+      type="text"
+      placeholder="Enter your email for updates"
+      class="w-full md:w-auto px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus-primary-border"
+    />
+    <button
+      class="primary-bg primary-hover-bg px-6 py-3 rounded-sm text-lg transition cursor-pointer mt-4 md:mt-0"
+    >
+      Subscribe
+    </button>
+  </div>
+</section> -->

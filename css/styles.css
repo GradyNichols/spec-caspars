@@ -37,12 +37,6 @@
   box-shadow: 0 0 0 3px rgba(115, 82, 0, 0.2);
 }
 
-@media (max-width: 768px) {
-  .reservation-btn {
-    display: none;
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -60,8 +54,18 @@ body {
   font-style: normal;
 }
 
+/* For Chrome, Safari, and Opera */
+html::-webkit-scrollbar {
+  display: none;
+}
+
 /* Smooth Scrolling */
 html {
+  /* For Firefox */
+  scrollbar-width: none;
+
+  /* For Internet Explorer and Edge */
+  -ms-overflow-style: none;
   scroll-behavior: smooth;
 }
 
@@ -113,49 +117,6 @@ textarea {
 
 #navbar {
   overflow-y: hidden;
-}
-
-/* Mobile Responsive Adjustments */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem !important;
-  }
-
-  h2 {
-    font-size: 1.5rem !important;
-  }
-
-  /* center navbar content vertically on mobile */
-  /*#navbar .flex {
-    min-height: 56px;
-    align-items: center;
-  }
-
-  #navbar .flex > div,
-  #navbar button {
-    align-items: center;
-  }
-
-  #navbar button {
-    padding: 0.35rem 0.75rem;
-  }*/
-  #navbar .flex {
-    padding-top: 0.5rem;
-  }
-  .logo {
-    max-height: 50px;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo {
-    max-height: 40px;
-  }
-}
-@media (min-width: 768px) {
-  .logo {
-    max-height: 65px;
-  }
 }
 
 /* Animation for hover effects */
@@ -215,7 +176,13 @@ textarea {
   transition:
     max-height 0.35s ease,
     opacity 0.6s ease,
-    transform 1.3s ease;
+    transform 1.3s ease,
+    border 0.3s ease,
+    padding-top 0.3s ease,
+    margin-top 0.3s ease;
+  border: none;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 #mobileMenu.menu-open {
@@ -225,6 +192,58 @@ textarea {
   transition:
     max-height 1.2s ease,
     opacity 0.3s ease,
-    transform 0.3s ease-in-out;
-  /* transition: 0.7s ease; */
+    transform 0.3s ease-in-out,
+    border 0.3s ease,
+    padding-top 0.3s ease,
+    margin-top 0.3s ease;
+  border-top: 2px solid var(--primary-color);
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+}
+/* transition: 0.7s ease; */
+
+#loader {
+  background: linear-gradient(
+    120deg,
+    var(--primary-color),
+    #f9f6f0,
+    #ffe8b5,
+    var(--primary-color)
+  );
+  background-size: 300% 300%;
+  animation: gradientFlow 25s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#loader img {
+  animation: floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-12px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+#loader.fade-out {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
 }

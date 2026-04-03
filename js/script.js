@@ -1,3 +1,16 @@
+window.addEventListener("load", function () {
+  const loader = document.getElementById("loader");
+  const body = document.body;
+  body.style.overflow = "hidden";
+  setTimeout(() => {
+    loader.classList.add("fade-out");
+    body.style.overflow = "auto";
+  }, 1000);
+  setTimeout(() => {
+    loader.remove();
+  }, 5000);
+});
+
 // Simple toast notification
 function showToast(message, type = "success") {
   const toast = document.createElement("div");
@@ -37,6 +50,37 @@ function getRouteFromPage(pageUrl) {
 function getPageFromPath(pathname) {
   const normalizedPath = pathname.toLowerCase().replace(/\/$/, "") || "/";
   return routeMap[normalizedPath] || routeMap["/"];
+}
+
+function toggleFAQ(button) {
+  const container = document.getElementById("faqContainer");
+  const allItems = container.querySelectorAll(".faq-content");
+  const allIcons = container.querySelectorAll(".faq-icon");
+
+  const content = button.nextElementSibling;
+  const icon = button.querySelector(".faq-icon");
+
+  const isOpen = content.style.maxHeight;
+
+  allItems.forEach((item) => {
+    item.style.maxHeight = null;
+    item.style.opacity = 0;
+  });
+
+  allIcons.forEach((i) => {
+    i.style.transform = "rotate(0deg)";
+    i.textContent = "+";
+  });
+
+  if (!isOpen) {
+    content.style.maxHeight = content.scrollHeight + "px";
+    content.style.opacity = 1;
+
+    button.scrollIntoView({ behavior: "smooth", block: "center" });
+
+    icon.style.transform = "rotate(45deg)";
+    icon.textContent = "+";
+  }
 }
 
 function updateActiveButtonMobile() {
@@ -109,9 +153,9 @@ async function loadPage(pageUrl, pushState = true) {
 
     // Ensure only non-home gets top padding for fixed navbar overlap
     if (currentPage === "home") {
-      contentDiv.classList.remove("pt-10");
+      contentDiv.classList.remove("pt-[60px]");
     } else {
-      contentDiv.classList.add("pt-10");
+      contentDiv.classList.add("pt-[60px]");
     }
 
     // Update page title
@@ -160,6 +204,7 @@ async function loadPage(pageUrl, pushState = true) {
 }
 
 // Toggle Mobile Menu with smooth animation
+
 function toggleMobileMenu() {
   const mobileMenu = document.getElementById("mobileMenu");
   if (mobileMenu) {
@@ -263,11 +308,14 @@ window.addEventListener("popstate", function (e) {
 // Initialize on page load
 document.addEventListener("DOMContentLoaded", function () {
   const route = window.location.pathname;
+  // const parallaxBg = document.getElementById("parallaxBg");
+
   loadPage(getPageFromPath(route), false);
 
   // Navbar scroll transparency effect on Home only
   window.addEventListener("scroll", function () {
     const navbar = document.getElementById("navbar");
+    // const reservationBtn = document.getElementsByClassName("reservation-btn");
     if (!navbar) return;
 
     if (currentPage !== "home") {
@@ -286,6 +334,8 @@ document.addEventListener("DOMContentLoaded", function () {
       navbar.style.backgroundColor = "rgba(255, 255, 255, 1)";
       navbar.style.color = "black";
     }
+
+    // parallaxBg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
   });
 
   updateActiveButton();
