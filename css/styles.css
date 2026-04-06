@@ -287,3 +287,18 @@ textarea {
 .menu-open-icon #line3 {
   transform: translateY(-6px) rotate(-45deg);
 } */
+
+.menu-link {
+  position: relative;
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+  color: var(--primary-color);
+}
+
+.menu-link.active {
+  color: var(--primary-color);
+  font-weight: bold;
+}

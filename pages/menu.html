@@ -1,100 +1,130 @@
-<section id="gradientFlowBackground" class="max-w-7xl mx-auto px-4 py-16">
-  <h1 class="text-4xl font-bold text-gray-900 mb-12 text-center">Our Menu</h1>
-
-  <!-- Appetizers -->
-  <div class="mb-12">
-    <h2
-      class="text-2xl font-semibold text-gray-900 mb-6 primary-border border-b-4 pb-2"
+<div
+  class="sticky lg:top-[97.5px] md:top-[95px] top-[91px] left-0 right-0 z-[45] bg-[#d1d5db] backdrop-blur-md shadow-sm"
+>
+  <div class="max-w-7xl mx-auto px-4 relative">
+    <div
+      id="menuNavLinks"
+      class="flex justify-center md:space-x-12 space-x-8 py-4 text-sm md:text-base relative"
     >
-      Appetizers
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-gray-50 p-6 rounded-lg">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="text-lg font-semibold">Garlic Bread</h3>
-          <span class="primary-text font-bold">$8.99</span>
-        </div>
-        <p class="text-gray-600">Crispy bread with garlic butter and herbs</p>
-      </div>
-      <div class="bg-gray-50 p-6 rounded-lg">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="text-lg font-semibold">Calamari</h3>
-          <span class="primary-text font-bold">$12.99</span>
-        </div>
-        <p class="text-gray-600">Perfectly fried squid with marinara sauce</p>
-      </div>
+      <button class="menu-link active" data-section="appetizers">
+        Appetizers
+      </button>
+      <button class="menu-link" data-section="mains">Mains</button>
+      <button class="menu-link" data-section="desserts">Desserts</button>
+      <button class="menu-link" data-section="drinks">Drinks</button>
+
+      <span
+        id="menuIndicator"
+        class="absolute bottom-2 h-[2px] bg-[#735200] transition-all duration-300"
+      ></span>
     </div>
   </div>
+</div>
 
-  <!-- Main Courses -->
-  <div class="mb-12">
-    <h2
-      class="text-2xl font-semibold text-gray-900 mb-6 primary-border border-b-4 pb-2"
-    >
-      Main Courses
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-gray-50 p-6 rounded-lg">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="text-lg font-semibold">Grilled Salmon</h3>
-          <span class="primary-text font-bold">$24.99</span>
-        </div>
-        <p class="text-gray-600">Fresh salmon fillet with lemon butter sauce</p>
+<section
+  id="title"
+  class="max-w-7xl mx-auto px-8 md:px-12 text-center mt-20 mb-0"
+>
+  <h1 class="text-4xl font-bold text-gray-900 text-center">Our Menu</h1>
+</section>
+
+<section id="appetizers" class="max-w-7xl mx-auto px-8 md:px-12 py-5">
+  <h2
+    class="text-2xl font-semibold text-gray-900 mb-6 primary-border border-b-2 pb-2"
+  >
+    Appetizers
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="bg-gray-50 p-6 rounded-lg">
+      <div class="flex justify-between items-start mb-2">
+        <h3 class="text-lg font-semibold">Garlic Bread</h3>
+        <span class="primary-text font-bold">$8.99</span>
       </div>
-      <div class="bg-gray-50 p-6 rounded-lg">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="text-lg font-semibold">Ribeye Steak</h3>
-          <span class="primary-text font-bold">$28.99</span>
-        </div>
-        <p class="text-gray-600">
-          Premium cut aged 28 days, served with vegetables
-        </p>
-      </div>
-      <div class="bg-gray-50 p-6 rounded-lg">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="text-lg font-semibold">Pasta Carbonara</h3>
-          <span class="primary-text font-bold">$18.99</span>
-        </div>
-        <p class="text-gray-600">
-          Traditional Italian pasta with cream and bacon
-        </p>
-      </div>
-      <div class="bg-gray-50 p-6 rounded-lg">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="text-lg font-semibold">Herb Chicken</h3>
-          <span class="primary-text font-bold">$19.99</span>
-        </div>
-        <p class="text-gray-600">
-          Roasted chicken breast with herbs and garlic
-        </p>
-      </div>
+      <p class="text-gray-600">Crispy bread with garlic butter and herbs</p>
     </div>
-  </div>
-
-  <!-- Desserts -->
-  <div>
-    <h2
-      class="text-2xl font-semibold text-gray-900 mb-6 primary-border border-b-4 pb-2"
-    >
-      Desserts
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-gray-50 p-6 rounded-lg">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="text-lg font-semibold">Tiramisu</h3>
-          <span class="primary-text font-bold">$7.99</span>
-        </div>
-        <p class="text-gray-600">
-          Classic Italian dessert with layers of flavor
-        </p>
+    <div class="bg-gray-50 p-6 rounded-lg">
+      <div class="flex justify-between items-start mb-2">
+        <h3 class="text-lg font-semibold">Calamari</h3>
+        <span class="primary-text font-bold">$12.99</span>
       </div>
-      <div class="bg-gray-50 p-6 rounded-lg">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="text-lg font-semibold">Chocolate Lava Cake</h3>
-          <span class="primary-text font-bold">$8.99</span>
-        </div>
-        <p class="text-gray-600">Rich molten chocolate with ice cream</p>
-      </div>
+      <p class="text-gray-600">Perfectly fried squid with marinara sauce</p>
     </div>
   </div>
 </section>
+
+<section id="mains" class="max-w-7xl mx-auto px-8 md:px-12 py-5">
+  <h2
+    class="text-2xl font-semibold text-gray-900 mb-6 primary-border border-b-2 pb-2"
+  >
+    Main Courses
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="bg-gray-50 p-6 rounded-lg">
+      <div class="flex justify-between items-start mb-2">
+        <h3 class="text-lg font-semibold">Grilled Salmon</h3>
+        <span class="primary-text font-bold">$24.99</span>
+      </div>
+      <p class="text-gray-600">Fresh salmon fillet with lemon butter sauce</p>
+    </div>
+    <div class="bg-gray-50 p-6 rounded-lg">
+      <div class="flex justify-between items-start mb-2">
+        <h3 class="text-lg font-semibold">Ribeye Steak</h3>
+        <span class="primary-text font-bold">$28.99</span>
+      </div>
+      <p class="text-gray-600">
+        Premium cut aged 28 days, served with vegetables
+      </p>
+    </div>
+    <div class="bg-gray-50 p-6 rounded-lg">
+      <div class="flex justify-between items-start mb-2">
+        <h3 class="text-lg font-semibold">Pasta Carbonara</h3>
+        <span class="primary-text font-bold">$18.99</span>
+      </div>
+      <p class="text-gray-600">
+        Traditional Italian pasta with cream and bacon
+      </p>
+    </div>
+    <div class="bg-gray-50 p-6 rounded-lg">
+      <div class="flex justify-between items-start mb-2">
+        <h3 class="text-lg font-semibold">Herb Chicken</h3>
+        <span class="primary-text font-bold">$19.99</span>
+      </div>
+      <p class="text-gray-600">Roasted chicken breast with herbs and garlic</p>
+    </div>
+  </div>
+</section>
+
+<section id="desserts" class="max-w-7xl mx-auto px-8 md:px-12 py-5">
+  <h2
+    class="text-2xl font-semibold text-gray-900 mb-6 primary-border border-b-2 pb-2"
+  >
+    Desserts
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="bg-gray-50 p-6 rounded-lg">
+      <div class="flex justify-between items-start mb-2">
+        <h3 class="text-lg font-semibold">Tiramisu</h3>
+        <span class="primary-text font-bold">$7.99</span>
+      </div>
+      <p class="text-gray-600">Classic Italian dessert with layers of flavor</p>
+    </div>
+    <div class="bg-gray-50 p-6 rounded-lg">
+      <div class="flex justify-between items-start mb-2">
+        <h3 class="text-lg font-semibold">Chocolate Lava Cake</h3>
+        <span class="primary-text font-bold">$8.99</span>
+      </div>
+      <p class="text-gray-600">Rich molten chocolate with ice cream</p>
+    </div>
+  </div>
+</section>
+
+<section id="drinks" class="max-w-7xl mx-auto px-8 md:px-12 pt-5 pb-15">
+  <h2
+    class="text-2xl font-semibold text-gray-900 mb-6 primary-border border-b-2 pb-2"
+  >
+    Drinks
+  </h2>
+  drinks section here
+</section>
+<br />
+<br />
