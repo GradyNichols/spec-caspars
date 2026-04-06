@@ -205,17 +205,55 @@ async function loadPage(pageUrl, pushState = true) {
 
 // Toggle Mobile Menu with smooth animation
 
+function animateMenuIcon(isOpen) {
+  const line1 = document.getElementById("line1");
+  const line2 = document.getElementById("line2");
+  const line3 = document.getElementById("line3");
+
+  if (isOpen) {
+    line1.style.transform = "rotate(-45deg) translate(-4px, 6px)";
+    line2.style.opacity = "0";
+    line3.style.transform = "rotate(45deg) translate(-3px, -4px)";
+  } else {
+    line1.style.transform = "rotate(0) translate(0, 0)";
+    line2.style.opacity = "1";
+    line3.style.transform = "rotate(0) translate(0, 0)";
+  }
+}
+
 function toggleMobileMenu() {
   const mobileMenu = document.getElementById("mobileMenu");
-  if (mobileMenu) {
-    mobileMenu.classList.toggle("menu-open");
+  const overlay = document.getElementById("overlay");
+
+  const isOpen = mobileMenu.classList.contains("menu-open");
+
+  animateMenuIcon(!isOpen);
+
+  if (isOpen) {
+    closeMobileMenu();
+  } else {
+    if (mobileMenu) {
+      mobileMenu.classList.add("menu-open");
+    }
+    if (overlay) {
+      overlay.classList.remove("opacity-0", "pointer-events-none");
+      overlay.classList.add("opacity-100");
+    }
   }
 }
 
 function closeMobileMenu() {
   const mobileMenu = document.getElementById("mobileMenu");
+  const overlay = document.getElementById("overlay");
+
+  animateMenuIcon(false);
+
   if (mobileMenu) {
     mobileMenu.classList.remove("menu-open");
+  }
+  if (overlay) {
+    overlay.classList.remove("opacity-100");
+    overlay.classList.add("opacity-0", "pointer-events-none");
   }
 }
 
