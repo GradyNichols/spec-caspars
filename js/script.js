@@ -139,6 +139,80 @@ function updateActiveButton() {
   }
 }
 
+function initMenuNav() {
+  const links = document.querySelectorAll(".menu-link");
+  const sections = document.querySelectorAll("section[id]");
+  const indicator = document.getElementById("menuIndicator");
+
+  if (!links.length || !sections.length || !indicator) return;
+
+  function moveIndicator(el) {
+    const rect = el.getBoundingClientRect();
+    // const parentRect = el.parentElement.getBoundingClientRect();
+    const parentRect = document
+      .getElementById("menuNavLinks")
+      .getBoundingClientRect();
+
+    indicator.style.width = rect.width + "px";
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      indicator.style.left = rect.left - parentRect.left - 31 + "px";
+    } else {
+      indicator.style.left = rect.left - parentRect.left - 48 + "px";
+    }
+  }
+
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      const id = link.dataset.section;
+      const section = document.getElementById(id);
+
+      if (section) {
+        const offset = 120;
+        const top = section.offsetTop - offset;
+
+        window.scrollTo({
+          top: top,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+
+          links.forEach((link) => {
+            link.classList.remove("active");
+
+            if (link.dataset.section === id) {
+              link.classList.add("active");
+              moveIndicator(link);
+            }
+          });
+        }
+      });
+    },
+    {
+      rootMargin: "-120px 0px -40% 0px",
+    },
+  );
+
+  sections.forEach((section) => observer.observe(section));
+
+  const active = document.querySelector(".menu-link.active");
+  if (active) {
+    setTimeout(() => moveIndicator(active), 50);
+  }
+
+  window.addEventListener("resize", () => {
+    const active = document.querySelector(".menu-link.active");
+    if (active) moveIndicator(active);
+  });
+}
+
 async function loadPage(pageUrl, pushState = true) {
   try {
     const response = await fetch(pageUrl);
@@ -179,6 +253,8 @@ async function loadPage(pageUrl, pushState = true) {
 
     // Scroll to top
     window.scrollTo(0, 0);
+
+    setTimeout(() => initMenuNav(), 150);
 
     // Navbar style behavior depends on page
     const navbar = document.getElementById("navbar");
@@ -373,6 +449,7 @@ document.addEventListener("DOMContentLoaded", function () {
       navbar.style.color = "black";
     }
 
+    setTimeout(() => initMenuNav(), 50);
     // parallaxBg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
   });
 
