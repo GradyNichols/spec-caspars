@@ -1,3 +1,38 @@
+<section class="relative overflow-hidden px-8 md:px-12 pt-20 pb-12 mx-auto">
+  <div
+    id="parallaxBg"
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0"
+    style="background-image: url(&quot;logo/download.jpeg&quot;)"
+  ></div>
+
+  <div
+    class="relative z-10 max-w-3xl md:mt-10 md:mb-10 mt-0 mb-0 mx-auto mt-0 p-10 bg-white/80 backdrop-blur-md rounded-md text-center"
+  >
+    <h2 class="text-4xl md:text-5xl font-bold text-[#735200] mb-4">Menu</h2>
+    <p class="text-gray-800 mb-6">
+      Experience the taste of luxury dining with our exquisite menu, crafted by
+      world-class chefs using the finest ingredients.
+    </p>
+    <button
+      onclick="document.getElementById('apps').click()"
+      class="px-6 py-3 border border-[#735200] text-[#735200] rounded-sm transition-all duration-300 ease-in-out hover:bg-[#735200] hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+    >
+      Explore Our Menu
+    </button>
+  </div>
+</section>
+
+<section class="bg-[#463D2E] w-full py-8 px-6">
+  <div class="max-w-6xl mx-auto flex items-center justify-center">
+    <div class="w-full max-w-xl text-center">
+      <p class="text-white text-lg leading-relaxed italic">
+        Experience the perfect blend of traditional flavors and modern culinary
+        techniques at our restaurant.
+      </p>
+    </div>
+  </div>
+</section>
+
 <div
   class="sticky lg:top-[97px] md:top-[95px] top-[91px] left-0 right-0 z-[45] bg-[#d1d5db] backdrop-blur-md shadow-sm"
 >
@@ -6,7 +41,7 @@
       id="menuNavLinks"
       class="flex justify-center md:space-x-12 space-x-8 py-4 text-sm md:text-base relative"
     >
-      <button class="menu-link active" data-section="appetizers">
+      <button class="menu-link active" id="apps" data-section="appetizers">
         Appetizers
       </button>
       <button class="menu-link" data-section="mains">Mains</button>
@@ -21,138 +56,411 @@
   </div>
 </div>
 
-<!-- <section
-  id="title"
-  class="max-w-7xl mx-auto px-8 md:px-12 text-center mt-20 mb-0"
->
-  <h1 class="text-4xl font-bold text-gray-900 text-center">Our Menu</h1>
-</section> -->
-
 <section id="appetizers" class="max-w-7xl mx-auto px-8 md:px-12 pb-0 pt-16">
   <h2
     class="text-2xl font-semibold text-gray-900 mb-6 primary-border border-b-2 pb-2"
   >
     Appetizers
   </h2>
+  <p class="text-sm text-gray-500">Description text lorem epsum</p>
+  <section class="py-16 max-md:pb-8">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- image -->
+        <div class="relative overflow-hidden rounded-lg">
+          <img
+            src="/logo/download.jpeg"
+            alt="image"
+            class="w-full h-full object-cover transition duration-500 hover:scale-105"
+          />
+        </div>
+
+        <div class="space-y-5">
+          <p class="text-xs tracking-[0.2em] uppercase text-[#735200]">
+            Chef's Selection
+          </p>
+
+          <h3 class="text-3xl md:text-4xl font-serif">Zeytoon Parvardeh</h3>
+
+          <div class="w-12 h-[1px] bg-[#735200] opacity-60"></div>
+
+          <p class="text-gray-600 loading-relaxed">
+            Marinated olives with pomegranate molasses, crushed walnuts, and
+            aromatic herbs.
+          </p>
+
+          <p class="text-lg text-[#735200] font-medium">$15</p>
+        </div>
+        <!-- text -->
+      </div>
+    </div>
+    <div class="max-w-6xl h-[1px] bg-[#735200] opacity-60 md:mt-20 mt-10"></div>
+  </section>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Garlic Bread</h3>
-        <span class="primary-text font-bold">$8.99</span>
+    <div class="space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kashk-e Bademjan</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$14</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
       </div>
-      <p class="text-gray-600">Crispy bread with garlic butter and herbs</p>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
     </div>
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Calamari</h3>
-        <span class="primary-text font-bold">$12.99</span>
+    <div class="space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kabob Barg</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$34</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
       </div>
-      <p class="text-gray-600">Perfectly fried squid with marinara sauce</p>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
     </div>
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Garlic Bread</h3>
-        <span class="primary-text font-bold">$8.99</span>
+    <div class="space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kashk-e Bademjan</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$14</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
       </div>
-      <p class="text-gray-600">Crispy bread with garlic butter and herbs</p>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
     </div>
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Calamari</h3>
-        <span class="primary-text font-bold">$12.99</span>
+    <div class="space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kabob Barg</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$34</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
       </div>
-      <p class="text-gray-600">Perfectly fried squid with marinara sauce</p>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
     </div>
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Garlic Bread</h3>
-        <span class="primary-text font-bold">$8.99</span>
+    <div class="space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kashk-e Bademjan</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$14</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
       </div>
-      <p class="text-gray-600">Crispy bread with garlic butter and herbs</p>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
     </div>
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Calamari</h3>
-        <span class="primary-text font-bold">$12.99</span>
+    <div class="space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kabob Barg</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$34</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
       </div>
-      <p class="text-gray-600">Perfectly fried squid with marinara sauce</p>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
     </div>
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Garlic Bread</h3>
-        <span class="primary-text font-bold">$8.99</span>
+    <div class="space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kashk-e Bademjan</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$14</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
       </div>
-      <p class="text-gray-600">Crispy bread with garlic butter and herbs</p>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
     </div>
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Calamari</h3>
-        <span class="primary-text font-bold">$12.99</span>
+    <div class="space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kabob Barg</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$34</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
       </div>
-      <p class="text-gray-600">Perfectly fried squid with marinara sauce</p>
-    </div>
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Garlic Bread</h3>
-        <span class="primary-text font-bold">$8.99</span>
-      </div>
-      <p class="text-gray-600">Crispy bread with garlic butter and herbs</p>
-    </div>
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Calamari</h3>
-        <span class="primary-text font-bold">$12.99</span>
-      </div>
-      <p class="text-gray-600">Perfectly fried squid with marinara sauce</p>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
     </div>
   </div>
 </section>
-
 <br />
+<section class="relative overflow-hidden md:p-16 p-0 mx-auto">
+  <div
+    id="parallaxBg"
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0"
+    style="background-image: url(&quot;logo/download.jpeg&quot;)"
+  ></div>
 
-<section id="mains" class="max-w-7xl mx-auto px-8 md:px-12 pb-0 pt-14">
+  <div
+    class="relative z-10 max-w-3xl mx-auto pt-16 pb-12 px-16 bg-white/80 backdrop-blur-md md:rounded-md rounded-none text-center"
+  >
+    <p class="text-gray-600 mb-6 italic text-lg">
+      Experience the taste of luxury dining with our exquisite menu, crafted by
+      world-class chefs using the finest ingredients.
+    </p>
+  </div>
+</section>
+
+<section id="mains" class="max-w-7xl mx-auto px-8 md:px-12 pb-0 pt-10">
+  <br />
   <h2
     class="text-2xl font-semibold text-gray-900 mb-6 primary-border border-b-2 pb-2"
   >
     Main Courses
   </h2>
+  <p class="text-sm text-gray-500">Description text lorem epsum</p>
+  <section class="py-16 max-md:pb-8">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <!-- text -->
+        <div class="space-y-5">
+          <p class="text-xs tracking-[0.2em] uppercase text-[#735200]">
+            Chef's Selection
+          </p>
+
+          <h3 class="text-3xl md:text-4xl font-serif">Zeytoon Parvardeh</h3>
+
+          <div class="w-12 h-[1px] bg-[#735200] opacity-60"></div>
+
+          <p class="text-gray-600 loading-relaxed">
+            Marinated olives with pomegranate molasses, crushed walnuts, and
+            aromatic herbs.
+          </p>
+
+          <p class="text-lg text-[#735200] font-medium">$15</p>
+        </div>
+        <!-- image -->
+        <div class="relative overflow-hidden rounded-lg">
+          <img
+            src="/logo/download.jpeg"
+            alt="image"
+            class="w-full h-full object-cover transition duration-500 hover:scale-105"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="max-w-6xl h-[1px] bg-[#735200] opacity-60 md:mt-20 mt-10"></div>
+  </section>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Grilled Salmon</h3>
-        <span class="primary-text font-bold">$24.99</span>
+    <div class="space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kashk-e Bademjan</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$14</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
       </div>
-      <p class="text-gray-600">Fresh salmon fillet with lemon butter sauce</p>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
     </div>
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Ribeye Steak</h3>
-        <span class="primary-text font-bold">$28.99</span>
+    <div class="space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kabob Barg</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$34</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
       </div>
-      <p class="text-gray-600">
-        Premium cut aged 28 days, served with vegetables
-      </p>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
     </div>
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Pasta Carbonara</h3>
-        <span class="primary-text font-bold">$18.99</span>
+    <div class="space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kashk-e Bademjan</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$14</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
       </div>
-      <p class="text-gray-600">
-        Traditional Italian pasta with cream and bacon
-      </p>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
     </div>
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Herb Chicken</h3>
-        <span class="primary-text font-bold">$19.99</span>
+    <div class="space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kabob Barg</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$34</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
       </div>
-      <p class="text-gray-600">Roasted chicken breast with herbs and garlic</p>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
+    </div>
+    <div class="space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kashk-e Bademjan</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$14</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
+      </div>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
+    </div>
+    <div class="space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kabob Barg</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$34</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
+      </div>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
+    </div>
+    <div class="space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kashk-e Bademjan</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$14</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
+      </div>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
+    </div>
+    <div class="space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kabob Barg</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$34</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
+      </div>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
+    </div>
+    <div class="space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kashk-e Bademjan</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$14</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
+      </div>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
+    </div>
+    <div class="space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kabob Barg</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$34</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
+      </div>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
     </div>
   </div>
 </section>
 
 <br />
+
+<section class="bg-[#f9f7f2] w-full py-12 px-6 border-gray-400">
+  <div class="max-w-6xl mx-auto flex items-center justify-center">
+    <div class="w-full max-w-xl text-center">
+      <p class="text-gray-600 text-lg leading-relaxed italic">
+        Experience the perfect blend of traditional flavors and modern culinary
+        techniques at our restaurant.
+      </p>
+    </div>
+  </div>
+</section>
 
 <section id="desserts" class="max-w-7xl mx-auto px-8 md:px-12 pt-14 pb-0">
   <h2
@@ -160,62 +468,240 @@
   >
     Desserts
   </h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Tiramisu</h3>
-        <span class="primary-text font-bold">$7.99</span>
+  <p class="text-sm text-gray-500">Description text lorem epsum</p>
+  <section class="py-16 max-md:pb-8">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- image -->
+        <div class="relative overflow-hidden rounded-lg">
+          <img
+            src="/logo/download.jpeg"
+            alt="image"
+            class="w-full h-full object-cover transition duration-500 hover:scale-105"
+          />
+        </div>
+
+        <div class="space-y-5">
+          <p class="text-xs tracking-[0.2em] uppercase text-[#735200]">
+            Chef's Selection
+          </p>
+
+          <h3 class="text-3xl md:text-4xl font-serif">Zeytoon Parvardeh</h3>
+
+          <div class="w-12 h-[1px] bg-[#735200] opacity-60"></div>
+
+          <p class="text-gray-600 loading-relaxed">
+            Marinated olives with pomegranate molasses, crushed walnuts, and
+            aromatic herbs.
+          </p>
+
+          <p class="text-lg text-[#735200] font-medium">$15</p>
+        </div>
+        <!-- text -->
       </div>
-      <p class="text-gray-600">Classic Italian dessert with layers of flavor</p>
     </div>
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Chocolate Lava Cake</h3>
-        <span class="primary-text font-bold">$8.99</span>
+    <div class="max-w-6xl h-[1px] bg-[#735200] opacity-60 md:mt-20 mt-10"></div>
+  </section>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="md:space-y-12 space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kashk-e Bademjan</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$14</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
       </div>
-      <p class="text-gray-600">Rich molten chocolate with ice cream</p>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
     </div>
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Tiramisu</h3>
-        <span class="primary-text font-bold">$7.99</span>
+    <div class="md:space-y-12 space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kabob Barg</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$34</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
       </div>
-      <p class="text-gray-600">Classic Italian dessert with layers of flavor</p>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
     </div>
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Chocolate Lava Cake</h3>
-        <span class="primary-text font-bold">$8.99</span>
+    <div class="md:space-y-12 space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kashk-e Bademjan</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$14</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
       </div>
-      <p class="text-gray-600">Rich bitch chocolate with ice cream</p>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
     </div>
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Tiramisu</h3>
-        <span class="primary-text font-bold">$7.99</span>
+    <div class="md:space-y-12 space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kabob Barg</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$34</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
       </div>
-      <p class="text-gray-600">
-        cwallssiiss Italian dessert with layers of flavor
-      </p>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
     </div>
-    <div class="bg-gray-50 p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-lg font-semibold">Chocolate Lava Cake</h3>
-        <span class="primary-text font-bold">$8.99</span>
+    <div class="md:space-y-12 space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kashk-e Bademjan</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$14</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
       </div>
-      <p class="text-gray-600">Rich bitch chocolate with ice cream</p>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
+    </div>
+    <div class="md:space-y-12 space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kabob Barg</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$34</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
+      </div>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
+    </div>
+    <div class="md:space-y-12 space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kashk-e Bademjan</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$14</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
+      </div>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
+    </div>
+    <div class="md:space-y-12 space-y-8">
+      <div>
+        <div class="flex items-center">
+          <span class="text-lg font-medium">Kabob Barg</span>
+          <span
+            class="flex-1 border-b border-dashed mx-3 primary-border"
+          ></span>
+          <span>$34</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">
+          Roasted eggplant, whey, caramelized onions, and mint
+        </p>
+      </div>
+
+      <div class="border-t border-gray-200 opacity-30"></div>
     </div>
   </div>
 </section>
-<br />
 
-<section id="drinks" class="max-w-7xl mx-auto px-8 md:px-12 pt-14 pb-15">
+<section id="drinks" class="px-8 md:px-12 pt-14 pb-15">
   <h2
     class="text-2xl font-semibold text-gray-900 mb-6 primary-border border-b-2 pb-2"
   >
     Drinks
   </h2>
-  drinks section here
+  <p class="text-sm text-gray-500">Description text lorem epsum</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 py-12">
+    <div class="space-y-12">
+      <h3 class="text-xl font-semibold tracking-wide">Non-Alcoholic</h3>
+      <div class="space-y-6">
+        <div>
+          <div class="flex items-center">
+            <span class="text-lg font-medium">Kashk-e Bademjan</span>
+            <span
+              class="flex-1 border-b border-dashed mx-3 primary-border"
+            ></span>
+            <span>$14</span>
+          </div>
+          <p class="text-sm text-gray-500 mt-1">
+            Roasted eggplant, whey, caramelized onions, and mint
+          </p>
+        </div>
+        <div>
+          <div class="flex items-center">
+            <span class="text-lg font-medium">Kashk-e Bademjan</span>
+            <span
+              class="flex-1 border-b border-dashed mx-3 primary-border"
+            ></span>
+            <span>$14</span>
+          </div>
+          <p class="text-sm text-gray-500 mt-1">
+            Roasted eggplant, whey, caramelized onions, and mint
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="space-y-12">
+      <h3 class="text-xl font-semibold tracking-wide">Non-Alcoholic</h3>
+      <div class="space-y-6">
+        <div>
+          <div class="flex items-center">
+            <span class="text-lg font-medium">Kashk-e Bademjan</span>
+            <span
+              class="flex-1 border-b border-dashed mx-3 primary-border"
+            ></span>
+            <span>$14</span>
+          </div>
+          <p class="text-sm text-gray-500 mt-1">
+            Roasted eggplant, whey, caramelized onions, and mint
+          </p>
+        </div>
+        <div>
+          <div class="flex items-center">
+            <span class="text-lg font-medium">Kashk-e Bademjan</span>
+            <span
+              class="flex-1 border-b border-dashed mx-3 primary-border"
+            ></span>
+            <span>$14</span>
+          </div>
+          <p class="text-sm text-gray-500 mt-1">
+            Roasted eggplant, whey, caramelized onions, and mint
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <br />
 <br />

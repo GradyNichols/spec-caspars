@@ -11,6 +11,11 @@ window.addEventListener("load", function () {
   }, 5000);
 });
 
+function scrollToApps() {
+  const element = document.getElementById("appetizers");
+  element.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 // Simple toast notification
 function showToast(message, type = "success") {
   const toast = document.createElement("div");
@@ -157,7 +162,7 @@ function initMenuNav() {
     if (window.matchMedia("(max-width: 768px)").matches) {
       indicator.style.left = rect.left - parentRect.left - 31 + "px";
     } else {
-      indicator.style.left = rect.left - parentRect.left - 48 + "px";
+      indicator.style.left = rect.left - parentRect.left - 47 + "px";
     }
   }
 
@@ -167,7 +172,7 @@ function initMenuNav() {
       const section = document.getElementById(id);
 
       if (section) {
-        const offset = 120;
+        const offset = 125;
         const top = section.offsetTop - offset;
 
         window.scrollTo({
