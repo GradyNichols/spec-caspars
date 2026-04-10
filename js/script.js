@@ -463,3 +463,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log("Restaurant website initialized successfully!");
 });
+
+const swiper = new Swiper(".swiper", {
+  slidesPerView: 1.2,
+  spaceBetween: 16,
+  centeredSlides: true,
+
+  loop: true,
+
+  autoplay: {
+    delay: 3500, // slower = more luxury
+    disableOnInteraction: false,
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});

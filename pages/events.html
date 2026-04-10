@@ -61,6 +61,69 @@
 </section>
 
 <section class="py-20">
+  <div class="max-w-7xl mx-auto px-4 space-y-12">
+    <!-- Header -->
+    <div class="text-center space-y-4">
+      <h2 class="text-4xl font-serif">Moments at Caspar’s</h2>
+      <p class="text-gray-500">A glimpse into the experiences we’ve created.</p>
+    </div>
+
+    <!-- MOBILE SLIDER -->
+    <div class="swiper md:hidden">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img
+            src="/logo/download.jpeg"
+            class="w-full h-[300px] object-cover rounded-lg"
+          />
+        </div>
+
+        <div class="swiper-slide">
+          <img
+            src="/logo/spicy-ground-beef-rice-bowl_84443-78618.jpg.avif"
+            class="w-full h-[300px] object-cover rounded-lg"
+          />
+        </div>
+
+        <div class="swiper-slide">
+          <img
+            src="/logo/download.jpeg"
+            class="w-full h-[300px] object-cover rounded-lg"
+          />
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="swiper-pagination mt-4"></div>
+    </div>
+
+    <!-- DESKTOP GRID -->
+    <div class="hidden md:grid md:grid-cols-3 gap-6">
+      <div class="overflow-hidden rounded-lg group">
+        <img
+          src="/logo/download.jpeg"
+          class="w-full h-[300px] object-cover transition duration-500 group-hover:scale-105"
+        />
+      </div>
+
+      <div class="overflow-hidden rounded-lg group">
+        <img
+          src="/logo/spicy-ground-beef-rice-bowl_84443-78618.jpg.avif"
+          class="w-full h-[300px] object-cover transition duration-500 group-hover:scale-105"
+        />
+      </div>
+
+      <div class="overflow-hidden rounded-lg group">
+        <img
+          src="/logo/download.jpeg"
+          class="w-full h-[300px] object-cover transition duration-500 group-hover:scale-105"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20">
   <div class="max-w-7xl mx-auto px-4 space-y-16">
     <!-- Header -->
     <div class="text-center space-y-4">
@@ -103,6 +166,23 @@
         <div class="w-8 h-[1px] bg-[#735200] opacity-50"></div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="relative overflow-hidden md:p-16 p-0 mx-auto">
+  <div
+    id="parallaxBg"
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0"
+    style="background-image: url(&quot;logo/download.jpeg&quot;)"
+  ></div>
+
+  <div
+    class="relative z-10 max-w-3xl mx-auto pt-16 pb-12 px-16 bg-white/80 backdrop-blur-md md:rounded-md rounded-none text-center"
+  >
+    <p class="text-gray-600 mb-6 italic text-lg">
+      Experience the taste of luxury dining with our exquisite menu, crafted by
+      world-class chefs using the finest ingredients.
+    </p>
   </div>
 </section>
 
@@ -149,197 +229,106 @@
   </div>
 </section>
 
-<section id="event-inquiry" class="py-20">
-  <div class="max-w-3xl mx-auto px-4">
-    <!-- Header -->
-    <div class="text-center space-y-4 mb-12">
-      <h2 class="text-4xl md:text-5xl font-serif">Plan Your Event</h2>
-      <p class="text-gray-500">
-        Tell us about your vision and we’ll take care of the rest.
-      </p>
-    </div>
-
-    <!-- Form -->
-    <form class="space-y-6">
-      <!-- Name + Email -->
-      <div class="grid md:grid-cols-2 gap-6">
-        <input
-          type="text"
-          placeholder="Full Name"
-          class="w-full border border-gray-300 px-4 py-3 focus:outline-none focus:border-[#735200] transition"
-        />
-        <input
-          type="email"
-          placeholder="Email Address"
-          class="w-full border border-gray-300 px-4 py-3 focus:outline-none focus:border-[#735200] transition"
-        />
+<section id="event-inquiry" class="py-24 bg-[#faf9f7]">
+  <div class="max-w-4xl mx-auto px-4">
+    <!-- Container -->
+    <div
+      class="border border-[#e5e0d8] p-10 md:p-16 bg-white shadow-[0_10px_40px_rgba(0,0,0,0.05)] space-y-12"
+    >
+      <!-- Header -->
+      <div class="text-center space-y-4">
+        <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">
+          Private Events
+        </p>
+        <h2 class="text-4xl md:text-5xl font-serif">Plan Your Event</h2>
+        <div class="w-12 h-[1px] bg-[#735200] mx-auto opacity-60"></div>
+        <p class="text-gray-500 max-w-md mx-auto">
+          Tell us about your vision and we’ll curate an unforgettable
+          experience.
+        </p>
       </div>
 
-      <!-- Phone + Event Type -->
-      <div class="grid md:grid-cols-2 gap-6">
-        <input
-          type="tel"
-          placeholder="Phone Number"
-          class="w-full border border-gray-300 px-4 py-3 focus:outline-none focus:border-[#735200] transition"
-        />
+      <!-- Form -->
+      <form class="space-y-8">
+        <!-- Row -->
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="space-y-2">
+            <label class="text-sm text-gray-500">Full Name</label>
+            <input
+              type="text"
+              class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#735200]"
+            />
+          </div>
 
-        <select
-          class="w-full border border-gray-300 px-4 py-3 focus:outline-none focus:border-[#735200] text-gray-500"
-        >
-          <option selected disabled>Event Type</option>
-          <option>Private Dining</option>
-          <option>Wedding</option>
-          <option>Corporate Event</option>
-          <option>Other</option>
-        </select>
-      </div>
-
-      <!-- Date + Guests -->
-      <div class="grid md:grid-cols-2 gap-6">
-        <input
-          type="date"
-          class="w-full border border-gray-300 px-4 py-3 focus:outline-none focus:border-[#735200]"
-        />
-        <input
-          type="number"
-          placeholder="Number of Guests"
-          class="w-full border border-gray-300 px-4 py-3 focus:outline-none focus:border-[#735200]"
-        />
-      </div>
-
-      <!-- Message -->
-      <textarea
-        rows="5"
-        placeholder="Tell us more about your event..."
-        class="w-full border border-gray-300 px-4 py-3 focus:outline-none focus:border-[#735200] resize-none"
-      ></textarea>
-
-      <!-- Submit -->
-      <div class="text-center pt-4">
-        <button
-          type="submit"
-          class="px-8 py-3 border border-[#735200] text-[#735200] uppercase tracking-wide text-sm transition-all duration-300 hover:bg-[#735200] hover:text-white hover:shadow-lg"
-        >
-          Submit Inquiry
-        </button>
-      </div>
-    </form>
-  </div>
-</section>
-
-<section class="max-w-7xl mx-auto px-4 py-16">
-  <!-- <h1 class="text-4xl font-bold text-gray-900 mb-12 text-center">
-    Upcoming Events
-  </h1> -->
-
-  <div class="space-y-6">
-    <!-- Event 1 -->
-    <div class="bg-white primary-border border-l-4 shadow-lg p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-4">
-        <div>
-          <h2 class="text-2xl font-semibold text-gray-900">
-            Wine Tasting Night
-          </h2>
-          <p class="text-gray-600 mt-1">
-            📅 Friday, April 12, 2024 | 🕖 7:00 PM - 10:00 PM
-          </p>
+          <div class="space-y-2">
+            <label class="text-sm text-gray-500">Email Address</label>
+            <input
+              type="email"
+              class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#735200]"
+            />
+          </div>
         </div>
-        <span class="primary-bg text-white px-4 py-2 rounded"
-          >$45 per person</span
-        >
-      </div>
-      <p class="text-gray-700 mb-4">
-        Join us for an exclusive wine tasting featuring selections from renowned
-        vineyards across Italy and France. Our sommeliers will guide you through
-        each pairing.
-      </p>
-      <button
-        onclick="loadPage('pages/reservation.html')"
-        class="inline-block primary-bg primary-hover-bg text-white px-6 py-2 rounded transition cursor-pointer"
-      >
-        Reserve Your Spot
-      </button>
-    </div>
 
-    <!-- Event 2 -->
-    <div class="bg-white primary-border border-l-4 shadow-lg p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-4">
-        <div>
-          <h2 class="text-2xl font-semibold text-gray-900">
-            Chef's Table Experience
-          </h2>
-          <p class="text-gray-600 mt-1">
-            📅 Saturday, April 20, 2024 | 🕖 6:00 PM - 9:00 PM
-          </p>
-        </div>
-        <span class="primary-bg text-white px-4 py-2 rounded"
-          >$85 per person</span
-        >
-      </div>
-      <p class="text-gray-700 mb-4">
-        Sit at our exclusive chef's table and watch our culinary team prepare an
-        8-course tasting menu. Includes wine pairings and interactions with our
-        head chef.
-      </p>
-      <button
-        onclick="loadPage('pages/reservation.html')"
-        class="inline-block primary-bg primary-hover-bg text-white px-6 py-2 rounded transition cursor-pointer"
-      >
-        Reserve Your Spot
-      </button>
-    </div>
+        <!-- Row -->
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="space-y-2">
+            <label class="text-sm text-gray-500">Phone Number</label>
+            <input
+              type="tel"
+              class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#735200]"
+            />
+          </div>
 
-    <!-- Event 3 -->
-    <div class="bg-white primary-border border-l-4 shadow-lg p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-4">
-        <div>
-          <h2 class="text-2xl font-semibold text-gray-900">Live Jazz Night</h2>
-          <p class="text-gray-600 mt-1">
-            📅 Wednesday, April 25, 2024 | 🕖 8:00 PM - 11:00 PM
-          </p>
+          <div class="space-y-2">
+            <label class="text-sm text-gray-500">Event Type</label>
+            <select
+              class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#735200] bg-transparent"
+            >
+              <option>Private Dining</option>
+              <option>Wedding</option>
+              <option>Corporate Event</option>
+              <option>Other</option>
+            </select>
+          </div>
         </div>
-        <span class="primary-bg text-white px-4 py-2 rounded"
-          >FREE with dinner</span
-        >
-      </div>
-      <p class="text-gray-700 mb-4">
-        Enjoy an intimate jazz performance from the renowned trio "Blue Notes"
-        while savoring our special dinner menu. Complimentary with any dinner
-        reservation.
-      </p>
-      <button
-        onclick="loadPage('pages/reservation.html')"
-        class="inline-block primary-bg primary-hover-bg text-white px-6 py-2 rounded transition cursor-pointer"
-      >
-        Reserve Your Spot
-      </button>
-    </div>
 
-    <!-- Event 4 -->
-    <div class="bg-white primary-border border-l-4 shadow-lg p-6 rounded-lg">
-      <div class="flex justify-between items-start mb-4">
-        <div>
-          <h2 class="text-2xl font-semibold text-gray-900">
-            Cooking Class: Pasta Making
-          </h2>
-          <p class="text-gray-600 mt-1">
-            📅 Sunday, May 5, 2024 | 🕖 2:00 PM - 5:00 PM
-          </p>
+        <!-- Row -->
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="space-y-2">
+            <label class="text-sm text-gray-500">Event Date</label>
+            <input
+              type="date"
+              class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#735200]"
+            />
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-sm text-gray-500">Guest Count</label>
+            <input
+              type="number"
+              class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#735200]"
+            />
+          </div>
         </div>
-        <span class="primary-bg text-white px-4 py-2 rounded"
-          >$60 per person</span
-        >
-      </div>
-      <p class="text-gray-700 mb-4">
-        Learn the art of handmade pasta from our Italy-trained chefs. Includes
-        hands-on instruction and a three-course meal featuring your creations.
-      </p>
-      <button
-        onclick="loadPage('pages/reservation.html')"
-        class="inline-block primary-bg primary-hover-bg text-white px-6 py-2 rounded transition cursor-pointer"
-      >
-        Reserve Your Spot
-      </button>
+
+        <!-- Message -->
+        <div class="space-y-2">
+          <label class="text-sm text-gray-500">Event Details</label>
+          <textarea
+            rows="4"
+            class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-[#735200] resize-none"
+          ></textarea>
+        </div>
+
+        <!-- Button -->
+        <div class="text-center pt-6">
+          <button
+            class="px-10 py-3 border border-[#735200] text-[#735200] uppercase tracking-[0.15em] text-sm transition-all duration-300 hover:bg-[#735200] hover:text-white"
+          >
+            Submit Inquiry
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </section>
