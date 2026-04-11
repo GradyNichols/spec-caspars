@@ -15,7 +15,7 @@
   ></div>
 
   <!-- Dark Overlay -->
-  <div class="absolute inset-0 bg-black/50"></div>
+  <div class="absolute inset-0 bg-black/50"><!-- Add video here  --></div>
 
   <!-- Content -->
   <div class="relative z-10 max-w-3xl px-6 space-y-6">
@@ -45,8 +45,161 @@
   </div>
 </section>
 
+<section
+  class="md:py-4 py-2 bg-gradient-to-r from-[#735200] via-[#a67c00] to-[#c6a85b] text-white"
+>
+  <div class="max-w-5xl mx-auto p-0 md:px-6 items-center text-center italic">
+    Text here
+  </div>
+</section>
+
+<section
+  class="md:py-16 py-0 bg-gradient-to-tl from-[#faf9f7] via-[#f3efe6] to-[#eae3d6]"
+>
+  <div
+    class="max-w-6xl mx-auto p-0 md:px-6 grid md:grid-cols-2 gap-16 items-center"
+  >
+    <!-- IMAGE (enhanced) -->
+    <div class="relative group">
+      <div class="overflow-hidden rounded-none">
+        <img
+          src="logo/download.jpeg"
+          alt="Dining Experience"
+          class="w-full h-[420px] object-cover transition duration-700 group-hover:scale-105"
+        />
+      </div>
+
+      <!-- subtle overlay -->
+      <div class="absolute inset-0 bg-black/10 rounded-xl"></div>
+    </div>
+
+    <!-- TEXT -->
+    <div
+      class="space-y-6 text-left md:text-left md:pt-0 pt-3 md:px-0 px-[9%] md:pb-0 pb-20"
+    >
+      <p
+        class="text-xs tracking-[0.25em] uppercase text-[#735200] text-shadow-lg"
+      >
+        Our Experienceeee
+      </p>
+
+      <h2
+        class="text-4xl md:text-5xl font-serif text-amber-900 text-shadow-2xs text-shadow-sky-300 leading-tight"
+      >
+        A Refined Approach to Dining
+      </h2>
+
+      <div class="w-12 h-[1px] bg-[#c6a85b] opacity-70 mx-0 md:mx-0"></div>
+
+      <p class="text-gray-700 leading-relaxed max-w-lg">
+        Blending tradition with modern technique, each dish is crafted with
+        intention—designed to be both familiar and unexpected.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- MENU PREVIEW HERE (SLIDER) -->
+<section class="py-28 bg-[#faf9f7]">
+  <div class="max-w-6xl mx-auto px-6 space-y-16">
+    <!-- Header -->
+    <div class="text-center space-y-4">
+      <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">Our Menu</p>
+
+      <h2 class="text-4xl md:text-5xl font-serif text-[#735200]">
+        Featured Selections
+      </h2>
+
+      <div class="w-12 h-[1px] bg-[#735200] mx-auto opacity-60"></div>
+    </div>
+
+    <!-- Swiper -->
+    <div class="swiper menuSwiper">
+      <div class="swiper-wrapper">
+        <!-- ITEM -->
+        <div class="swiper-slide group">
+          <div class="overflow-hidden rounded-lg">
+            <img
+              src="/images/kebab.jpg"
+              class="w-full h-[320px] object-cover transition duration-700 group-hover:scale-105"
+            />
+          </div>
+
+          <div class="pt-4 text-center space-y-1">
+            <h3 class="font-serif text-xl text-gray-800">Koobideh Kebab</h3>
+            <p class="text-sm text-gray-500">
+              Grilled minced lamb, saffron rice
+            </p>
+          </div>
+        </div>
+
+        <!-- ITEM -->
+        <div class="swiper-slide group">
+          <div class="overflow-hidden rounded-lg">
+            <img
+              src="/images/chicken.jpg"
+              class="w-full h-[320px] object-cover transition duration-700 group-hover:scale-105"
+            />
+          </div>
+
+          <div class="pt-4 text-center space-y-1">
+            <h3 class="font-serif text-xl text-gray-800">Joojeh Kabab</h3>
+            <p class="text-sm text-gray-500">
+              Marinated chicken, citrus saffron glaze
+            </p>
+          </div>
+        </div>
+
+        <!-- ITEM -->
+        <div class="swiper-slide group">
+          <div class="overflow-hidden rounded-lg">
+            <img
+              src="/images/stew.jpg"
+              class="w-full h-[320px] object-cover transition duration-700 group-hover:scale-105"
+            />
+          </div>
+
+          <div class="pt-4 text-center space-y-1">
+            <h3 class="font-serif text-xl text-gray-800">Ghormeh Sabzi</h3>
+            <p class="text-sm text-gray-500">
+              Herb stew with kidney beans & lamb
+            </p>
+          </div>
+        </div>
+
+        <!-- ITEM -->
+        <div class="swiper-slide group">
+          <div class="overflow-hidden rounded-lg">
+            <img
+              src="/images/rice.jpg"
+              class="w-full h-[320px] object-cover transition duration-700 group-hover:scale-105"
+            />
+          </div>
+
+          <div class="pt-4 text-center space-y-1">
+            <h3 class="font-serif text-xl text-gray-800">Zereshk Polo</h3>
+            <p class="text-sm text-gray-500">
+              Barberry rice with saffron chicken
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center pt-6">
+      <button
+        onclick="loadPage('pages/menu.html')"
+        class="px-8 py-3 border border-[#735200] text-[#735200] uppercase tracking-[0.15em] text-sm transition hover:bg-[#735200] hover:text-white"
+      >
+        View Full Menu
+      </button>
+    </div>
+  </div>
+</section>
+
 <!-- Featured Section -->
-<section class="py-24">
+<section class="py-24 px-12">
   <div class="max-w-5xl mx-auto px-4 space-y-16">
     <!-- Header -->
     <div class="text-center space-y-4">
@@ -106,9 +259,126 @@
   </div>
 </section>
 
-<br />
+<section class="relative overflow-hidden">
+  <div
+    id="parallaxBg"
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0"
+    style="background-image: url(&quot;logo/download.jpeg&quot;)"
+  ></div>
 
-<section class="bg-[#f9f7f2] py-28 px-6">
+  <section
+    class="relative md:py-4 py-2 bg-gradient-to-b from-[rgba(255,255,255,1)] via-[rgba(255,255,255,0.7)] to-[rgba(255,255,255,0)] text-white"
+  >
+    <div class="max-w-5xl mx-auto p-0 md:px-6 items-center text-center italic">
+      Text here
+    </div>
+  </section>
+
+  <div
+    class="relative z-10 max-w-3xl md:my-20 mt-0 mb-0 mx-auto p-10 bg-white/80 backdrop-blur-md md:rounded-md rounded-none text-center"
+  >
+    <h2 class="text-4xl md:text-5xl font-bold text-[#735200] my-4">
+      Final CTA
+    </h2>
+    <p class="text-gray-800 mb-6">
+      Experience the taste of luxury dining with our exquisite menu, crafted by
+      world-class chefs using the finest ingredients.
+    </p>
+    <button
+      onclick="loadPage('pages/menu.html')"
+      class="px-6 py-3 border border-[#735200] text-[#735200] rounded-sm transition-all duration-300 ease-in-out hover:bg-[#735200] hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+    >
+      Plan your Evening
+    </button>
+  </div>
+
+  <section
+    class="relative md:py-4 py-2 bg-gradient-to-t from-[rgba(255,255,255,1)] via-[rgba(255,255,255,0.7)] to-[rgba(255,255,255,0)] text-white"
+  >
+    <div class="max-w-5xl mx-auto p-0 md:px-6 items-center text-center italic">
+      Text here
+    </div>
+  </section>
+</section>
+
+<!-- EVENTS / PRIVATE DINING PREVIEW HERE -->
+<section
+  class="py-28 bg-gradient-to-b from-[#ffffff] via-[#f3efe6] to-[#eae3d6]"
+>
+  <div class="max-w-6xl mx-auto px-6 space-y-20">
+    <!-- Header -->
+    <div class="text-center space-y-4">
+      <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">
+        Gatherings
+      </p>
+
+      <h2 class="text-4xl md:text-5xl font-serif text-[#735200]">
+        Events & Private Dining
+      </h2>
+
+      <div class="w-12 h-[1px] bg-[#735200] mx-auto opacity-60"></div>
+    </div>
+
+    <!-- Main Feature -->
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- TEXT (LEFT) -->
+      <div class="space-y-6 text-center md:text-left order-2 md:order-1">
+        <h3 class="text-3xl font-serif text-gray-800">
+          Host Your Next Occasion With Us
+        </h3>
+
+        <p class="text-gray-600 leading-relaxed max-w-md">
+          Whether it’s an intimate dinner or a larger celebration, our space is
+          designed to create a seamless and memorable experience.
+        </p>
+
+        <button
+          onclick="loadPage('pages/events.html')"
+          class="px-8 py-3 border border-[#735200] text-[#735200] uppercase tracking-[0.15em] text-sm transition hover:bg-[#735200] hover:text-white"
+        >
+          Explore Events
+        </button>
+      </div>
+
+      <!-- IMAGE (RIGHT) -->
+      <div class="overflow-hidden rounded-lg group order-1 md:order-2">
+        <img
+          src="/images/private-dining.jpg"
+          class="w-full h-[420px] object-cover transition duration-700 group-hover:scale-105"
+        />
+      </div>
+    </div>
+
+    <!-- Secondary Row -->
+    <div class="grid md:grid-cols-3 gap-8 pt-10 border-t border-[#e5e0d8]">
+      <div class="space-y-3 text-center md:text-left">
+        <h4 class="font-serif text-xl text-gray-800">Intimate Settings</h4>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Thoughtfully designed spaces for smaller, more personal gatherings.
+        </p>
+      </div>
+
+      <div class="space-y-3 text-center md:text-left">
+        <h4 class="font-serif text-xl text-gray-800">Curated Menus</h4>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Custom menus tailored to your event, crafted with seasonal
+          ingredients.
+        </p>
+      </div>
+
+      <div class="space-y-3 text-center md:text-left">
+        <h4 class="font-serif text-xl text-gray-800">Seamless Service</h4>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Our team ensures every detail is handled with care and precision.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section
+  class="bg-gradient-to-t from-[#faf9f7] via-[#f3efe6] to-[#eae3d6] py-28 px-6"
+>
   <div class="max-w-3xl mx-auto space-y-16">
     <!-- Header -->
     <div class="text-center space-y-4">
@@ -116,7 +386,9 @@
         Information
       </p>
 
-      <h2 class="text-4xl md:text-5xl font-serif text-[#735200]">
+      <h2
+        class="text-4xl md:text-5xl font-serif text-amber-900 text-shadow-2xs text-shadow-sky-300"
+      >
         Frequently Asked Questions
       </h2>
 
@@ -124,9 +396,9 @@
     </div>
 
     <!-- FAQ -->
-    <div class="space-y-4" id="faqContainer">
+    <div class="space-y-4 px-6" id="faqContainer">
       <!-- ITEM -->
-      <div class="border-b border-[#e5e0d8] pb-2">
+      <div class="border-b border-[#e5e0d8]">
         <button
           onclick="toggleFAQ(this)"
           class="w-full flex justify-between items-center py-6 text-left group"
@@ -153,7 +425,7 @@
       </div>
 
       <!-- ITEM -->
-      <div class="border-b border-[#e5e0d8] pb-2">
+      <div class="border-b border-[#e5e0d8]">
         <button
           onclick="toggleFAQ(this)"
           class="w-full flex justify-between items-center py-6 text-left group"
@@ -175,7 +447,7 @@
       </div>
 
       <!-- ITEM -->
-      <div class="border-b border-[#e5e0d8] pb-2">
+      <div class="border-b border-[#e5e0d8]">
         <button
           onclick="toggleFAQ(this)"
           class="w-full flex justify-between items-center py-6 text-left group"
@@ -199,69 +471,8 @@
   </div>
 </section>
 
-<!-- <section class="w-full bg-[#463D2E] py-20 px-6">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-    <div class="w-full md:w-1/2 overflow-hidden rounded-2xl">
-      <img
-        src="logo/download.jpeg"
-        alt="photo"
-        class="w-full h-[400px] object-cover transition duration-700 hover:scale-105"
-      />
-    </div>
-
-    <div class="w-full md:w-1/2 max-w-xl text-center md:text-left">
-      <h2
-        class="text-3xl md:text-4xl font-semibold text-white mb-4 tracking-wide"
-      >
-        Discover the Taste of Excellence
-      </h2>
-      <div class="w-16 h-[2px] bg-green mb-6 mx-auto md:mx-0"></div>
-      <p class="text-gray-300 text-lg leading-relaxed">
-        Experience the perfect blend of traditional flavors and modern culinary
-        techniques at our restaurant.
-      </p>
-    </div>
-  </div>
-</section> -->
-
-<section class="py-28 bg-[#463D2E]">
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-    <!-- IMAGE (enhanced) -->
-    <div class="relative group">
-      <div class="overflow-hidden rounded-xl">
-        <img
-          src="logo/download.jpeg"
-          alt="Dining Experience"
-          class="w-full h-[420px] object-cover transition duration-700 group-hover:scale-105"
-        />
-      </div>
-
-      <!-- subtle overlay -->
-      <div class="absolute inset-0 bg-black/10 rounded-xl"></div>
-    </div>
-
-    <!-- TEXT -->
-    <div class="space-y-6 text-center md:text-left">
-      <p class="text-xs tracking-[0.25em] uppercase text-[#c6a85b]">
-        Our Experience
-      </p>
-
-      <h2 class="text-4xl md:text-5xl font-serif text-white leading-tight">
-        A Refined Approach to Dining
-      </h2>
-
-      <div class="w-12 h-[1px] bg-[#c6a85b] opacity-70 mx-auto md:mx-0"></div>
-
-      <p class="text-gray-300 leading-relaxed max-w-lg">
-        Blending tradition with modern technique, each dish is crafted with
-        intention—designed to be both familiar and unexpected.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="py-28 bg-[#faf9f7]">
-  <div class="max-w-5xl mx-auto px-4 space-y-20">
+<section class="pb-28 pt-16 bg-[#faf9f7]">
+  <div class="max-w-5xl mx-auto md:px-4 px-8 space-y-20">
     <!-- Header -->
     <div class="text-center space-y-4">
       <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">
@@ -320,27 +531,6 @@
   </div>
 </section>
 
-<!-- <section class="bg-gradient-to-b from-[#888888] to-[#463D2E] py-16 px-6">
-  <div class="max-w-7xl mx-auto text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Dine with Us?</h2>
-    <p class="text-xl md:text-2xl text-gray-300 mb-8">
-      Book your table now and experience the best dining in town
-    </p>
-    <button
-      onclick="loadPage('pages/reservation.html')"
-      class="px-6 py-3 border border-[#735200] text-[#735200] rounded-sm transition-all duration-300 ease-in-out hover:bg-[#735200] hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
-    >
-      Reserve Your Table
-    </button>
-  </div>
-
-  <div class="max-w-7xl mx-auto text-center mt-8">
-    <p class="text-gray-300">
-      Have questions? Call us at <span class="font-bold">1-800-123-4567</span>
-    </p>
-  </div>
-</section> -->
-
 <section class="relative overflow-hidden">
   <div
     id="parallaxBg"
@@ -349,10 +539,10 @@
   ></div>
 
   <div
-    class="relative z-10 max-w-3xl md:my-10 mt-0 mb-0 mx-auto mt-0 p-10 bg-white/80 backdrop-blur-md md:rounded-md rounded-none text-center"
+    class="relative z-10 max-w-3xl md:my-20 mt-0 mb-0 mx-auto p-10 bg-white/80 backdrop-blur-md md:rounded-md rounded-none text-center"
   >
-    <h2 class="text-4xl md:text-5xl font-bold text-[#735200] mb-4">
-      Experience Culinary Magic
+    <h2 class="text-4xl md:text-5xl font-bold text-[#735200] my-4">
+      Final CTA
     </h2>
     <p class="text-gray-800 mb-6">
       Experience the taste of luxury dining with our exquisite menu, crafted by
@@ -362,7 +552,7 @@
       onclick="loadPage('pages/menu.html')"
       class="px-6 py-3 border border-[#735200] text-[#735200] rounded-sm transition-all duration-300 ease-in-out hover:bg-[#735200] hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
     >
-      Explore Our Menu
+      Plan your Evening
     </button>
   </div>
 </section>
@@ -406,20 +596,3 @@
     <p class="text-xs text-gray-400 pt-4">No spam. Only meaningful updates.</p>
   </div>
 </section>
-
-<!-- <section
-  class="min-w-full m-0 px-4 py-16 bg-white border-t-2 border-b-2 text-black"
->
-  <div class="flex justify-between items-center max-w-6xl mx-auto">
-    <input
-      type="text"
-      placeholder="Enter your email for updates"
-      class="w-full md:w-auto px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus-primary-border"
-    />
-    <button
-      class="primary-bg primary-hover-bg px-6 py-3 rounded-sm text-lg transition cursor-pointer mt-4 md:mt-0"
-    >
-      Subscribe
-    </button>
-  </div>
-</section> -->

@@ -223,6 +223,10 @@ function initializeSwiper() {
     new Swiper(el, {
       slidesPreview: 1.2,
       spaceBetween: 16,
+      breakpoints: {
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      },
       centeredSlides: true,
       loop: true,
       autoplay: {
