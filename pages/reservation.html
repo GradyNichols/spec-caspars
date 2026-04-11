@@ -1,186 +1,130 @@
-<section class="max-w-7xl mx-auto px-4 py-16">
-  <h1 class="text-4xl font-bold text-gray-900 mb-4 text-center">
-    Make a Reservation
-  </h1>
-  <p class="text-gray-600 text-center mb-12">
-    Reserve your table now and enjoy a wonderful dining experience
-  </p>
+<section class="relative overflow-hidden px-8 md:px-12 pt-20 pb-12 mx-auto">
+  <div
+    id="parallaxBg"
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0"
+    style="background-image: url(&quot;logo/download.jpeg&quot;)"
+  ></div>
 
-  <div class="bg-white shadow-lg rounded-none p-8">
-    <form id="reservationForm" class="space-y-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label for="firstName" class="block text-gray-700 font-semibold mb-2"
-            >First Name</label
-          >
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            required
-            class="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none focus-primary-border"
-          />
-        </div>
-        <div>
-          <label for="lastName" class="block text-gray-700 font-semibold mb-2"
-            >Last Name</label
-          >
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            required
-            class="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none focus-primary-border"
-          />
-        </div>
+  <div
+    class="relative z-10 max-w-3xl md:mt-10 md:mb-10 mt-0 mb-0 mx-auto mt-0 p-10 bg-white/80 backdrop-blur-md rounded-md text-center space-y-6"
+  >
+    <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">
+      Eat some food
+    </p>
+
+    <h1 class="text-4xl md:text-5xl font-serif">Make a Reservation</h1>
+
+    <div class="w-12 h-[1px] bg-[#735200] mx-auto opacity-60"></div>
+
+    <button
+      onclick="loadPage('pages/menu.html')"
+      class="px-6 py-3 border border-[#735200] text-[#735200] rounded-sm transition-all duration-300 ease-in-out hover:bg-[#735200] hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+    >
+      Explore Our Menu
+    </button>
+  </div>
+</section>
+
+<section class="py-28 px-10">
+  <div class="max-w-4xl mx-auto px-4 grid md:grid-cols-3 gap-10 text-center">
+    <div class="space-y-3">
+      <h3 class="text-lg font-medium">Request</h3>
+      <p class="text-sm text-gray-500">Submit your preferred date and time.</p>
+    </div>
+
+    <div class="space-y-3">
+      <h3 class="text-lg font-medium">Confirmation</h3>
+      <p class="text-sm text-gray-500">Our team will confirm availability.</p>
+    </div>
+
+    <div class="space-y-3">
+      <h3 class="text-lg font-medium">Experience</h3>
+      <p class="text-sm text-gray-500">
+        Arrive and enjoy a curated dining experience.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-[#faf9f7]">
+  <div class="max-w-3xl mx-auto px-4">
+    <div
+      class="bg-white border border-[#e5e0d8] p-10 md:p-14 space-y-10 shadow-[0_10px_40px_rgba(0,0,0,0.05)]"
+    >
+      <!-- Header -->
+      <div class="text-center space-y-3">
+        <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">
+          Dining Reservation
+        </p>
+        <h2 class="text-3xl md:text-4xl font-serif">Request a Table</h2>
+        <div class="w-10 h-[1px] bg-[#735200] mx-auto opacity-60"></div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label for="res-email" class="block text-gray-700 font-semibold mb-2"
-            >Email</label
-          >
+      <!-- Form -->
+      <form class="space-y-8">
+        <div class="grid md:grid-cols-2 gap-8">
+          <input
+            type="text"
+            placeholder="Full Name"
+            class="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-[#735200]"
+          />
+
           <input
             type="email"
-            id="res-email"
-            name="email"
-            required
-            class="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none focus-primary-border"
+            placeholder="Email"
+            class="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-[#735200]"
           />
         </div>
-        <div>
-          <label for="res-phone" class="block text-gray-700 font-semibold mb-2"
-            >Phone Number</label
-          >
-          <input
-            type="tel"
-            id="res-phone"
-            name="phone"
-            required
-            class="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none focus-primary-border"
-          />
-        </div>
-      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label for="date" class="block text-gray-700 font-semibold mb-2"
-            >Date</label
-          >
+        <div class="grid md:grid-cols-2 gap-8">
           <input
             type="date"
-            id="date"
-            name="date"
-            required
-            class="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none focus-primary-border"
+            class="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-[#735200]"
           />
-        </div>
-        <div>
-          <label for="time" class="block text-gray-700 font-semibold mb-2"
-            >Time</label
-          >
-          <input
-            type="time"
-            id="time"
-            name="time"
-            required
-            class="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none focus-primary-border"
-          />
-        </div>
-      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label for="guests" class="block text-gray-700 font-semibold mb-2"
-            >Number of Guests</label
-          >
           <select
-            id="guests"
-            name="guests"
-            required
-            class="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none focus-primary-border"
+            class="w-full border-b border-gray-300 py-3 bg-transparent text-gray-500 focus:outline-none focus:border-[#735200]"
           >
-            <option value="">Select number of guests</option>
-            <option value="1">1 Guest</option>
-            <option value="2">2 Guests</option>
-            <option value="3">3 Guests</option>
-            <option value="4">4 Guests</option>
-            <option value="5">5 Guests</option>
-            <option value="6">6 Guests</option>
-            <option value="7">7 Guests</option>
-            <option value="8">8+ Guests (Contact us)</option>
+            <option>Party Size</option>
+            <option>1–2 Guests</option>
+            <option>3–4 Guests</option>
+            <option>5–6 Guests</option>
+            <option>7+ Guests</option>
           </select>
         </div>
-        <div>
-          <label for="occasion" class="block text-gray-700 font-semibold mb-2"
-            >Occasion</label
-          >
-          <select
-            id="occasion"
-            name="occasion"
-            class="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none focus-primary-border"
-          >
-            <option value="">Select an occasion</option>
-            <option value="birthday">Birthday</option>
-            <option value="anniversary">Anniversary</option>
-            <option value="business">Business Dinner</option>
-            <option value="casual">Casual Dining</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-      </div>
 
-      <div>
-        <label
-          for="specialRequests"
-          class="block text-gray-700 font-semibold mb-2"
-          >Special Requests</label
-        >
-        <textarea
-          id="specialRequests"
-          name="specialRequests"
-          rows="4"
-          placeholder="Any special requests or dietary requirements?"
-          class="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none focus-primary-border"
-        ></textarea>
-      </div>
-
-      <div class="flex items-center">
         <input
-          type="checkbox"
-          id="terms"
-          name="terms"
-          required
-          class="w-4 h-4 primary-text rounded-none focus-primary-ring"
+          type="time"
+          class="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-[#735200]"
         />
-        <label for="terms" class="ml-2 text-gray-700"
-          >I agree to the cancellation policy</label
-        >
-      </div>
 
-      <button
-        type="submit"
-        class="w-full primary-bg primary-hover-bg text-white font-semibold py-3 rounded-none transition cursor-pointer"
-      >
-        Confirm Reservation
-      </button>
-    </form>
+        <textarea
+          rows="4"
+          placeholder="Special requests (optional)"
+          class="w-full border-b border-gray-300 py-3 resize-none focus:outline-none focus:border-[#735200]"
+        ></textarea>
+
+        <!-- Button -->
+        <div class="text-center pt-4">
+          <button
+            class="px-10 py-3 border border-[#735200] text-[#735200] uppercase tracking-[0.15em] text-sm hover:bg-[#735200] hover:text-white transition"
+          >
+            Submit Request
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
+</section>
 
-  <!-- Info Box -->
-  <div class="mt-12 bg-gray-50 border-l-4 primary-border p-6 rounded-none">
-    <h3 class="text-lg font-semibold text-gray-900 mb-4">
-      Important Information
-    </h3>
-    <ul class="text-gray-600 space-y-2">
-      <li>✓ Reservations must be made at least 24 hours in advance</li>
-      <li>✓ Please arrive 10-15 minutes before your reservation time</li>
-      <li>✓ Cancellations must be made 24 hours before the reservation</li>
-      <li>✓ Tables will be held for 15 minutes after reservation time</li>
-      <li>
-        ✓ For large parties (8+ guests), please call us directly at (555)
-        123-4567
-      </li>
-    </ul>
+<section class="py-16 text-center">
+  <div class="max-w-2xl mx-auto px-4 space-y-4">
+    <p class="text-gray-500">
+      Reservations are limited each evening to ensure quality of service.
+    </p>
+
+    <p class="text-sm text-[#735200]">
+      Walk-ins are accepted based on availability only.
+    </p>
   </div>
 </section>

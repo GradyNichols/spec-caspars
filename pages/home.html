@@ -2,133 +2,204 @@
 <!-- bg-gradient-to-b from-[rgba(0,0,0,0)] to-[#666666] -->
 
 <!-- Hero Section -->
-<div
-  class="bg-[linear-gradient(to_bottom,black_0%,transparent_50%,transparent_65%,white_100%),url('/logo/spicy-ground-beef-rice-bowl_84443-78618.jpg.avif')] bg-no-repeat bg-cover bg-center text-white h-screen flex flex-col items-center justify-center text-center w-full [@media(max-height:500px)]:pt-10 [@media(max-height:340px)]:pt-20 [@media(max-height:300px)]:pt-32"
+
+<section
+  class="relative h-screen w-full flex items-center justify-center text-center overflow-hidden"
 >
-  <h1 class="text-5xl md:text-7xl font-bold mb-4 px-8">
-    Welcome to my Restaurant
-  </h1>
-  <p class="text-xl md:text-2xl text-gray-300 mb-8">
-    Experience culinary excellence with our finest dishes
-  </p>
-  <!-- <button
-    onclick="loadPage('pages/reservation.html')"
-    class="primary-bg primary-hover-bg px-8 py-3 rounded-sm text-lg font-semibold transition cursor-pointer"
-  >
-    Reserve Your Table
-  </button> -->
-  <button
-    onclick="loadPage('pages/reservation.html')"
-    class="px-6 py-3 border border-[#735200] text-[#735200] rounded-sm transition-all duration-300 ease-in-out hover:bg-[#735200] hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
-  >
-    Reserve Your Tablerrrr
-  </button>
-  <!-- <button
-    onclick="loadPage('pages/reservation.html')"
-    class="px-6 py-3 bg-[#735200] text-white rounded-sm transition-all duration-300 ease-in-out hover:bg-[#463D2E]"
-  >
-    Reserve Your Table
-  </button> -->
-</div>
+  <!-- Background Image -->
+  <div
+    class="absolute inset-0 bg-cover bg-center"
+    style="
+      background-image: url(&quot;/logo/spicy-ground-beef-rice-bowl_84443-78618.jpg.avif&quot;);
+    "
+  ></div>
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-3xl px-6 space-y-6">
+    <p class="text-xs tracking-[0.3em] uppercase text-[#c6a85b]">Caspar’s</p>
+
+    <h1 class="text-5xl md:text-7xl font-serif text-white leading-tight">
+      A Refined Dining Experience
+    </h1>
+
+    <div class="w-12 h-[1px] bg-[#c6a85b] mx-auto opacity-70"></div>
+
+    <p
+      class="text-gray-300 text-lg md:text-xl max-w-xl mx-auto leading-relaxed"
+    >
+      Where tradition meets modern technique—crafted for those who appreciate
+      detail.
+    </p>
+
+    <div class="pt-4">
+      <button
+        onclick="loadPage('pages/reservation.html')"
+        class="px-8 py-3 border border-[#c6a85b] text-[#c6a85b] uppercase tracking-[0.15em] text-sm transition hover:bg-[#c6a85b] hover:text-black"
+      >
+        Reserve a Table
+      </button>
+    </div>
+  </div>
+</section>
 
 <!-- Featured Section -->
-<section class="max-w-7xl mx-auto px-4 py-16">
-  <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
-    Why Choose Us?
-  </h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div class="bg-gray-100 p-6 rounded-lg text-center">
-      <h3 class="text-xl font-semibold mb-4">Premium Quality</h3>
-      <p class="text-gray-600">
-        We source only the finest ingredients for our dishes
+<section class="py-24">
+  <div class="max-w-5xl mx-auto px-4 space-y-16">
+    <!-- Header -->
+    <div class="text-center space-y-4">
+      <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">
+        Our Philosophy
+      </p>
+
+      <h2 class="text-4xl md:text-5xl font-serif">Crafted With Intention</h2>
+
+      <div class="w-12 h-[1px] bg-[#735200] mx-auto opacity-60"></div>
+
+      <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+        Every detail—from ingredient selection to atmosphere—is carefully
+        considered to create an experience that feels both refined and
+        effortless.
       </p>
     </div>
-    <div class="bg-gray-100 p-6 rounded-lg text-center">
-      <h3 class="text-xl font-semibold mb-4">Expert Chefs</h3>
-      <p class="text-gray-600">
-        Our skilled chefs bring passion to every plate
-      </p>
-    </div>
-    <div class="bg-gray-100 p-6 rounded-lg text-center">
-      <h3 class="text-xl font-semibold mb-4">Ambiance</h3>
-      <p class="text-gray-600">
-        Enjoy your meal in a warm and welcoming atmosphere
-      </p>
+
+    <!-- Content -->
+    <div class="space-y-12">
+      <!-- Item -->
+      <div
+        class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 border-b border-[#e5e0d8] pb-8"
+      >
+        <h3 class="text-2xl font-serif">Premium Ingredients</h3>
+
+        <p class="text-gray-500 max-w-xl leading-relaxed">
+          We source only the highest quality ingredients, selected for both
+          flavor and integrity, ensuring every dish meets our standards.
+        </p>
+      </div>
+
+      <!-- Item -->
+      <div
+        class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 border-b border-[#e5e0d8] pb-8"
+      >
+        <h3 class="text-2xl font-serif">Culinary Precision</h3>
+
+        <p class="text-gray-500 max-w-xl leading-relaxed">
+          Our chefs approach each plate with care and discipline, balancing
+          technique with creativity to deliver something memorable.
+        </p>
+      </div>
+
+      <!-- Item -->
+      <div
+        class="flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+      >
+        <h3 class="text-2xl font-serif">Thoughtful Atmosphere</h3>
+
+        <p class="text-gray-500 max-w-xl leading-relaxed">
+          From lighting to layout, every element of the space is designed to
+          complement the dining experience without distraction.
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
 <br />
 
-<section class="bg-[#f9f7f2] py-20 px-6">
-  <div class="max-w-3xl mx-auto">
-    <h2
-      class="text-3xl md:text-4xl font-bold text-center text-[#735200] mb-12 tracking-wide"
-    >
-      Frequently Asked Questions
-    </h2>
-    <div class="space-y-0" id="faqContainer">
-      <div class="border border-gray-200 rounded-sm overflow-hidden">
+<section class="bg-[#f9f7f2] py-28 px-6">
+  <div class="max-w-3xl mx-auto space-y-16">
+    <!-- Header -->
+    <div class="text-center space-y-4">
+      <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">
+        Information
+      </p>
+
+      <h2 class="text-4xl md:text-5xl font-serif text-[#735200]">
+        Frequently Asked Questions
+      </h2>
+
+      <div class="w-12 h-[1px] bg-[#735200] mx-auto opacity-60"></div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="space-y-4" id="faqContainer">
+      <!-- ITEM -->
+      <div class="border-b border-[#e5e0d8] pb-2">
         <button
           onclick="toggleFAQ(this)"
-          class="w-full flex justify-between items-center p-5 text-left hover:bg-[#f3efe6] transition"
+          class="w-full flex justify-between items-center py-6 text-left group"
         >
-          <span class="font-medium text-gray-800"
-            >Do I need a reservation?</span
-          >
+          <span class="font-medium text-gray-800 text-lg">
+            Do I need a reservation?
+          </span>
+
           <span
-            class="faq-icon text-[#735200] text-3xl transition-transform duration-300"
-            >+</span
+            class="faq-icon text-[#735200] text-2xl transition-transform duration-300 group-hover:rotate-12"
           >
+            +
+          </span>
         </button>
+
         <div
-          class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0 px-5 select-none"
+          class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0 pr-8 select-none"
         >
-          <p class="py-4 text-gray-600">
+          <p class="pb-6 text-gray-600 leading-relaxed">
             While walk-ins are welcome, we recommend making a reservation to
             ensure availability.
           </p>
         </div>
       </div>
-      <div class="border border-gray-200 rounded-sm overflow-hidden">
+
+      <!-- ITEM -->
+      <div class="border-b border-[#e5e0d8] pb-2">
         <button
           onclick="toggleFAQ(this)"
-          class="w-full flex justify-between items-center p-5 text-left hover:bg-[#f3efe6] transition"
+          class="w-full flex justify-between items-center py-6 text-left group"
         >
-          <span class="font-medium text-gray-800">Question 2</span>
+          <span class="font-medium text-gray-800 text-lg"> Question 2 </span>
+
           <span
-            class="faq-icon text-[#735200] text-3xl transition-transform duration-300"
-            >+</span
+            class="faq-icon text-[#735200] text-2xl transition-transform duration-300 group-hover:rotate-12"
           >
+            +
+          </span>
         </button>
+
         <div
-          class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0 px-5 select-none"
+          class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0 pr-8 select-none"
         >
-          <p class="py-4 text-gray-600">Answer 2</p>
+          <p class="pb-6 text-gray-600 leading-relaxed">Answer 2</p>
         </div>
       </div>
-      <div class="border border-gray-200 rounded-sm overflow-hidden">
+
+      <!-- ITEM -->
+      <div class="border-b border-[#e5e0d8] pb-2">
         <button
           onclick="toggleFAQ(this)"
-          class="w-full flex justify-between items-center p-5 text-left hover:bg-[#f3efe6] transition"
+          class="w-full flex justify-between items-center py-6 text-left group"
         >
-          <span class="font-medium text-gray-800">Question 3</span>
+          <span class="font-medium text-gray-800 text-lg"> Question 3 </span>
+
           <span
-            class="faq-icon text-[#735200] text-3xl transition-transform duration-300"
-            >+</span
+            class="faq-icon text-[#735200] text-2xl transition-transform duration-300 group-hover:rotate-12"
           >
+            +
+          </span>
         </button>
+
         <div
-          class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0 px-5 select-none"
+          class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0 pr-8 select-none"
         >
-          <p class="py-4 text-gray-600">Answer 3</p>
+          <p class="pb-6 text-gray-600 leading-relaxed">Answer 3</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="w-full bg-[#463D2E] py-20 px-6">
+<!-- <section class="w-full bg-[#463D2E] py-20 px-6">
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
     <div class="w-full md:w-1/2 overflow-hidden rounded-2xl">
       <img
@@ -151,34 +222,99 @@
       </p>
     </div>
   </div>
+</section> -->
+
+<section class="py-28 bg-[#463D2E]">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <!-- IMAGE (enhanced) -->
+    <div class="relative group">
+      <div class="overflow-hidden rounded-xl">
+        <img
+          src="logo/download.jpeg"
+          alt="Dining Experience"
+          class="w-full h-[420px] object-cover transition duration-700 group-hover:scale-105"
+        />
+      </div>
+
+      <!-- subtle overlay -->
+      <div class="absolute inset-0 bg-black/10 rounded-xl"></div>
+    </div>
+
+    <!-- TEXT -->
+    <div class="space-y-6 text-center md:text-left">
+      <p class="text-xs tracking-[0.25em] uppercase text-[#c6a85b]">
+        Our Experience
+      </p>
+
+      <h2 class="text-4xl md:text-5xl font-serif text-white leading-tight">
+        A Refined Approach to Dining
+      </h2>
+
+      <div class="w-12 h-[1px] bg-[#c6a85b] opacity-70 mx-auto md:mx-0"></div>
+
+      <p class="text-gray-300 leading-relaxed max-w-lg">
+        Blending tradition with modern technique, each dish is crafted with
+        intention—designed to be both familiar and unexpected.
+      </p>
+    </div>
+  </div>
 </section>
 
-<section class="bg-gray-100 py-16 px-6 border-t-2 border-b-2 border-gray-300">
-  <div class="max-w-7xl mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
-      What Our Customers Say
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-white p-6 rounded-lg shadow-lg">
-        <p class="text-gray-600 mb-4">
-          "The food was absolutely amazing! The flavors were perfectly balanced
-          and the presentation was beautiful."
+<section class="py-28 bg-[#faf9f7]">
+  <div class="max-w-5xl mx-auto px-4 space-y-20">
+    <!-- Header -->
+    <div class="text-center space-y-4">
+      <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">
+        Guest Experience
+      </p>
+
+      <h2 class="text-4xl md:text-5xl font-serif">Words from Our Guests</h2>
+
+      <div class="w-12 h-[1px] bg-[#735200] mx-auto opacity-60"></div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="space-y-16">
+      <!-- Quote -->
+      <div class="max-w-3xl mx-auto text-center space-y-6">
+        <p class="text-xl md:text-2xl font-serif text-gray-800 leading-relaxed">
+          “The flavors were incredibly balanced, and every detail felt
+          intentional. It’s rare to find a place that feels this refined.”
         </p>
-        <h3 class="text-lg font-semibold">John D.</h3>
+
+        <span class="text-sm text-gray-500 tracking-wide">
+          — Guest Experience
+        </span>
       </div>
-      <div class="bg-white p-6 rounded-lg shadow-lg">
-        <p class="text-gray-600 mb-4">
-          "The ambiance of the restaurant made our dining experience even more
-          enjoyable. Highly recommend!"
+
+      <!-- Divider -->
+      <div class="w-16 h-[1px] bg-[#e5e0d8] mx-auto"></div>
+
+      <!-- Quote -->
+      <div class="max-w-3xl mx-auto text-center space-y-6">
+        <p class="text-xl md:text-2xl font-serif text-gray-800 leading-relaxed">
+          “The atmosphere alone makes it worth visiting, but the food and
+          service elevate it into something truly memorable.”
         </p>
-        <h3 class="text-lg font-semibold">Emily R.</h3>
+
+        <span class="text-sm text-gray-500 tracking-wide">
+          — Private Dining Guest
+        </span>
       </div>
-      <div class="bg-white p-6 rounded-lg shadow-lg">
-        <p class="text-gray-600 mb-4">
-          "Exceptional service and delicious food. We will definitely be coming
-          back!"
+
+      <!-- Divider -->
+      <div class="w-16 h-[1px] bg-[#e5e0d8] mx-auto"></div>
+
+      <!-- Quote -->
+      <div class="max-w-3xl mx-auto text-center space-y-6">
+        <p class="text-xl md:text-2xl font-serif text-gray-800 leading-relaxed">
+          “Everything felt effortless, from the moment we arrived to the last
+          course. We’ll definitely be returning.”
         </p>
-        <h3 class="text-lg font-semibold">Michael S.</h3>
+
+        <span class="text-sm text-gray-500 tracking-wide">
+          — Evening Reservation
+        </span>
       </div>
     </div>
   </div>
@@ -231,28 +367,43 @@
   </div>
 </section>
 
-<section class="bg-[#ffffff] py-16 px-10">
-  <div class="max-w-2xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-bold text-[#735200] mb-4">
-      Stay in the Loop!
-    </h2>
-    <p class="text-gray-700 mb-8">
-      Sign up for our newsletter to receive exclusive offers, event updates, and
-      the latest news from our restaurant.
+<section class="bg-[#faf9f7] py-20 px-6">
+  <div class="max-w-2xl mx-auto text-center space-y-10">
+    <!-- Header -->
+    <div class="space-y-4">
+      <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">Updates</p>
+
+      <h2 class="text-4xl md:text-5xl font-serif text-[#735200]">
+        Join Our Mailing List
+      </h2>
+
+      <div class="w-12 h-[1px] bg-[#735200] mx-auto opacity-60"></div>
+    </div>
+
+    <!-- Description -->
+    <p class="text-gray-600 leading-relaxed max-w-xl mx-auto">
+      Receive occasional updates on seasonal menus, curated events, and private
+      dining availability.
     </p>
-    <form class="flex flex-col sm:flex-row gap-4 justify-center">
+
+    <!-- Form -->
+    <form class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
       <input
         type="email"
-        placeholder="Enter your email"
-        class="w-full sm:w-auto flex-1 px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#735200] text-gray-700"
+        placeholder="Email address"
+        class="w-full sm:flex-1 px-4 py-3 border-b border-[#e5e0d8] bg-transparent text-gray-700 focus:outline-none focus:border-[#735200] transition"
       />
+
       <button
         type="submit"
-        class="px-6 py-3 bg-[#735200] text-white rounded-sm shadow-md hover:bg-[#463D2E] transition-all duration-300 ease-in-out uppercase font-semibold tracking-wide"
+        class="px-8 py-3 border border-[#735200] text-[#735200] uppercase tracking-[0.15em] text-sm transition hover:bg-[#735200] hover:text-white"
       >
         Subscribe
       </button>
     </form>
+
+    <!-- subtle note -->
+    <p class="text-xs text-gray-400 pt-4">No spam. Only meaningful updates.</p>
   </div>
 </section>
 

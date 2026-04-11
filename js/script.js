@@ -218,8 +218,30 @@ function initMenuNav() {
   });
 }
 
+function initializeSwiper() {
+  document.querySelectorAll(".swiper").forEach((el) => {
+    new Swiper(el, {
+      slidesPreview: 1.2,
+      spaceBetween: 16,
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: el.querySelector(".swiper-pagination"),
+        clickable: true,
+      },
+    });
+  });
+  console.log("swiper initialized");
+}
+
 async function loadPage(pageUrl, pushState = true) {
   try {
+    const cacheBustedUrl = `${pageUrl}?v=${Date.now()}`;
+
     const response = await fetch(pageUrl);
     if (!response.ok) throw new Error("Page not found");
 
@@ -227,14 +249,16 @@ async function loadPage(pageUrl, pushState = true) {
     const contentDiv = document.getElementById("content");
     contentDiv.innerHTML = content;
 
+    initializeSwiper?.();
+
     // Update current page
     currentPage = pageUrl.split("/").pop().replace(".html", "");
 
     // Ensure only non-home gets top padding for fixed navbar overlap
     if (currentPage === "home") {
-      contentDiv.classList.remove("pt-[60px]");
+      contentDiv.classList.remove("pt-[78px]");
     } else {
-      contentDiv.classList.add("pt-[60px]");
+      contentDiv.classList.add("pt-[78px]");
     }
 
     // Update page title
@@ -290,15 +314,23 @@ function animateMenuIcon(isOpen) {
   const line1 = document.getElementById("line1");
   const line2 = document.getElementById("line2");
   const line3 = document.getElementById("line3");
+  const menuIconButton = document.getElementById("menuIconButton");
+  const logo = document.getElementById("mainLogo");
 
   if (isOpen) {
-    line1.style.transform = "rotate(-45deg) translate(-4px, 6px)";
+    // top — rotating facing down
+    line1.style.transform = "rotate(-45deg) translate(-1px, 2.5px)";
     line2.style.opacity = "0";
-    line3.style.transform = "rotate(45deg) translate(-3px, -4px)";
+    // bottom — rotating facing upward
+    line3.style.transform = "rotate(45deg) translate(-6px, -7px)";
+    //menuIconButton.style.transform = "translateY(-3px)";
+    logo.classList.remove("pt-2");
   } else {
     line1.style.transform = "rotate(0) translate(0, 0)";
     line2.style.opacity = "1";
     line3.style.transform = "rotate(0) translate(0, 0)";
+    //menuIconButton.style.transform = "translateY(0)";
+    logo.classList.add("pt-2");
   }
 }
 
@@ -462,22 +494,4 @@ document.addEventListener("DOMContentLoaded", function () {
   updateActiveButtonMobile();
 
   console.log("Restaurant website initialized successfully!");
-});
-
-const swiper = new Swiper(".swiper", {
-  slidesPerView: 1.2,
-  spaceBetween: 16,
-  centeredSlides: true,
-
-  loop: true,
-
-  autoplay: {
-    delay: 3500, // slower = more luxury
-    disableOnInteraction: false,
-  },
-
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
 });

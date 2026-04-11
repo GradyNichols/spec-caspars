@@ -1,121 +1,167 @@
-<section class="max-w-7xl mx-auto px-4 py-16">
-  <h1 class="text-4xl font-bold text-gray-900 mb-12 text-center">Contact Us</h1>
+<section class="relative overflow-hidden px-8 md:px-12 pt-20 pb-12 mx-auto">
+  <div
+    id="parallaxBg"
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0"
+    style="background-image: url(&quot;logo/download.jpeg&quot;)"
+  ></div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-    <!-- Contact Information -->
-    <div>
-      <h2 class="text-2xl font-semibold text-gray-900 mb-6">Get In Touch</h2>
+  <div
+    class="relative z-10 max-w-3xl md:mt-10 md:mb-10 mt-0 mb-0 mx-auto mt-0 p-10 bg-white/80 backdrop-blur-md rounded-md text-center space-y-6"
+  >
+    <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">
+      Get in Touch
+    </p>
 
-      <div class="mb-8">
-        <h3 class="text-lg font-semibold text-gray-900 mb-3">📍 Address</h3>
-        <p class="text-gray-600">
-          123 Main Street<br />Downtown, City, ST 12345<br />USA
-        </p>
+    <h1 class="text-4xl md:text-5xl font-serif">Contact</h1>
+
+    <div class="w-12 h-[1px] bg-[#735200] mx-auto opacity-60"></div>
+
+    <p class="text-gray-500 leading-relaxed">
+      Whether you're planning an evening with us or simply have a question, our
+      team is here to assist you.
+    </p>
+  </div>
+</section>
+
+<section class="py-28">
+  <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-20 items-start">
+    <!-- LEFT: CONTACT INFO -->
+    <div class="grid sm:grid-cols-2 md:grid-cols-1 gap-6">
+      <!-- CARD -->
+      <div
+        class="group border border-[#e5e0d8] p-6 transition duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+      >
+        <div class="flex items-start justify-between">
+          <div class="space-y-3">
+            <p class="text-xs tracking-[0.2em] uppercase text-[#735200]">
+              Location
+            </p>
+
+            <h3 class="text-xl font-serif">Visit Us</h3>
+
+            <p class="text-gray-500 leading-relaxed text-sm">
+              123 Example Street<br />
+              Simi Valley, CA
+            </p>
+          </div>
+
+          <!-- subtle icon -->
+          <div
+            class="text-[#735200] opacity-40 group-hover:opacity-80 transition"
+          >
+            📍
+          </div>
+        </div>
       </div>
 
-      <div class="mb-8">
-        <h3 class="text-lg font-semibold text-gray-900 mb-3">📞 Phone</h3>
-        <p class="text-gray-600">(555) 123-4567</p>
+      <!-- CARD -->
+      <div
+        class="group border border-[#e5e0d8] p-6 transition duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+      >
+        <div class="flex items-start justify-between">
+          <div class="space-y-3">
+            <p class="text-xs tracking-[0.2em] uppercase text-[#735200]">
+              Hours
+            </p>
+
+            <h3 class="text-xl font-serif">Opening Times</h3>
+
+            <p class="text-gray-500 leading-relaxed text-sm">
+              Mon–Thu: 5pm – 10pm<br />
+              Fri–Sun: 4pm – 11pm
+            </p>
+          </div>
+
+          <div
+            class="text-[#735200] opacity-40 group-hover:opacity-80 transition"
+          >
+            🕒
+          </div>
+        </div>
       </div>
 
-      <div class="mb-8">
-        <h3 class="text-lg font-semibold text-gray-900 mb-3">✉️ Email</h3>
-        <p class="text-gray-600">info@ourrestaurant.com</p>
-      </div>
+      <!-- CARD -->
+      <div
+        class="group border border-[#e5e0d8] p-6 transition duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+      >
+        <div class="flex items-start justify-between">
+          <div class="space-y-3">
+            <p class="text-xs tracking-[0.2em] uppercase text-[#735200]">
+              Contact
+            </p>
 
-      <div>
-        <h3 class="text-lg font-semibold text-gray-900 mb-3">🕐 Hours</h3>
-        <p class="text-gray-600">
-          Monday - Thursday: 11:00 AM - 10:00 PM<br />
-          Friday - Saturday: 11:00 AM - 11:00 PM<br />
-          Sunday: 12:00 PM - 9:00 PM<br />
-          <span class="font-semibold">Closed on Major Holidays</span>
-        </p>
+            <h3 class="text-xl font-serif">Reach Us</h3>
+
+            <p class="text-gray-500 leading-relaxed text-sm">
+              (555) 123-4567<br />
+              hello@caspars.com
+            </p>
+          </div>
+
+          <div
+            class="text-[#735200] opacity-40 group-hover:opacity-80 transition"
+          >
+            ✉️
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Contact Form -->
-    <div>
-      <h2 class="text-2xl font-semibold text-gray-900 mb-6">
-        Send us a Message
-      </h2>
-      <form id="contactForm" class="space-y-4">
-        <div>
-          <label
-            for="contact-name"
-            class="block text-gray-700 font-semibold mb-2"
-            >Your Name</label
-          >
-          <input
-            type="text"
-            id="contact-name"
-            name="name"
-            required
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus-primary-border"
-          />
-        </div>
-        <div>
-          <label
-            for="contact-email"
-            class="block text-gray-700 font-semibold mb-2"
-            >Your Email</label
-          >
-          <input
-            type="email"
-            id="contact-email"
-            name="email"
-            required
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus-primary-border"
-          />
-        </div>
-        <div>
-          <label
-            for="contact-phone"
-            class="block text-gray-700 font-semibold mb-2"
-            >Phone Number</label
-          >
-          <input
-            type="tel"
-            id="contact-phone"
-            name="phone"
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus-primary-border"
-          />
-        </div>
-        <div>
-          <label
-            for="contact-subject"
-            class="block text-gray-700 font-semibold mb-2"
-            >Subject</label
-          >
-          <input
-            type="text"
-            id="contact-subject"
-            name="subject"
-            required
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus-primary-border"
-          />
-        </div>
-        <div>
-          <label
-            for="contact-message"
-            class="block text-gray-700 font-semibold mb-2"
-            >Message</label
-          >
-          <textarea
-            id="contact-message"
-            name="message"
-            rows="5"
-            required
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus-primary-border"
-          ></textarea>
-        </div>
+    <!-- RIGHT: FORM (FRAMED) -->
+    <div
+      class="bg-white border border-[#e5e0d8] p-10 md:p-14 shadow-[0_10px_40px_rgba(0,0,0,0.05)] space-y-8"
+    >
+      <div class="space-y-3">
+        <h2 class="text-2xl font-serif">Send a Message</h2>
+        <div class="w-10 h-[1px] bg-[#735200] opacity-60"></div>
+      </div>
+
+      <form class="space-y-6">
+        <input
+          type="text"
+          placeholder="Full Name"
+          class="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-[#735200]"
+        />
+
+        <input
+          type="email"
+          placeholder="Email Address"
+          class="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-[#735200]"
+        />
+
+        <textarea
+          rows="4"
+          placeholder="Message"
+          class="w-full border-b border-gray-300 py-3 resize-none focus:outline-none focus:border-[#735200]"
+        ></textarea>
+
         <button
-          type="submit"
-          class="w-full primary-bg primary-hover-bg text-white font-semibold py-3 rounded-lg transition cursor-pointer"
+          class="mt-6 px-8 py-3 border border-[#735200] text-[#735200] uppercase tracking-[0.15em] text-sm transition hover:bg-[#735200] hover:text-white"
         >
           Send Message
         </button>
       </form>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-[#faf9f7] text-center">
+  <p class="text-xl font-serif text-gray-600 max-w-2xl mx-auto">
+    We look forward to welcoming you.
+  </p>
+</section>
+
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="rounded-lg overflow-hidden border border-[#e5e0d8]">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.4617505888637!2d-118.41282672428572!3d34.13452691338108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bdeea67b069f%3A0xdc685c57cdbb65fe!2s3901%20Oeste%20Ave%2C%20Studio%20City%2C%20CA%2091604!5e0!3m2!1sen!2sus!4v1775851322123!5m2!1sen!2sus"
+        class="w-full h-[400px] border-0"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
     </div>
   </div>
 </section>
