@@ -255,57 +255,191 @@
       </div>
 
       <!-- Form -->
-      <form class="space-y-8">
+      <form class="space-y-6">
         <!-- Row -->
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="space-y-2">
-            <label class="text-sm text-gray-500">Full Name</label>
-            <input
-              type="text"
-              class="w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[#735200]"
-            />
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-1">
+            <div class="relative w-full pt-5">
+              <input
+                type="text"
+                id="fullName"
+                placeholder=" "
+                class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[#735200]"
+              />
+              <label
+                for="fullName"
+                class="cursor-auto absolute left-4 top-5 mt-4 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:left-1 peer-focus:scale-95 peer-[&:not(:placeholder-shown)]:left-1 peer-[&:not(:placeholder-shown)]:scale-95 peer-[&:not(:placeholder-shown)]:top-[-1rem] ease-out duration-200 peer-focus:top-[-1rem] peer-focus:text-xs peer-focus:text-[#735200] peer-[&:not(:placeholder-shown)]:top-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-[#735200]"
+              >
+                Full Name
+              </label>
+            </div>
           </div>
 
-          <div class="space-y-2">
-            <label class="text-sm text-gray-500">Email Address</label>
-            <input
-              type="email"
-              class="w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[#735200]"
-            />
+          <div class="space-y-1">
+            <div class="relative w-full pt-5">
+              <input
+                type="email"
+                id="emailAddress"
+                placeholder=" "
+                class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[#735200]"
+              />
+              <label
+                for="emailAddress"
+                class="cursor-auto absolute left-4 top-5 mt-4 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:left-1 peer-focus:scale-95 peer-[&:not(:placeholder-shown)]:left-1 peer-[&:not(:placeholder-shown)]:scale-95 peer-[&:not(:placeholder-shown)]:top-[-1rem] ease-out duration-200 peer-focus:top-[-1rem] peer-focus:text-xs peer-focus:text-[#735200] peer-[&:not(:placeholder-shown)]:top-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-[#735200]"
+              >
+                Email Address
+              </label>
+            </div>
           </div>
         </div>
 
         <!-- Row -->
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="space-y-2">
-            <label class="text-sm text-gray-500">Phone Number</label>
-            <input
-              type="tel"
-              class="w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[#735200]"
-            />
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-1">
+            <div class="relative w-full pt-5">
+              <input
+                type="tel"
+                id="phoneNumber"
+                placeholder=" "
+                class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[#735200]"
+                required
+              />
+              <label
+                for="phoneNumber"
+                class="cursor-auto absolute left-4 top-5 mt-4 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:left-1 peer-focus:scale-95 peer-[&:not(:placeholder-shown)]:left-1 peer-[&:not(:placeholder-shown)]:scale-95 peer-[&:not(:placeholder-shown)]:top-[-1rem] ease-out duration-200 peer-focus:top-[-1rem] peer-focus:text-xs peer-focus:text-[#735200] peer-[&:not(:placeholder-shown)]:top-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-[#735200]"
+              >
+                Phone Number
+              </label>
+            </div>
           </div>
 
-          <div class="space-y-2">
-            <!-- <label class="text-sm text-gray-500">Event Type</label>
-            <select
-              class="w-full border-b border-gray-300 p-3 appearance-none focus:outline-none focus:border-[#735200] bg-transparent text-gray-500"
-            >
-              <option>Private Dining</option>
-              <option>Wedding</option>
-              <option>Corporate Event</option>
-              <option>Other</option>
-            </select> -->
-            <!-- Hidden real select (for forms) -->
-            <label class="text-sm text-gray-500">Event Type</label>
+          <div class="space-y-1">
+            <div class="relative w-full pt-5">
+              <input
+                type="number"
+                id="guestCount"
+                placeholder=" "
+                class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[#735200]"
+              />
+              <label
+                for="guestCount"
+                class="cursor-auto absolute left-4 top-5 mt-4 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:left-1 peer-focus:scale-95 peer-[&:not(:placeholder-shown)]:left-1 peer-[&:not(:placeholder-shown)]:scale-95 peer-[&:not(:placeholder-shown)]:top-[-1rem] ease-out duration-200 peer-focus:top-[-1rem] peer-focus:text-xs peer-focus:text-[#735200] peer-[&:not(:placeholder-shown)]:top-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-[#735200]"
+              >
+                Guest Count
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row -->
+        <div class="grid md:grid-cols-2 gap-6 color-black">
+          <div class="space-y-1">
+            <div class="relative w-full pt-5">
+              <input
+                type="date"
+                id="date"
+                value=""
+                class="peer appearance-none brightness-100 color-black w-full border-b border-gray-300 px-3 py-[10px] focus:outline-none focus:border-[#735200]"
+                required
+              />
+              <label
+                for="date"
+                class="cursor-auto absolute text-[#735200] left-1 scale-95 top-0 text-xs"
+              >
+                Event Date
+              </label>
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <div class="relative w-full pt-5">
+              <select id="realSelect" class="hidden" required>
+                <option value="">Select an option</option>
+                <option value="private">Private Dining</option>
+                <option value="event">Event Booking</option>
+                <option value="general">General Inquiry</option>
+              </select>
+              <label
+                for="realSelect"
+                class="cursor-auto absolute text-[#735200] left-1 scale-95 top-0 text-xs"
+              >
+                Event Type
+              </label>
+
+              <button
+                type="button"
+                id="selectTrigger"
+                class="w-full text-left p-3 border-b border-[#e5e0d8] text-gray-700 flex justify-between items-center focus:outline-none"
+              >
+                <span id="selectValue" class="text-gray-400">
+                  Select an option
+                </span>
+
+                <span
+                  id="selectArrow"
+                  class="text-[#735200] transition-transform duration-600"
+                >
+                  <svg
+                    fill="#735200"
+                    width="24px"
+                    height="24px"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    stroke="#735200"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <path
+                        d="M12 16a1 1 0 0 1-.707-.293L5.636 10.05A1 1 0 0 1 7.05 8.636l4.95 4.95 4.95-4.95a1 1 0 0 1 1.414 1.414l-5.657 5.657A1 1 0 0 1 12 16z"
+                      ></path>
+                    </g>
+                  </svg>
+                </span>
+              </button>
+              <div
+                id="selectDropdown"
+                class="relative w-full m-0 bg-white border-[#e5e0d8] shadow-lg h-0 pointer-events-none transform translate-y-[-20px] transition-all duration-300 z-20"
+              >
+                <div
+                  id="dropdownOption"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
+                  data-value="private"
+                >
+                  Private Dining
+                </div>
+
+                <div
+                  id="dropdownOption"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-b-none border-[#e5e0d8] cursor-pointer"
+                  data-value="event"
+                >
+                  Event Booking
+                </div>
+
+                <div
+                  id="dropdownOption"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-[#e5e0d8] cursor-pointer"
+                  data-value="general"
+                >
+                  General Inquiry
+                </div>
+              </div>
+            </div>
+            <!-- <label class="text-sm text-gray-500">Event Type diididd</label>
             <select id="realSelect" class="hidden">
               <option value="">Select an option</option>
               <option value="private">Private Dining</option>
               <option value="event">Event Booking</option>
               <option value="general">General Inquiry</option>
-            </select>
+            </select> -->
 
             <!-- Visible trigger -->
-            <button
+            <!-- <button
               type="button"
               id="selectTrigger"
               class="w-full text-left p-3 border-b border-[#e5e0d8] text-gray-700 flex justify-between items-center focus:outline-none"
@@ -339,10 +473,10 @@
                   </g>
                 </svg>
               </span>
-            </button>
+            </button> -->
 
             <!-- Dropdown -->
-            <div
+            <!-- <div
               id="selectDropdown"
               class="relative w-full m-0 bg-white border-[#e5e0d8] shadow-lg h-0 pointer-events-none transform translate-y-[-20px] transition-all duration-300 z-20"
             >
@@ -369,49 +503,30 @@
               >
                 General Inquiry
               </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row -->
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="space-y-2">
-            <label class="text-sm text-gray-500">Event Date</label>
-            <input
-              type="date"
-              class="appearance-none color-black w-full border-b border-gray-300 px-3 py-[10px] focus:outline-none focus:border-[#735200]"
-            />
-          </div>
-
-          <div class="space-y-2">
-            <label class="text-sm text-gray-500">Guest Count</label>
-            <input
-              type="number"
-              class="w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[#735200]"
-            />
+            </div> -->
           </div>
         </div>
 
         <!-- Message -->
-        <div class="space-y-2">
-          <div class="relative w-full pt-5">
+        <div class="space-y-0">
+          <div class="relative w-full pt-5 transition-all duration-500">
             <textarea
-              rows="4"
+              rows="2"
               placeholder=" "
-              class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[#735200] resize-none"
+              id="message"
+              class="leading-6 peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[#735200] resize-none overflow-hidden transition-all duration-500"
+              maxlength="500"
+              oninput="autoResize(this)"
+              required
             ></textarea>
 
             <label
-              class="absolute left-4 top-5 mt-4 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:left-1 peer-focus:scale-95 peer-[&:not(:placeholder-shown)]:left-1 peer-[&:not(:placeholder-shown)]:scale-95 peer-[&:not(:placeholder-shown)]:top-[-1rem] ease-out duration-200 peer-focus:top-[-1rem] peer-focus:text-xs peer-focus:text-[#735200] peer-[&:not(:placeholder-shown)]:top-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-[#735200]"
+              for="message"
+              class="cursor-auto absolute left-4 top-5 mt-4 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:left-1 peer-focus:scale-95 peer-[&:not(:placeholder-shown)]:left-1 peer-[&:not(:placeholder-shown)]:scale-95 peer-[&:not(:placeholder-shown)]:top-[-1rem] ease-out duration-200 peer-focus:top-[-1rem] peer-focus:text-xs peer-focus:text-[#735200] peer-[&:not(:placeholder-shown)]:top-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-[#735200]"
             >
               Event Details
             </label>
           </div>
-          <!-- <label class="text-sm text-gray-500">Event Details</label>
-          <textarea
-            rows="4"
-            class="w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[#735200] resize-none"
-          ></textarea> -->
         </div>
 
         <!-- Button -->

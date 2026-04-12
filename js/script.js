@@ -16,6 +16,19 @@ function scrollToApps() {
   element.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+const textarea = document.querySelectorAll("textarea");
+
+// textarea.addEventListener("keydown", (e) => {
+//   if (e.key === "Enter") {
+//     e.preventDefault(); // Stops the new line from being created
+//   }
+// });
+
+// textarea.addEventListener("input", function () {
+//   // Replaces all types of line breaks (LF, CR) with an empty string or a space
+//   this.value = this.value.replace(/[\r\n]+/g, "");
+// });
+
 // Simple toast notification
 function showToast(message, type = "success") {
   const toast = document.createElement("div");
@@ -29,6 +42,11 @@ function showToast(message, type = "success") {
     toast.style.opacity = "0";
     setTimeout(() => document.body.removeChild(toast), 300);
   }, 3000);
+}
+
+function todaysDate() {
+  const today = new Date().toISOString().split("T")[0];
+  document.getElementById("date").value = today;
 }
 
 // Current page tracker
@@ -142,6 +160,16 @@ function updateActiveButton() {
       activeButton.style.fontWeight = "bold";
     }
   }
+}
+
+function autoResize(el) {
+  el.style.height = "auto";
+
+  const lineHeight = parseFloat(getComputedStyle(el).lineHeight);
+  const maxLines = 6; // adjust if you want
+  const maxHeight = lineHeight * maxLines;
+
+  el.style.height = Math.min(el.scrollHeight, maxHeight) + "px";
 }
 
 function initMenuNav() {
@@ -258,7 +286,7 @@ function initCustomSelect() {
 
     dropdown.classList.toggle("h-auto", !isOpen);
     dropdown.classList.toggle("pointer-events-auto", !isOpen);
-    dropdown.classList.toggle("translate-y-[-8px]", !isOpen);
+    dropdown.classList.toggle("translate-y-0", !isOpen);
     // dropdown.classList.toggle("border", !isOpen);
     dropdownOption.forEach((e) => {
       e.classList.toggle("hidden", isOpen);
@@ -282,7 +310,7 @@ function initCustomSelect() {
       dropdown.classList.remove(
         "h-auto",
         "pointer-events-auto",
-        "translate-y-[-8px]",
+        "translate-y-0",
         // "border",
       );
       dropdownOption.forEach((e) => {
@@ -298,7 +326,7 @@ function initCustomSelect() {
       dropdown.classList.remove(
         "h-full",
         "pointer-events-auto",
-        "translate-y-[-8px]",
+        "translate-y-0",
         // "border",
       );
       dropdownOption.forEach((e) => {
@@ -564,6 +592,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateActiveButton();
   updateActiveButtonMobile();
+
+  constrainInput = (event) => {
+    event.target.value = event.target.value.replace(/[\r\n\v]+/g, "");
+  };
+
+  document.querySelectorAll("textarea").forEach((el) => {
+    el.addEventListener("keyup", constrainInput);
+  });
 
   console.log("Restaurant website initialized successfully!");
 });

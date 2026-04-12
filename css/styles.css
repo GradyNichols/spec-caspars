@@ -62,6 +62,16 @@ html::-webkit-scrollbar {
   display: none;
 }
 
+input[type="date"],
+input[type="time"] {
+  color: var(--dark-bg); /* gray-400 */
+}
+
+input[type="date"]::-webkit-datetime-edit,
+input[type="time"]::-webkit-datetime-edit {
+  color: inherit;
+}
+
 /* Smooth Scrolling */
 html {
   /* For Firefox */
