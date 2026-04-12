@@ -242,6 +242,73 @@ function initializeSwiper() {
   console.log("swiper initialized");
 }
 
+function initCustomSelect() {
+  const trigger = document.getElementById("selectTrigger");
+  const dropdown = document.getElementById("selectDropdown");
+  const valueText = document.getElementById("selectValue");
+  const realSelect = document.getElementById("realSelect");
+  const arrow = document.getElementById("selectArrow");
+  const dropdownOption = document.querySelectorAll("#dropdownOption");
+
+  if (!trigger || !dropdown) return;
+
+  // Toggle dropdown
+  trigger.addEventListener("click", () => {
+    const isOpen = dropdown.classList.contains("h-auto");
+
+    dropdown.classList.toggle("h-auto", !isOpen);
+    dropdown.classList.toggle("pointer-events-auto", !isOpen);
+    dropdown.classList.toggle("translate-y-[-8px]", !isOpen);
+    // dropdown.classList.toggle("border", !isOpen);
+    dropdownOption.forEach((e) => {
+      e.classList.toggle("hidden", isOpen);
+    });
+
+    arrow.classList.toggle("rotate-180", !isOpen);
+  });
+
+  // Select option
+  dropdown.querySelectorAll("[data-value]").forEach((option) => {
+    option.addEventListener("click", () => {
+      const value = option.getAttribute("data-value");
+      const text = option.textContent;
+
+      valueText.textContent = text;
+      valueText.classList.remove("text-gray-400");
+
+      realSelect.value = value;
+
+      // Close dropdown
+      dropdown.classList.remove(
+        "h-auto",
+        "pointer-events-auto",
+        "translate-y-[-8px]",
+        // "border",
+      );
+      dropdownOption.forEach((e) => {
+        e.classList.add("hidden");
+      });
+      arrow.classList.remove("rotate-180");
+    });
+  });
+
+  // Click outside to close
+  document.addEventListener("click", (e) => {
+    if (!trigger.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.remove(
+        "h-full",
+        "pointer-events-auto",
+        "translate-y-[-8px]",
+        // "border",
+      );
+      dropdownOption.forEach((e) => {
+        e.classList.add("hidden");
+      });
+      arrow.classList.remove("rotate-180");
+    }
+  });
+}
+
 async function loadPage(pageUrl, pushState = true) {
   try {
     const cacheBustedUrl = `${pageUrl}?v=${Date.now()}`;
@@ -254,6 +321,7 @@ async function loadPage(pageUrl, pushState = true) {
     contentDiv.innerHTML = content;
 
     initializeSwiper?.();
+    initCustomSelect?.();
 
     // Update current page
     currentPage = pageUrl.split("/").pop().replace(".html", "");
