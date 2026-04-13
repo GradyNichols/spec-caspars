@@ -8,29 +8,31 @@
   <div
     class="relative z-10 max-w-3xl md:mt-10 md:mb-10 mt-0 mb-0 mx-auto mt-0 p-10 bg-white/80 backdrop-blur-md rounded-md text-center space-y-6"
   >
-    <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">
+    <p class="text-xs tracking-[0.25em] uppercase text-[var(--primary-color)]">
       Eat some food
     </p>
 
-    <h1 class="text-4xl md:text-5xl font-serif">Menu</h1>
+    <h1 class="text-4xl md:text-5xl font-serif text-amber-900">Menu</h1>
 
     <p class="text-gray-800 mb-6 mt-14">
       Experience the taste of luxury dining with our exquisite menu, crafted by
       world-class chefs using the finest ingredients.
     </p>
 
-    <div class="w-12 h-[1px] bg-[#735200] mx-auto opacity-60"></div>
+    <div
+      class="w-12 h-[1px] bg-[var(--primary-color)] mx-auto opacity-60"
+    ></div>
 
     <button
       onclick="document.getElementById('apps').click()"
-      class="px-6 py-3 mx-auto border border-[#735200] text-[#735200] rounded-sm transition-all duration-300 ease-in-out hover:bg-[#735200] hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+      class="px-6 py-3 mx-auto border border-[var(--primary-color)] text-[var(--primary-color)] rounded-sm transition-all duration-300 ease-in-out hover:bg-[var(--primary-color)] hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
     >
       Explore Our Menu
     </button>
   </div>
 </section>
 
-<section class="bg-[#463D2E] w-full py-8 px-6">
+<section class="bg-[var(--dark-bg)] w-full py-8 px-6">
   <div class="max-w-6xl mx-auto flex items-center justify-center">
     <div class="w-full max-w-xl text-center">
       <p class="text-white text-lg leading-relaxed italic">
@@ -40,6 +42,10 @@
     </div>
   </div>
 </section>
+
+<section
+  class="py-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
+></section>
 
 <div
   class="sticky md:top-[110px] top-[102px] left-0 right-0 z-[45] bg-[#d1d5db] backdrop-blur-md shadow-sm"
@@ -58,7 +64,7 @@
 
       <span
         id="menuIndicator"
-        class="absolute bottom-2 h-[2px] bg-[#735200] transition-all duration-300"
+        class="absolute bottom-2 h-[2px] bg-[var(--primary-color)] transition-all duration-300"
       ></span>
     </div>
   </div>
@@ -84,25 +90,31 @@
         </div>
 
         <div class="space-y-5">
-          <p class="text-xs tracking-[0.2em] uppercase text-[#735200]">
+          <p
+            class="text-xs tracking-[0.2em] uppercase text-[var(--primary-color)]"
+          >
             Chef's Selection
           </p>
 
-          <h3 class="text-3xl md:text-4xl font-serif">Zeytoon Parvardeh</h3>
+          <h3 class="text-3xl md:text-4xl font-serif text-amber-900">
+            Zeytoon Parvardeh
+          </h3>
 
-          <div class="w-12 h-[1px] bg-[#735200] opacity-60"></div>
+          <div class="w-12 h-[1px] bg-[var(--primary-color)] opacity-60"></div>
 
           <p class="text-gray-600 loading-relaxed">
             Marinated olives with pomegranate molasses, crushed walnuts, and
             aromatic herbs.
           </p>
 
-          <p class="text-lg text-[#735200] font-medium">$15</p>
+          <p class="text-lg text-[var(--primary-color)] font-medium">$15</p>
         </div>
         <!-- text -->
       </div>
     </div>
-    <div class="max-w-6xl h-[1px] bg-[#735200] opacity-60 md:mt-20 mt-10"></div>
+    <div
+      class="max-w-6xl h-[1px] bg-[var(--primary-color)] opacity-60 md:mt-20 mt-10"
+    ></div>
   </section>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     <div class="space-y-8">
@@ -236,6 +248,9 @@
   </div>
 </section>
 <br />
+<section
+  class="py-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
+></section>
 <section class="relative overflow-hidden md:p-16 p-0 mx-auto">
   <div
     id="parallaxBg"
@@ -253,6 +268,10 @@
   </div>
 </section>
 
+<section
+  class="py-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
+></section>
+
 <section id="mains" class="max-w-7xl mx-auto px-8 md:px-12 pb-0 pt-10">
   <br />
   <h2
@@ -266,20 +285,24 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
         <!-- text -->
         <div class="space-y-5">
-          <p class="text-xs tracking-[0.2em] uppercase text-[#735200]">
+          <p
+            class="text-xs tracking-[0.2em] uppercase text-[var(--primary-color)]"
+          >
             Chef's Selection
           </p>
 
-          <h3 class="text-3xl md:text-4xl font-serif">Zeytoon Parvardeh</h3>
+          <h3 class="text-3xl md:text-4xl font-serif text-amber-900">
+            Zeytoon Parvardeh
+          </h3>
 
-          <div class="w-12 h-[1px] bg-[#735200] opacity-60"></div>
+          <div class="w-12 h-[1px] bg-[var(--primary-color)] opacity-60"></div>
 
           <p class="text-gray-600 loading-relaxed">
             Marinated olives with pomegranate molasses, crushed walnuts, and
             aromatic herbs.
           </p>
 
-          <p class="text-lg text-[#735200] font-medium">$15</p>
+          <p class="text-lg text-[var(--primary-color)] font-medium">$15</p>
         </div>
         <!-- image -->
         <div class="relative overflow-hidden rounded-lg">
@@ -291,7 +314,9 @@
         </div>
       </div>
     </div>
-    <div class="max-w-6xl h-[1px] bg-[#735200] opacity-60 md:mt-20 mt-10"></div>
+    <div
+      class="max-w-6xl h-[1px] bg-[var(--primary-color)] opacity-60 md:mt-20 mt-10"
+    ></div>
   </section>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     <div class="space-y-8">
@@ -459,6 +484,14 @@
 
 <br />
 
+<section
+  class="py-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
+>
+  <!-- <div class="max-w-5xl mx-auto p-0 md:px-6 items-center text-center italic">
+    Text here
+  </div> -->
+</section>
+
 <section class="bg-[#f9f7f2] w-full py-12 px-6 border-gray-400">
   <div class="max-w-6xl mx-auto flex items-center justify-center">
     <div class="w-full max-w-xl text-center">
@@ -468,6 +501,14 @@
       </p>
     </div>
   </div>
+</section>
+
+<section
+  class="py-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
+>
+  <!-- <div class="max-w-5xl mx-auto p-0 md:px-6 items-center text-center italic">
+    Text here
+  </div> -->
 </section>
 
 <section id="desserts" class="max-w-7xl mx-auto px-8 md:px-12 pt-14 pb-0">
@@ -490,25 +531,31 @@
         </div>
 
         <div class="space-y-5">
-          <p class="text-xs tracking-[0.2em] uppercase text-[#735200]">
+          <p
+            class="text-xs tracking-[0.2em] uppercase text-[var(--primary-color)]"
+          >
             Chef's Selection
           </p>
 
-          <h3 class="text-3xl md:text-4xl font-serif">Zeytoon Parvardeh</h3>
+          <h3 class="text-3xl md:text-4xl font-serif text-amber-900">
+            Zeytoon Parvardeh
+          </h3>
 
-          <div class="w-12 h-[1px] bg-[#735200] opacity-60"></div>
+          <div class="w-12 h-[1px] bg-[var(--primary-color)] opacity-60"></div>
 
           <p class="text-gray-600 loading-relaxed">
             Marinated olives with pomegranate molasses, crushed walnuts, and
             aromatic herbs.
           </p>
 
-          <p class="text-lg text-[#735200] font-medium">$15</p>
+          <p class="text-lg text-[var(--primary-color)] font-medium">$15</p>
         </div>
         <!-- text -->
       </div>
     </div>
-    <div class="max-w-6xl h-[1px] bg-[#735200] opacity-60 md:mt-20 mt-10"></div>
+    <div
+      class="max-w-6xl h-[1px] bg-[var(--primary-color)] opacity-60 md:mt-20 mt-10"
+    ></div>
   </section>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     <div class="md:space-y-12 space-y-8">
@@ -774,7 +821,7 @@
 
 <section class="relative bg-[#f8f4f2] py-16 px-10">
   <div class="relative max-w-3xl mx-auto text-center">
-    <h2 class="text-4xl md:text-5xl font-bold text-[#735200] mb-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-4">
       Experience Culinary Magic
     </h2>
     <p class="text-gray-800 mb-6">
@@ -783,25 +830,9 @@
     </p>
     <button
       onclick="loadPage('pages/reservation.html')"
-      class="px-6 py-3 border border-[#735200] text-[#735200] rounded-sm transition-all duration-300 ease-in-out hover:bg-[#735200] hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+      class="px-6 py-3 border border-[var(--primary-color)] text-[var(--primary-color)] rounded-sm transition-all duration-300 ease-in-out hover:bg-[var(--primary-color)] hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
     >
       Make a reservation
     </button>
-  </div>
-</section>
-
-<section class="relative bg-white p-24">
-  <div class="relative w-full pt-5">
-    <input
-      type="text"
-      placeholder=" "
-      class="peer w-full border-b border-[#e5e0d8] bg-transparent p-3 text-gray-800 focus:outline-none focus:border-[#735200]"
-    />
-
-    <label
-      class="absolute left-5 top-5 mt-4 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:left-4 peer-focus:scale-95 peer-[&:not(:placeholder-shown)]:left-4 peer-[&:not(:placeholder-shown)]:scale-95 peer-[&:not(:placeholder-shown)]:top-[-1rem] ease-out duration-200 peer-focus:top-[-1rem] peer-focus:text-xs peer-focus:text-[#735200] peer-[&:not(:placeholder-shown)]:top-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-[#735200]"
-    >
-      Your Name
-    </label>
   </div>
 </section>

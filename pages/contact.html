@@ -8,13 +8,15 @@
   <div
     class="relative z-10 max-w-3xl md:mt-10 md:mb-10 mt-0 mb-0 mx-auto mt-0 p-10 bg-white/80 backdrop-blur-md rounded-md text-center space-y-6"
   >
-    <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">
+    <p class="text-xs tracking-[0.25em] uppercase text-[var(--primary-color)]">
       Get in Touch
     </p>
 
-    <h1 class="text-4xl md:text-5xl font-serif">Contact</h1>
+    <h1 class="text-4xl md:text-5xl font-serif text-amber-900">Contact</h1>
 
-    <div class="w-12 h-[1px] bg-[#735200] mx-auto opacity-60"></div>
+    <div
+      class="w-12 h-[1px] bg-[var(--primary-color)] mx-auto opacity-60"
+    ></div>
 
     <p class="text-gray-500 leading-relaxed">
       Whether you're planning an evening with us or simply have a question, our
@@ -22,6 +24,10 @@
     </p>
   </div>
 </section>
+
+<section
+  class="py-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
+></section>
 
 <section class="py-28">
   <div
@@ -35,7 +41,9 @@
       >
         <div class="flex items-start justify-between">
           <div class="space-y-3">
-            <p class="text-xs tracking-[0.2em] uppercase text-[#735200]">
+            <p
+              class="text-xs tracking-[0.2em] uppercase text-[var(--primary-color)]"
+            >
               Location
             </p>
 
@@ -49,7 +57,7 @@
 
           <!-- subtle icon -->
           <div
-            class="text-[#735200] opacity-40 group-hover:opacity-80 transition"
+            class="text-[var(--primary-color)] opacity-40 group-hover:opacity-80 transition"
           >
             <svg
               fill="#aa7942"
@@ -81,7 +89,9 @@
       >
         <div class="flex items-start justify-between">
           <div class="space-y-3">
-            <p class="text-xs tracking-[0.2em] uppercase text-[#735200]">
+            <p
+              class="text-xs tracking-[0.2em] uppercase text-[var(--primary-color)]"
+            >
               Hours
             </p>
 
@@ -94,7 +104,7 @@
           </div>
 
           <div
-            class="text-[#735200] opacity-40 group-hover:opacity-80 transition"
+            class="text-[var(--primary-color)] opacity-40 group-hover:opacity-80 transition"
           >
             <svg
               fill="#aa7942"
@@ -128,7 +138,9 @@
       >
         <div class="flex items-start justify-between">
           <div class="space-y-3">
-            <p class="text-xs tracking-[0.2em] uppercase text-[#735200]">
+            <p
+              class="text-xs tracking-[0.2em] uppercase text-[var(--primary-color)]"
+            >
               Contact
             </p>
 
@@ -141,7 +153,7 @@
           </div>
 
           <div
-            class="text-[#735200] opacity-40 group-hover:opacity-80 transition"
+            class="text-[var(--primary-color)] opacity-40 group-hover:opacity-80 transition"
           >
             <svg
               fill="#aa7942"
@@ -168,16 +180,16 @@
     </div>
 
     <div
-      class="md:hidden max-w-6xl h-[1px] bg-[#735200] opacity-60 my-20"
+      class="md:hidden max-w-6xl h-[1px] bg-[var(--primary-color)] opacity-60 my-20"
     ></div>
 
     <!-- RIGHT: FORM (FRAMED) -->
     <div
-      class="w-full bg-white border border-[#e5e0d8] py-12 px-16 md:p-14 shadow-[0_10px_40px_rgba(0,0,0,0.05)] space-y-8"
+      class="w-full bg-white border border-[#e5e0d8] md:p-14 py-14 px-12 shadow-[0_10px_40px_rgba(0,0,0,0.05)] space-y-6"
     >
       <div class="space-y-3">
-        <h2 class="text-2xl font-serif">Send a Message</h2>
-        <div class="w-10 h-[1px] bg-[#735200] opacity-60"></div>
+        <h2 class="text-2xl font-serif text-amber-900">Send a Message</h2>
+        <div class="w-10 h-[1px] bg-[var(--primary-color)] opacity-60"></div>
       </div>
 
       <form class="space-y-3">
@@ -186,12 +198,12 @@
             type="text"
             id="fullName"
             placeholder=" "
-            class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[#735200]"
+            class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
             required
           />
           <label
             for="fullName"
-            class="cursor-auto absolute left-4 top-5 mt-4 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:left-1 peer-focus:scale-95 peer-[&:not(:placeholder-shown)]:left-1 peer-[&:not(:placeholder-shown)]:scale-95 peer-[&:not(:placeholder-shown)]:top-[-1rem] ease-out duration-200 peer-focus:top-[-1rem] peer-focus:text-xs peer-focus:text-[#735200] peer-[&:not(:placeholder-shown)]:top-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-[#735200]"
+            class="cursor-auto absolute left-4 top-5 mt-4 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:left-1 peer-focus:scale-95 peer-[&:not(:placeholder-shown)]:left-1 peer-[&:not(:placeholder-shown)]:scale-95 peer-[&:not(:placeholder-shown)]:top-[-1rem] ease-out duration-200 peer-focus:top-[-1rem] peer-focus:text-xs peer-focus:text-[var(--primary-color)] peer-[&:not(:placeholder-shown)]:top-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-[var(--primary-color)]"
           >
             Full Name
           </label>
@@ -199,7 +211,7 @@
         <!-- <input
           type="text"
           placeholder="Full Name"
-          class="w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[#735200]"
+          class="w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
         /> -->
 
         <div class="relative w-full pt-5">
@@ -207,12 +219,12 @@
             type="email"
             id="emailAddress"
             placeholder=" "
-            class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[#735200]"
+            class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
             required
           />
           <label
             for="emailAddress"
-            class="cursor-auto absolute left-4 top-5 mt-4 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:left-1 peer-focus:scale-95 peer-[&:not(:placeholder-shown)]:left-1 peer-[&:not(:placeholder-shown)]:scale-95 peer-[&:not(:placeholder-shown)]:top-[-1rem] ease-out duration-200 peer-focus:top-[-1rem] peer-focus:text-xs peer-focus:text-[#735200] peer-[&:not(:placeholder-shown)]:top-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-[#735200]"
+            class="cursor-auto absolute left-4 top-5 mt-4 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:left-1 peer-focus:scale-95 peer-[&:not(:placeholder-shown)]:left-1 peer-[&:not(:placeholder-shown)]:scale-95 peer-[&:not(:placeholder-shown)]:top-[-1rem] ease-out duration-200 peer-focus:top-[-1rem] peer-focus:text-xs peer-focus:text-[var(--primary-color)] peer-[&:not(:placeholder-shown)]:top-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-[var(--primary-color)]"
           >
             Email Address
           </label>
@@ -221,7 +233,7 @@
         <!-- <input
           type="email"
           placeholder="Email Address"
-          class="w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[#735200]"
+          class="w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
         /> -->
 
         <div class="relative w-full pt-5 transition-all duration-500">
@@ -229,7 +241,7 @@
             rows="2"
             placeholder=" "
             id="message"
-            class="leading-6 peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[#735200] resize-none overflow-hidden transition-all duration-500"
+            class="leading-6 peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)] resize-none overflow-hidden transition-all duration-500"
             maxlength="500"
             oninput="autoResize(this)"
             required
@@ -237,7 +249,7 @@
 
           <label
             for="message"
-            class="cursor-auto absolute left-4 top-5 mt-4 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:left-1 peer-focus:scale-95 peer-[&:not(:placeholder-shown)]:left-1 peer-[&:not(:placeholder-shown)]:scale-95 peer-[&:not(:placeholder-shown)]:top-[-1rem] ease-out duration-200 peer-focus:top-[-1rem] peer-focus:text-xs peer-focus:text-[#735200] peer-[&:not(:placeholder-shown)]:top-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-[#735200]"
+            class="cursor-auto absolute left-4 top-5 mt-4 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:left-1 peer-focus:scale-95 peer-[&:not(:placeholder-shown)]:left-1 peer-[&:not(:placeholder-shown)]:scale-95 peer-[&:not(:placeholder-shown)]:top-[-1rem] ease-out duration-200 peer-focus:top-[-1rem] peer-focus:text-xs peer-focus:text-[var(--primary-color)] peer-[&:not(:placeholder-shown)]:top-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-[var(--primary-color)]"
           >
             Message
           </label>
@@ -246,11 +258,11 @@
         <!-- <textarea
           rows="4"
           placeholder="Message"
-          class="w-full border-b border-gray-300 p-3 resize-none focus:outline-none focus:border-[#735200]"
+          class="w-full border-b border-gray-300 p-3 resize-none focus:outline-none focus:border-[var(--primary-color)]"
         ></textarea> -->
         <div class="pt-5">
           <button
-            class="px-10 py-3 border border-[#735200] text-[#735200] uppercase tracking-[0.15em] text-sm transition hover:bg-[#735200] hover:text-white"
+            class="px-10 py-3 border border-[var(--primary-color)] text-[var(--primary-color)] uppercase tracking-[0.15em] text-sm transition hover:bg-[var(--primary-color)] hover:text-white"
           >
             Send Message
           </button>
@@ -260,10 +272,26 @@
   </div>
 </section>
 
+<section
+  class="md:hidden py-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
+>
+  <!-- <div class="max-w-5xl mx-auto p-0 md:px-6 items-center text-center italic">
+    Text here
+  </div> -->
+</section>
+
 <section class="py-20 bg-[#faf9f7] text-center">
   <p class="text-xl font-serif text-gray-600 max-w-2xl mx-auto">
     We look forward to welcoming you.
   </p>
+</section>
+
+<section
+  class="md:hidden py-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
+>
+  <!-- <div class="max-w-5xl mx-auto p-0 md:px-6 items-center text-center italic">
+    Text here
+  </div> -->
 </section>
 
 <section class="py-20">

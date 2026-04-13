@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Viaoda+Libre&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
@@ -55,7 +55,7 @@
 
             <!-- Desktop Links -->
             <div
-              class="nav-links hidden md:flex items-center min-[750px]:max-[790px]:gap-5 gap-8 lg:gap-10 transition-all duration-300"
+              class="nav-links hidden md:flex items-center min-[750px]:max-[780px]:gap-5 gap-8 lg:gap-10 transition-all duration-300 text-md"
             >
               <button
                 onclick="loadPage('pages/menu.html')"
@@ -86,7 +86,7 @@
           <!-- Reservation Button -->
           <button
             onclick="loadPage('pages/reservation.html')"
-            class="hidden md:block px-5 md:px-6 py-2.5 md:py-3 text-xs md:text-sm reservation-btn border border-[#735200] text-[#735200] transition-all duration-300 hover:bg-[#735200] hover:text-white hover:border-transparent tracking-[0.12em] uppercase font-medium"
+            class="hidden md:block px-5 md:px-6 py-2.5 md:py-3 text-xs md:text-sm reservation-btn border border-[var(--primary-color)] text-[var(--primary-color)] transition-all duration-300 hover:bg-[var(--primary-color)] hover:text-white hover:border-transparent tracking-[0.12em] uppercase font-medium"
             id="reservation-button"
           >
             Make a Reservation
@@ -100,7 +100,7 @@
           >
             <svg
               id="menuIcon"
-              class="w-7 h-7 text-[#735200]"
+              class="w-7 h-7 text-[var(--primary-color)]"
               viewBox="0 0 24 24"
               fill="none"
             >
@@ -130,10 +130,13 @@
         </div>
 
         <!-- Mobile Navigation -->
-        <div id="mobileMenu" class="nav-links md:hidden py-2 space-y-1">
+        <div
+          id="mobileMenu"
+          class="nav-links md:hidden py-2 px-4 space-y-1 text-md"
+        >
           <button
             onclick="loadPage('pages/menu.html')"
-            class="brightness-150 primary-hover-text block w-full text-left py-3 px-4 cursor-pointer transition"
+            class="primary-hover-text block w-full text-center py-3 px-4 cursor-pointer transition rounded-none"
             id="menu-button"
           >
             Menu
@@ -141,7 +144,7 @@
 
           <button
             onclick="loadPage('pages/events.html')"
-            class="brightness-150 primary-hover-text block w-full text-left py-3 px-4 cursor-pointer transition"
+            class="primary-hover-text block w-full text-center py-3 px-4 cursor-pointer transition rounded-none"
             id="events-button"
           >
             Events
@@ -149,7 +152,7 @@
 
           <button
             onclick="loadPage('pages/contact.html')"
-            class="brightness-150 primary-hover-text block w-full text-left py-3 px-4 cursor-pointer transition"
+            class="primary-hover-text block w-full text-center py-3 px-4 cursor-pointer transition rounded-none"
             id="contact-button"
           >
             Contact
@@ -169,7 +172,10 @@
     </div>
 
     <!-- Footer -->
-    <footer class="w-full bg-[#463D2E] text-gray-300 py-10 px-4 md:px-6">
+    <section
+      class="py-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
+    ></section>
+    <footer class="w-full bg-[var(--dark-bg)] text-gray-300 py-10 px-4 md:px-6">
       <div class="max-w-5xl mx-auto flex flex-wrap justify-between gap-6">
         <div
           class="flex flex-col items-center sm:items-start flex-1 min-w-[180px] sm:flex-[1_1_48%] md:flex-[1_1_22%]"

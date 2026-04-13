@@ -57,6 +57,13 @@ body {
   font-style: normal;
 }
 
+p {
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* For Chrome, Safari, and Opera */
 html::-webkit-scrollbar {
   display: none;

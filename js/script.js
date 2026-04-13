@@ -108,6 +108,16 @@ function toggleFAQ(button) {
 
 function updateActiveButtonMobile() {
   const currentPath = window.location.pathname;
+  const backgroundCSSactive = "#faf9f7";
+  const backgroundCSSinactive = "#ffffff";
+  const fontWeightCSSactive = "bold";
+  const fontWeightCSSinactive = "normal";
+  const borderCSSinactive = "1px solid transparent";
+  const borderCSSactive = "1px solid var(--primary-color)";
+  const cursorCSSactive = "default";
+  const cursorCSSinactive = "pointer";
+  const colorCSSactive = "var(--primary-color)";
+  const colorCSSinactive = "var(--gray-400)";
 
   const pageMap = {
     "/menu": "#mobileMenu > button#menu-button",
@@ -118,9 +128,12 @@ function updateActiveButtonMobile() {
   Object.values(pageMap).forEach((selector) => {
     const button = document.querySelector(selector);
     if (button) {
-      button.style.fontWeight = "normal";
-      button.style.borderLeft = "1px solid transparent";
-      button.style.cursor = "pointer";
+      // inactive
+      button.style.fontWeight = fontWeightCSSinactive;
+      button.style.border = borderCSSinactive;
+      button.style.cursor = cursorCSSinactive;
+      button.style.backgroundColor = backgroundCSSinactive;
+      button.style.color = colorCSSinactive;
     }
   });
 
@@ -128,15 +141,22 @@ function updateActiveButtonMobile() {
   if (activeButtonSelector) {
     const activeButton = document.querySelector(activeButtonSelector);
     if (activeButton) {
-      activeButton.style.fontWeight = "bold";
-      activeButton.style.borderLeft = "1px solid var(--primary-color)";
-      activeButton.style.cursor = "default";
+      // active
+      activeButton.style.fontWeight = fontWeightCSSactive;
+      activeButton.style.border = borderCSSactive;
+      activeButton.style.cursor = cursorCSSactive;
+      activeButton.style.backgroundColor = backgroundCSSactive;
+      activeButton.style.color = colorCSSactive;
     }
   }
 }
 
 function updateActiveButton() {
   const currentPath = window.location.pathname;
+  const colorCSSactive = "var(--primary-color)";
+  const colorCSSinactive = "var(--gray-700)";
+  const fontWeightCSSactive = "bold";
+  const fontWeightCSSinactive = "normal";
 
   const pageMap = {
     "/menu": "menu-button",
@@ -148,7 +168,8 @@ function updateActiveButton() {
     const button = document.getElementById(id);
     if (button) {
       //   button.style.borderBottom = "none";
-      button.style.fontWeight = "normal";
+      button.style.fontWeight = fontWeightCSSinactive;
+      button.style.color = colorCSSinactive;
     }
   });
 
@@ -157,7 +178,8 @@ function updateActiveButton() {
     const activeButton = document.getElementById(activeButtonId);
     if (activeButton) {
       //   activeButton.style.borderBottom = "2px solid #1F2937";
-      activeButton.style.fontWeight = "bold";
+      activeButton.style.fontWeight = fontWeightCSSactive;
+      activeButton.style.color = colorCSSactive;
     }
   }
 }
@@ -169,7 +191,19 @@ function autoResize(el) {
   const maxLines = 6; // adjust if you want
   const maxHeight = lineHeight * maxLines;
 
-  el.style.height = Math.min(el.scrollHeight, maxHeight) + "px";
+  el.style.height = Math.min(el.scrollHeight, maxHeight) + 2 + "px";
+
+  this.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault(); // Prevents the creation of a new line
+    }
+    // this.value = this.value.replace(/[\r\n]+/g, "");
+  });
+
+  //   this.addEventListener("input", function () {
+  //     // Removes all new line characters globally
+  //     this.value = this.value.replace(/[\r\n]+/g, "");
+  //   });
 }
 
 function initMenuNav() {

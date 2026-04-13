@@ -46,15 +46,12 @@
 </section>
 
 <section
-  class="md:py-3 py-2 bg-gradient-to-r from-[#735200] via-[#a67c00] to-[#c6a85b] text-white"
->
-  <!-- <div class="max-w-5xl mx-auto p-0 md:px-6 items-center text-center italic">
-    Text here
-  </div> -->
-</section>
+  class="py-2 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
+></section>
 
+<!-- img / text section -->
 <section
-  class="md:py-16 py-0 bg-gradient-to-tl from-[#faf9f7] via-[#f3efe6] to-[#eae3d6]"
+  class="md:py-16 py-0 bg-gradient-to-t from-[#faf9f7] via-[#f3efe6] to-[#eae3d6]"
 >
   <div
     class="max-w-6xl mx-auto p-0 md:px-6 grid md:grid-cols-2 gap-16 items-center"
@@ -78,7 +75,7 @@
       class="space-y-6 text-left md:text-left md:pt-0 pt-3 md:px-0 px-[9%] md:pb-0 pb-20"
     >
       <p
-        class="text-xs tracking-[0.25em] uppercase text-[#735200] text-shadow-lg"
+        class="text-xs tracking-[0.25em] uppercase text-[var(--primary-color)] text-shadow-lg"
       >
         Our Experienceeee
       </p>
@@ -100,17 +97,23 @@
 </section>
 
 <!-- MENU PREVIEW HERE (SLIDER) -->
-<section class="py-28 bg-[#faf9f7]">
+<section class="py-28 bg-gradient-to-b from-[#faf9f7] to-[#ffffff]">
   <div class="max-w-6xl mx-auto px-5 space-y-16">
     <!-- Header -->
     <div class="text-center space-y-4">
-      <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">Our Menu</p>
+      <p
+        class="text-xs tracking-[0.25em] uppercase text-[var(--primary-color)]"
+      >
+        Our Menu
+      </p>
 
-      <h2 class="text-4xl md:text-5xl font-serif text-[#735200]">
+      <h2 class="text-4xl md:text-5xl font-serif text-amber-900">
         Featured Selections
       </h2>
 
-      <div class="w-12 h-[1px] bg-[#735200] mx-auto opacity-60"></div>
+      <div
+        class="w-12 h-[1px] bg-[var(--primary-color)] mx-auto opacity-60"
+      ></div>
     </div>
 
     <!-- Swiper -->
@@ -190,7 +193,7 @@
     <div class="text-center pt-6">
       <button
         onclick="loadPage('pages/menu.html')"
-        class="px-8 py-3 border border-[#735200] text-[#735200] uppercase tracking-[0.15em] text-sm transition hover:bg-[#735200] hover:text-white"
+        class="px-8 py-3 border border-[var(--primary-color)] text-[var(--primary-color)] uppercase tracking-[0.15em] text-sm transition hover:bg-[var(--primary-color)] hover:text-white"
       >
         View Full Menu
       </button>
@@ -198,18 +201,24 @@
   </div>
 </section>
 
-<!-- Featured Section -->
+<!-- Crafted with intention -->
 <section class="py-24 px-12">
   <div class="max-w-5xl mx-auto px-4 space-y-16">
     <!-- Header -->
     <div class="text-center space-y-4">
-      <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">
+      <p
+        class="text-xs tracking-[0.25em] uppercase text-[var(--primary-color)]"
+      >
         Our Philosophy
       </p>
 
-      <h2 class="text-4xl md:text-5xl font-serif">Crafted With Intention</h2>
+      <h2 class="text-4xl md:text-5xl font-serif text-amber-900">
+        Crafted With Intention
+      </h2>
 
-      <div class="w-12 h-[1px] bg-[#735200] mx-auto opacity-60"></div>
+      <div
+        class="w-12 h-[1px] bg-[var(--primary-color)] mx-auto opacity-60"
+      ></div>
 
       <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed">
         Every detail—from ingredient selection to atmosphere—is carefully
@@ -259,6 +268,7 @@
   </div>
 </section>
 
+<!-- parallax -->
 <section class="relative overflow-hidden">
   <div
     id="parallaxBg"
@@ -267,13 +277,13 @@
   ></div>
 
   <section
-    class="relative md:py-3 py-2 bg-gradient-to-r from-[#735200] via-[#a67c00] to-[#c6a85b] text-white"
+    class="relative py-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
   ></section>
 
   <div
     class="relative z-10 max-w-3xl md:my-20 mt-0 mb-0 mx-auto p-10 bg-white/80 backdrop-blur-md md:rounded-md rounded-none text-center"
   >
-    <h2 class="text-4xl md:text-5xl font-bold text-[#735200] my-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-amber-900 my-4">
       Contact Us
     </h2>
     <p class="text-gray-800 mb-6">
@@ -282,14 +292,14 @@
     </p>
     <button
       onclick="loadPage('pages/contact.html')"
-      class="px-6 py-3 border border-[#735200] text-[#735200] rounded-sm transition-all duration-300 ease-in-out hover:bg-[#735200] hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+      class="px-6 py-3 border border-[var(--primary-color)] text-[var(--primary-color)] rounded-sm transition-all duration-300 ease-in-out hover:bg-[var(--primary-color)] hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
     >
       Contact Us
     </button>
   </div>
 
   <section
-    class="relative md:py-3 py-2 bg-gradient-to-r from-[#735200] via-[#a67c00] to-[#c6a85b] text-white"
+    class="relative py-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
   ></section>
 </section>
 
@@ -300,15 +310,19 @@
   <div class="max-w-6xl mx-auto px-6 space-y-20">
     <!-- Header -->
     <div class="text-center space-y-4">
-      <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">
+      <p
+        class="text-xs tracking-[0.25em] uppercase text-[var(--primary-color)]"
+      >
         Gatherings
       </p>
 
-      <h2 class="text-4xl md:text-5xl font-serif text-[#735200]">
+      <h2 class="text-4xl md:text-5xl font-serif text-amber-900">
         Events & Private Dining
       </h2>
 
-      <div class="w-12 h-[1px] bg-[#735200] mx-auto opacity-60"></div>
+      <div
+        class="w-12 h-[1px] bg-[var(--primary-color)] mx-auto opacity-60"
+      ></div>
     </div>
 
     <!-- Main Feature -->
@@ -318,7 +332,7 @@
         class="space-y-6 md:text-left order-2 md:order-1 md:pt-0 pt-3 md:px-0 px-[7%]"
       >
         <p
-          class="text-xs tracking-[0.25em] uppercase text-[#735200] text-shadow-lg"
+          class="text-xs tracking-[0.25em] uppercase text-[var(--primary-color)] text-shadow-lg"
         >
           Our Experienceeee
         </p>
@@ -338,7 +352,7 @@
 
         <button
           onclick="loadPage('pages/events.html')"
-          class="px-8 py-3 border border-[#735200] text-[#735200] uppercase tracking-[0.15em] text-sm transition hover:bg-[#735200] hover:text-white"
+          class="px-8 py-3 border border-[var(--primary-color)] text-[var(--primary-color)] uppercase tracking-[0.15em] text-sm transition hover:bg-[var(--primary-color)] hover:text-white"
         >
           Explore Events
         </button>
@@ -380,13 +394,16 @@
   </div>
 </section>
 
+<!-- FAQ -->
 <section
   class="bg-gradient-to-t from-[#faf9f7] via-[#f3efe6] to-[#eae3d6] py-28 px-6"
 >
   <div class="max-w-3xl mx-auto space-y-16">
     <!-- Header -->
     <div class="text-center space-y-4">
-      <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">
+      <p
+        class="text-xs tracking-[0.25em] uppercase text-[var(--primary-color)]"
+      >
         Information
       </p>
 
@@ -396,7 +413,9 @@
         Frequently Asked Questions
       </h2>
 
-      <div class="w-12 h-[1px] bg-[#735200] mx-auto opacity-60"></div>
+      <div
+        class="w-12 h-[1px] bg-[var(--primary-color)] mx-auto opacity-60"
+      ></div>
     </div>
 
     <!-- FAQ -->
@@ -412,7 +431,7 @@
           </span>
 
           <span
-            class="faq-icon text-[#735200] text-2xl transition-transform duration-300 group-hover:rotate-12"
+            class="faq-icon text-[var(--primary-color)] text-2xl transition-transform duration-300 group-hover:rotate-12"
           >
             +
           </span>
@@ -437,7 +456,7 @@
           <span class="font-medium text-gray-800 text-lg"> Question 2 </span>
 
           <span
-            class="faq-icon text-[#735200] text-2xl transition-transform duration-300 group-hover:rotate-12"
+            class="faq-icon text-[var(--primary-color)] text-2xl transition-transform duration-300 group-hover:rotate-12"
           >
             +
           </span>
@@ -459,7 +478,7 @@
           <span class="font-medium text-gray-800 text-lg"> Question 3 </span>
 
           <span
-            class="faq-icon text-[#735200] text-2xl transition-transform duration-300 group-hover:rotate-12"
+            class="faq-icon text-[var(--primary-color)] text-2xl transition-transform duration-300 group-hover:rotate-12"
           >
             +
           </span>
@@ -475,17 +494,24 @@
   </div>
 </section>
 
+<!-- guest experience -->
 <section class="pb-28 pt-16 bg-[#faf9f7]">
   <div class="max-w-5xl mx-auto md:px-4 px-8 space-y-20">
     <!-- Header -->
     <div class="text-center space-y-4">
-      <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">
+      <p
+        class="text-xs tracking-[0.25em] uppercase text-[var(--primary-color)]"
+      >
         Guest Experience
       </p>
 
-      <h2 class="text-4xl md:text-5xl font-serif">Words from Our Guests</h2>
+      <h2 class="text-4xl md:text-5xl font-serif text-amber-900">
+        Words from Our Guests
+      </h2>
 
-      <div class="w-12 h-[1px] bg-[#735200] mx-auto opacity-60"></div>
+      <div
+        class="w-12 h-[1px] bg-[var(--primary-color)] mx-auto opacity-60"
+      ></div>
     </div>
 
     <!-- Testimonials -->
@@ -535,6 +561,7 @@
   </div>
 </section>
 
+<!-- parallax -->
 <section class="relative overflow-hidden">
   <div
     id="parallaxBg"
@@ -542,12 +569,12 @@
     style="background-image: url(&quot;logo/download.jpeg&quot;)"
   ></div>
   <section
-    class="relative md:py-3 py-2 bg-gradient-to-r from-[#735200] via-[#a67c00] to-[#c6a85b] text-white"
+    class="relative py-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
   ></section>
   <div
     class="relative z-10 max-w-3xl md:my-20 mt-0 mb-0 mx-auto p-10 bg-white/80 backdrop-blur-md md:rounded-md rounded-none text-center"
   >
-    <h2 class="text-4xl md:text-5xl font-bold text-[#735200] my-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-amber-900 my-4">
       Final CTA
     </h2>
     <p class="text-gray-800 mb-6">
@@ -556,27 +583,34 @@
     </p>
     <button
       onclick="loadPage('pages/menu.html')"
-      class="px-6 py-3 border border-[#735200] text-[#735200] rounded-sm transition-all duration-300 ease-in-out hover:bg-[#735200] hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+      class="px-6 py-3 border border-[var(--primary-color)] text-[var(--primary-color)] rounded-sm transition-all duration-300 ease-in-out hover:bg-[var(--primary-color)] hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
     >
       Plan your Evening
     </button>
   </div>
   <section
-    class="relative md:py-3 py-2 bg-gradient-to-r from-[#735200] via-[#a67c00] to-[#c6a85b] text-white"
+    class="relative py-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
   ></section>
 </section>
 
+<!-- mailing list -->
 <section class="bg-[#faf9f7] py-20 px-6">
   <div class="max-w-2xl mx-auto text-center space-y-10">
     <!-- Header -->
     <div class="space-y-4">
-      <p class="text-xs tracking-[0.25em] uppercase text-[#735200]">Updates</p>
+      <p
+        class="text-xs tracking-[0.25em] uppercase text-[var(--primary-color)]"
+      >
+        Updates
+      </p>
 
-      <h2 class="text-4xl md:text-5xl font-serif text-[#735200]">
+      <h2 class="text-4xl md:text-5xl font-serif text-amber-900">
         Join Our Mailing List
       </h2>
 
-      <div class="w-12 h-[1px] bg-[#735200] mx-auto opacity-60"></div>
+      <div
+        class="w-12 h-[1px] bg-[var(--primary-color)] mx-auto opacity-60"
+      ></div>
     </div>
 
     <!-- Description -->
@@ -590,12 +624,12 @@
       <input
         type="email"
         placeholder="Email address"
-        class="w-full sm:flex-1 px-4 py-3 border-b border-[#e5e0d8] bg-transparent text-gray-700 focus:outline-none focus:border-[#735200] transition"
+        class="w-full sm:flex-1 px-4 py-3 border-b border-[#e5e0d8] bg-transparent text-gray-700 focus:outline-none focus:border-[var(--primary-color)] transition"
       />
 
       <button
         type="submit"
-        class="px-8 py-3 border border-[#735200] text-[#735200] uppercase tracking-[0.15em] text-sm transition hover:bg-[#735200] hover:text-white"
+        class="px-8 py-3 border border-[var(--primary-color)] text-[var(--primary-color)] uppercase tracking-[0.15em] text-sm transition hover:bg-[var(--primary-color)] hover:text-white"
       >
         Subscribe
       </button>
