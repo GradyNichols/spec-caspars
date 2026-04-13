@@ -109,7 +109,7 @@ function toggleFAQ(button) {
 function updateActiveButtonMobile() {
   const currentPath = window.location.pathname;
   const backgroundCSSactive = "#faf9f7";
-  const backgroundCSSinactive = "#ffffff";
+  const backgroundCSSinactive = "transparent";
   const fontWeightCSSactive = "bold";
   const fontWeightCSSinactive = "normal";
   const borderCSSinactive = "1px solid transparent";
@@ -129,6 +129,7 @@ function updateActiveButtonMobile() {
     const button = document.querySelector(selector);
     if (button) {
       // inactive
+      button.classList.remove("shadow-md");
       button.style.fontWeight = fontWeightCSSinactive;
       button.style.border = borderCSSinactive;
       button.style.cursor = cursorCSSinactive;
@@ -142,6 +143,7 @@ function updateActiveButtonMobile() {
     const activeButton = document.querySelector(activeButtonSelector);
     if (activeButton) {
       // active
+      activeButton.classList.toggle("shadow-md");
       activeButton.style.fontWeight = fontWeightCSSactive;
       activeButton.style.border = borderCSSactive;
       activeButton.style.cursor = cursorCSSactive;
@@ -420,16 +422,63 @@ async function loadPage(pageUrl, pushState = true) {
     setTimeout(() => initMenuNav(), 150);
 
     // Navbar style behavior depends on page
+    // handleMediaNavbar(mobile);
+
     const navbar = document.getElementById("navbar");
+    matchDesktop = window.matchMedia("(min-width: 768px)");
+
     if (navbar) {
-      if (currentPage === "home") {
-        navbar.style.backgroundColor = "rgba(255,255,255, 0)";
-        navbar.style.color = "white";
+      //handleMediaNavbar(mobile, navbar, currentPage);
+      if (matchDesktop.matches) {
+        if (currentPage === "home") {
+          navbar.style.backgroundColor = "rgba(255,255,255, 0)";
+          navbar.style.color = "white";
+        } else {
+          navbar.style.backgroundColor = "rgba(255,255,255, 1)";
+          navbar.style.color = "black";
+        }
       } else {
-        navbar.style.backgroundColor = "rgba(255,255,255, 1)";
-        navbar.style.color = "black";
+        if (currentPage === "home") {
+          navbar.style.backgroundColor = "rgba(255,255,255, 0)";
+          navbar.style.color = "white";
+        } else {
+          navbar.style.backgroundColor = "rgba(255,255,255, 1)";
+          navbar.style.color = "black";
+        }
       }
     }
+
+    matchDesktop.addEventListener("change", (e) => {
+      if (e.matches) {
+        if (currentPage === "home") {
+          navbar.style.backgroundColor = "rgba(255,255,255, 0)";
+          navbar.style.color = "white";
+        } else {
+          navbar.style.backgroundColor = "rgba(255,255,255, 1)";
+          navbar.style.color = "black";
+        }
+      } else {
+        if (currentPage === "home") {
+          navbar.style.backgroundColor = "rgba(255,255,255, 0)";
+          navbar.style.color = "white";
+        } else {
+          navbar.style.backgroundColor = "rgba(255,255,255, 1)";
+          navbar.style.color = "black";
+        }
+      }
+
+      const scrollPosition = window.scrollY;
+      const maxScroll = 50; // Pixels to scroll before navbar becomes fully opaque
+
+      if (scrollPosition < maxScroll) {
+        const opacity = scrollPosition / maxScroll;
+        navbar.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`;
+        navbar.style.color = "white";
+      } else {
+        navbar.style.backgroundColor = "rgba(255, 255, 255, 1)";
+        navbar.style.color = "black";
+      }
+    });
 
     // Setup form handlers for the newly loaded content
     setupFormHandlers();
