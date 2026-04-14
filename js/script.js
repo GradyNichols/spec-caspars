@@ -425,60 +425,17 @@ async function loadPage(pageUrl, pushState = true) {
     // handleMediaNavbar(mobile);
 
     const navbar = document.getElementById("navbar");
-    matchDesktop = window.matchMedia("(min-width: 768px)");
+    //matchDesktop = window.matchMedia("(min-width: 768px)");
 
     if (navbar) {
-      //handleMediaNavbar(mobile, navbar, currentPage);
-      if (matchDesktop.matches) {
-        if (currentPage === "home") {
-          navbar.style.backgroundColor = "rgba(255,255,255, 0)";
-          navbar.style.color = "white";
-        } else {
-          navbar.style.backgroundColor = "rgba(255,255,255, 1)";
-          navbar.style.color = "black";
-        }
-      } else {
-        if (currentPage === "home") {
-          navbar.style.backgroundColor = "rgba(255,255,255, 0)";
-          navbar.style.color = "white";
-        } else {
-          navbar.style.backgroundColor = "rgba(255,255,255, 1)";
-          navbar.style.color = "black";
-        }
-      }
-    }
-
-    matchDesktop.addEventListener("change", (e) => {
-      if (e.matches) {
-        if (currentPage === "home") {
-          navbar.style.backgroundColor = "rgba(255,255,255, 0)";
-          navbar.style.color = "white";
-        } else {
-          navbar.style.backgroundColor = "rgba(255,255,255, 1)";
-          navbar.style.color = "black";
-        }
-      } else {
-        if (currentPage === "home") {
-          navbar.style.backgroundColor = "rgba(255,255,255, 0)";
-          navbar.style.color = "white";
-        } else {
-          navbar.style.backgroundColor = "rgba(255,255,255, 1)";
-          navbar.style.color = "black";
-        }
-      }
-
-      const scrollPosition = window.scrollY;
-      const maxScroll = 50; // Pixels to scroll before navbar becomes fully opaque
-
-      if (scrollPosition < maxScroll) {
-        const opacity = scrollPosition / maxScroll;
-        navbar.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`;
+      if (currentPage === "home") {
+        navbar.style.backgroundColor = "rgba(255,255,255, 0)";
         navbar.style.color = "white";
       } else {
-        navbar.style.backgroundColor = "rgba(255, 255, 255, 1)";
+        navbar.style.backgroundColor = "rgba(255,255,255, 1)";
         navbar.style.color = "black";
       }
-    });
+    }
 
     // Setup form handlers for the newly loaded content
     setupFormHandlers();
@@ -520,6 +477,7 @@ function animateMenuIcon(isOpen) {
 function toggleMobileMenu() {
   const mobileMenu = document.getElementById("mobileMenu");
   const overlay = document.getElementById("overlay");
+  const navbar = document.getElementById("navbar");
 
   const isOpen = mobileMenu.classList.contains("menu-open");
 
@@ -528,6 +486,8 @@ function toggleMobileMenu() {
   if (isOpen) {
     closeMobileMenu();
   } else {
+    navbar.style.backgroundColor = "rgba(255,255,255, 1)";
+    navbar.style.color = "black";
     if (mobileMenu) {
       mobileMenu.classList.add("menu-open");
     }
@@ -541,8 +501,12 @@ function toggleMobileMenu() {
 function closeMobileMenu() {
   const mobileMenu = document.getElementById("mobileMenu");
   const overlay = document.getElementById("overlay");
+  const navbar = document.getElementById("navbar");
 
   animateMenuIcon(false);
+
+  //   navbar.style.backgroundColor = "rgba(255,255,255, 0)";
+  //   navbar.style.color = "white";
 
   if (mobileMenu) {
     mobileMenu.classList.remove("menu-open");
@@ -550,6 +514,23 @@ function closeMobileMenu() {
   if (overlay) {
     overlay.classList.remove("opacity-100");
     overlay.classList.add("opacity-0", "pointer-events-none");
+  }
+
+  const scrollPosition = window.scrollY;
+  const maxScroll = 50; // Pixels to scroll before navbar becomes fully opaque
+
+  if (scrollPosition < maxScroll) {
+    const opacity = scrollPosition / maxScroll;
+    if (currentPage === "home") {
+      navbar.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`;
+      navbar.style.color = "white";
+    } else {
+      navbar.style.backgroundColor = "rgba(255, 255, 255, 1)";
+      navbar.style.color = "black";
+    }
+  } else {
+    navbar.style.backgroundColor = "rgba(255, 255, 255, 1)";
+    navbar.style.color = "black";
   }
 }
 

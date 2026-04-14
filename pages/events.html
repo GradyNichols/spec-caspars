@@ -47,7 +47,7 @@
     class="max-w-6xl mx-auto p-0 md:px-6 grid md:grid-cols-2 gap-16 items-center"
   >
     <div class="relative group">
-      <div class="overflow-hidden rounded-none">
+      <div class="overflow-hidden md:rounded-sm rounded-none">
         <img
           src="logo/download.jpeg"
           alt="Dining Experience"
@@ -295,7 +295,11 @@
       </div>
 
       <!-- Form -->
-      <form class="space-y-6">
+      <form
+        action="https://formspree.io/f/xaqawajp"
+        method="POST"
+        class="space-y-6"
+      >
         <!-- Row -->
         <div class="grid md:grid-cols-2 gap-6">
           <div class="space-y-1">
@@ -303,8 +307,10 @@
               <input
                 type="text"
                 id="fullName"
+                name="name"
                 placeholder=" "
                 class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
+                required
               />
               <label
                 for="fullName"
@@ -320,8 +326,10 @@
               <input
                 type="email"
                 id="emailAddress"
+                name="email"
                 placeholder=" "
                 class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
+                required
               />
               <label
                 for="emailAddress"
@@ -340,6 +348,7 @@
               <input
                 type="tel"
                 id="phoneNumber"
+                name="phoneNumber"
                 placeholder=" "
                 class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
                 required
@@ -358,6 +367,7 @@
               <input
                 type="number"
                 id="guestCount"
+                name="guestCount"
                 placeholder=" "
                 class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
               />
@@ -378,6 +388,7 @@
               <input
                 type="date"
                 id="date"
+                name="date"
                 value=""
                 class="peer appearance-none brightness-100 color-black w-full border-b border-gray-300 px-3 py-[10px] focus:outline-none focus:border-[var(--primary-color)]"
                 required
@@ -393,7 +404,7 @@
 
           <div class="space-y-1">
             <div class="relative w-full pt-5">
-              <select id="realSelect" class="hidden" required>
+              <select name="eventType" id="realSelect" class="hidden" required>
                 <option value="">Select an option</option>
                 <option value="private">Private Dining</option>
                 <option value="event">Event Booking</option>
@@ -553,7 +564,8 @@
             <textarea
               rows="2"
               placeholder=" "
-              id="message"
+              id="eventDetails"
+              name="eventDetails"
               class="leading-6 peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)] resize-none overflow-hidden transition-all duration-500"
               maxlength="500"
               oninput="autoResize(this)"
@@ -562,7 +574,7 @@
             ></textarea>
 
             <label
-              for="message"
+              for="eventDetails"
               class="cursor-auto absolute left-4 top-5 mt-4 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:left-1 peer-focus:scale-95 peer-[&:not(:placeholder-shown)]:left-1 peer-[&:not(:placeholder-shown)]:scale-95 peer-[&:not(:placeholder-shown)]:top-[-1rem] ease-out duration-200 peer-focus:top-[-1rem] peer-focus:text-xs peer-focus:text-[var(--primary-color)] peer-[&:not(:placeholder-shown)]:top-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-[var(--primary-color)]"
             >
               Event Details
@@ -573,6 +585,7 @@
         <!-- Button -->
         <div class="text-center pt-6">
           <button
+            type="submit"
             class="px-10 py-3 border border-[var(--primary-color)] text-[var(--primary-color)] uppercase tracking-[0.15em] text-sm transition-all duration-300 hover:bg-[var(--primary-color)] hover:text-white"
           >
             Submit Inquiry

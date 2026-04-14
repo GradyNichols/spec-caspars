@@ -79,14 +79,20 @@
       </div>
 
       <!-- Form -->
-      <form class="space-y-8">
+      <form
+        class="space-y-8"
+        action="https://formspree.io/f/xkokwkzd"
+        method="POST"
+      >
         <div class="grid md:grid-cols-2 gap-4">
           <div class="relative w-full pt-5">
             <input
               type="text"
               id="fullName"
+              name="name"
               placeholder=" "
               class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
+              required
             />
             <label
               for="fullName"
@@ -99,6 +105,7 @@
             <div class="relative w-full pt-5">
               <input
                 type="email"
+                name="email"
                 id="emailAddress"
                 placeholder=" "
                 class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
@@ -117,6 +124,7 @@
           <div class="relative w-full pt-5">
             <input
               type="date"
+              name="date"
               id="date"
               value=""
               class="peer appearance-none brightness-100 color-black w-full border-b border-gray-300 px-3 py-[9.5px] focus:outline-none focus:border-[var(--primary-color)]"
@@ -131,7 +139,7 @@
           </div>
           <div class="md:mt-0 mt-4">
             <div class="relative w-full pt-5">
-              <select id="realSelect" class="hidden" required>
+              <select name="partySize" id="realSelect" class="hidden" required>
                 <option value="">Select an option</option>
                 <option value="1-2">1-2 Guests</option>
                 <option value="3-4">3-4 Guests</option>
@@ -223,6 +231,7 @@
           <div class="relative w-full pt-5">
             <input
               type="time"
+              name="reservationTime"
               id="reservationTime"
               class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
               required
@@ -240,6 +249,7 @@
                 rows="2"
                 placeholder=" "
                 id="specialRequests"
+                name="specialRequests"
                 class="leading-6 peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)] resize-none overflow-hidden transition-all duration-500"
                 maxlength="500"
                 oninput="autoResize(this)"
@@ -265,6 +275,7 @@
         <!-- Button -->
         <div class="text-center pt-4">
           <button
+            type="submit"
             class="px-10 py-3 border border-[var(--primary-color)] text-[var(--primary-color)] uppercase tracking-[0.15em] text-sm hover:bg-[var(--primary-color)] hover:text-white transition"
           >
             Submit Request

@@ -192,12 +192,17 @@
         <div class="w-10 h-[1px] bg-[var(--primary-color)] opacity-60"></div>
       </div>
 
-      <form class="space-y-3">
+      <form
+        class="space-y-3"
+        action="https://formspree.io/f/maqawabb"
+        method="POST"
+      >
         <div class="relative w-full pt-5">
           <input
             type="text"
             id="fullName"
             placeholder=" "
+            name="name"
             class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
             required
           />
@@ -219,6 +224,7 @@
             type="email"
             id="emailAddress"
             placeholder=" "
+            name="email"
             class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
             required
           />
@@ -241,6 +247,7 @@
             rows="2"
             placeholder=" "
             id="message"
+            name="message"
             class="leading-6 peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)] resize-none overflow-hidden transition-all duration-500"
             maxlength="500"
             oninput="autoResize(this)"
@@ -262,6 +269,7 @@
         ></textarea> -->
         <div class="pt-5">
           <button
+            type="submit"
             class="px-10 py-3 border border-[var(--primary-color)] text-[var(--primary-color)] uppercase tracking-[0.15em] text-sm transition hover:bg-[var(--primary-color)] hover:text-white"
           >
             Send Message
