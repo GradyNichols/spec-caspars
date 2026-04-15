@@ -309,7 +309,10 @@
                 id="fullName"
                 name="name"
                 placeholder=" "
-                class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
+                class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)] invalid:border-red-600"
+                minlength="2"
+                maxlength="50"
+                pattern="^[A-Za-z\s]+$"
                 required
               />
               <label
@@ -328,7 +331,9 @@
                 id="emailAddress"
                 name="email"
                 placeholder=" "
-                class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
+                class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)] invalid:border-red-600"
+                minlength="6"
+                maxlength="50"
                 required
               />
               <label
@@ -347,10 +352,12 @@
             <div class="relative w-full pt-5">
               <input
                 type="tel"
+                pattern="^[0-9\-\+\s\(\)]{7,20}$"
+                inputmode="tel"
                 id="phoneNumber"
                 name="phoneNumber"
                 placeholder=" "
-                class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
+                class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)] invalid:border-red-600"
                 required
               />
               <label
@@ -363,21 +370,159 @@
           </div>
 
           <div class="space-y-1">
-            <div class="relative w-full pt-5">
-              <input
-                type="number"
-                id="guestCount"
-                name="guestCount"
-                placeholder=" "
-                class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
-              />
+            <div data-select class="relative w-full pt-5">
+              <select name="guestCount" id="guestCount" class="hidden" required>
+                <option value="">Select an option</option>
+                <option value="small">&lt; 10</option>
+                <option value="medium">10-20</option>
+                <option value="large">&gt; 20</option>
+              </select>
+
               <label
                 for="guestCount"
-                class="cursor-auto absolute left-4 top-5 mt-4 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:left-1 peer-focus:scale-95 peer-[&:not(:placeholder-shown)]:left-1 peer-[&:not(:placeholder-shown)]:scale-95 peer-[&:not(:placeholder-shown)]:top-[-1rem] ease-out duration-200 peer-focus:top-[-1rem] peer-focus:text-xs peer-focus:text-[var(--primary-color)] peer-[&:not(:placeholder-shown)]:top-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-[var(--primary-color)]"
+                class="cursor-auto absolute text-[var(--primary-color)] left-1 scale-95 top-0 text-xs peer-invalid:text-red-600"
               >
                 Guest Count
               </label>
+
+              <button
+                type="button"
+                data-trigger
+                class="w-full text-left p-3 border-b border-[#e5e0d8] text-gray-700 flex justify-between items-center focus:outline-none invalid:border-red-600"
+              >
+                <span data-value-display class="text-gray-400">
+                  Select an option
+                </span>
+
+                <span data-arrow class="transition-transform duration-600">
+                  <svg
+                    fill="var(--primary-color)"
+                    width="24px"
+                    height="24px"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    stroke="var(--primary-color)"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <path
+                        d="M12 16a1 1 0 0 1-.707-.293L5.636 10.05A1 1 0 0 1 7.05 8.636l4.95 4.95 4.95-4.95a1 1 0 0 1 1.414 1.414l-5.657 5.657A1 1 0 0 1 12 16z"
+                      ></path>
+                    </g>
+                  </svg>
+                </span>
+              </button>
+
+              <div
+                data-dropdown
+                class="relative w-full m-0 bg-white border-[#e5e0d8] shadow-lg h-0 pointer-events-none transform translate-y-[-20px] transition-all duration-300 z-20"
+              >
+                <div
+                  data-option
+                  data-value="small"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
+                >
+                  &lt; 10
+                </div>
+                <div
+                  data-option
+                  data-value="medium"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
+                >
+                  10-10
+                </div>
+                <div
+                  data-option
+                  data-value="large"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
+                >
+                  &gt; 20
+                </div>
+              </div>
             </div>
+            <!-- <div class="relative w-full pt-5">
+              <select name="guestCount" id="guestCount" class="hidden" required>
+                <option value="">Select an option</option>
+                <option value="small">&lt; 10</option>
+                <option value="medium">10-20</option>
+                <option value="large">&gt; 20</option>
+              </select>
+              <label
+                for="guestCount"
+                class="cursor-auto absolute text-[var(--primary-color)] left-1 scale-95 top-0 text-xs peer-invalid:text-red-600"
+              >
+                Guest Count
+              </label>
+
+              <button
+                type="button"
+                id="selectTrigger"
+                class="w-full text-left p-3 border-b border-[#e5e0d8] text-gray-700 flex justify-between items-center focus:outline-none invalid:border-red-600"
+              >
+                <span id="selectValue" class="text-gray-400">
+                  Select an option
+                </span>
+
+                <span
+                  id="selectArrow"
+                  class="text-[var(--primary-color)] transition-transform duration-600"
+                >
+                  <svg
+                    fill="var(--primary-color)"
+                    width="24px"
+                    height="24px"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    stroke="var(--primary-color)"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <path
+                        d="M12 16a1 1 0 0 1-.707-.293L5.636 10.05A1 1 0 0 1 7.05 8.636l4.95 4.95 4.95-4.95a1 1 0 0 1 1.414 1.414l-5.657 5.657A1 1 0 0 1 12 16z"
+                      ></path>
+                    </g>
+                  </svg>
+                </span>
+              </button>
+              <div
+                id="selectDropdown"
+                class="relative w-full m-0 bg-white border-[#e5e0d8] shadow-lg h-0 pointer-events-none transform translate-y-[-20px] transition-all duration-300 z-20"
+              >
+                <div
+                  data-option
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
+                  data-value="small"
+                >
+                  &lt; 10
+                </div>
+
+                <div
+                  data-option
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-b-none border-[#e5e0d8] cursor-pointer"
+                  data-value="medium"
+                >
+                  10-20
+                </div>
+
+                <div
+                  data-option
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-[#e5e0d8] cursor-pointer"
+                  data-value="large"
+                >
+                  &gt; 20
+                </div>
+              </div>
+            </div> -->
           </div>
         </div>
 
@@ -390,6 +535,7 @@
                 id="date"
                 name="date"
                 value=""
+                min=""
                 class="peer appearance-none brightness-100 color-black w-full border-b border-gray-300 px-3 py-[10px] focus:outline-none focus:border-[var(--primary-color)]"
                 required
               />
@@ -403,7 +549,78 @@
           </div>
 
           <div class="space-y-1">
-            <div class="relative w-full pt-5">
+            <div data-select class="relative w-full pt-5">
+              <select name="eventType" id="eventType" class="hidden" required>
+                <option value="">Select an option</option>
+                <option value="private">Private Dining</option>
+                <option value="event">Event Booking</option>
+                <option value="general">General Inquiry</option>
+              </select>
+              <label
+                for="eventType"
+                class="cursor-auto absolute text-[var(--primary-color)] left-1 scale-95 top-0 text-xs peer-invalid:text-red-600"
+              >
+                Event Type
+              </label>
+              <button
+                type="button"
+                data-trigger
+                class="w-full text-left p-3 border-b border-[#e5e0d8] text-gray-700 flex justify-between items-center focus:outline-none invalid:border-red-600"
+              >
+                <span data-value-display class="text-gray-400">
+                  Select an option
+                </span>
+                <span data-arrow class="transition-transform duration-600">
+                  <svg
+                    fill="var(--primary-color)"
+                    width="24px"
+                    height="24px"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    stroke="var(--primary-color)"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <path
+                        d="M12 16a1 1 0 0 1-.707-.293L5.636 10.05A1 1 0 0 1 7.05 8.636l4.95 4.95 4.95-4.95a1 1 0 0 1 1.414 1.414l-5.657 5.657A1 1 0 0 1 12 16z"
+                      ></path>
+                    </g>
+                  </svg>
+                </span>
+              </button>
+              <div
+                data-dropdown
+                class="relative w-full m-0 bg-white border-[#e5e0d8] shadow-lg h-0 pointer-events-none transform translate-y-[-20px] transition-all duration-300 z-20"
+              >
+                <div
+                  data-option
+                  data-value="private"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
+                >
+                  Private Dining
+                </div>
+                <div
+                  data-option
+                  data-value="event"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
+                >
+                  Event Booking
+                </div>
+                <div
+                  data-option
+                  data-value="general"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
+                >
+                  General Inquiry
+                </div>
+              </div>
+            </div>
+            <!-- <div class="relative w-full pt-5">
               <select name="eventType" id="realSelect" class="hidden" required>
                 <option value="">Select an option</option>
                 <option value="private">Private Dining</option>
@@ -457,7 +674,7 @@
                 class="relative w-full m-0 bg-white border-[#e5e0d8] shadow-lg h-0 pointer-events-none transform translate-y-[-20px] transition-all duration-300 z-20"
               >
                 <div
-                  id="dropdownOption"
+                  data-option
                   class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
                   data-value="private"
                 >
@@ -465,7 +682,7 @@
                 </div>
 
                 <div
-                  id="dropdownOption"
+                  data-option
                   class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-b-none border-[#e5e0d8] cursor-pointer"
                   data-value="event"
                 >
@@ -473,14 +690,14 @@
                 </div>
 
                 <div
-                  id="dropdownOption"
+                  data-option
                   class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-[#e5e0d8] cursor-pointer"
                   data-value="general"
                 >
                   General Inquiry
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- <label class="text-sm text-gray-500">Event Type diididd</label>
             <select id="realSelect" class="hidden">
               <option value="">Select an option</option>
@@ -567,6 +784,7 @@
               id="eventDetails"
               name="eventDetails"
               class="leading-6 peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)] resize-none overflow-hidden transition-all duration-500"
+              minlength="10"
               maxlength="500"
               oninput="autoResize(this)"
               required

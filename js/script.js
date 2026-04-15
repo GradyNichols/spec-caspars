@@ -307,71 +307,134 @@ function initializeSwiper() {
 }
 
 function initCustomSelect() {
-  const trigger = document.getElementById("selectTrigger");
-  const dropdown = document.getElementById("selectDropdown");
-  const valueText = document.getElementById("selectValue");
-  const realSelect = document.getElementById("realSelect");
-  const arrow = document.getElementById("selectArrow");
-  const dropdownOption = document.querySelectorAll("#dropdownOption");
+  document.querySelectorAll("[data-select]").forEach((container) => {
+    const trigger = container.querySelector("[data-trigger]");
+    const dropdown = container.querySelector("[data-dropdown]");
+    const valueText = container.querySelector("[data-value-display]");
+    const realSelect = container.querySelector("select");
+    const arrow = container.querySelector("[data-arrow]");
+    const options = container.querySelectorAll("[data-option]");
 
-  if (!trigger || !dropdown) return;
+    if (!trigger || !dropdown) return;
 
-  // Toggle dropdown
-  trigger.addEventListener("click", () => {
-    const isOpen = dropdown.classList.contains("h-auto");
+    // Toggle dropdown
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
 
-    dropdown.classList.toggle("h-auto", !isOpen);
-    dropdown.classList.toggle("pointer-events-auto", !isOpen);
-    dropdown.classList.toggle("translate-y-0", !isOpen);
-    // dropdown.classList.toggle("border", !isOpen);
-    dropdownOption.forEach((e) => {
-      e.classList.toggle("hidden", isOpen);
+      const isOpen = dropdown.classList.contains("h-auto");
+
+      dropdown.classList.toggle("h-auto", !isOpen);
+      dropdown.classList.toggle("pointer-events-auto", !isOpen);
+      dropdown.classList.toggle("translate-y-0", !isOpen);
+
+      options.forEach((el) => el.classList.toggle("hidden", isOpen));
+      arrow.classList.toggle("rotate-180", !isOpen);
     });
 
-    arrow.classList.toggle("rotate-180", !isOpen);
-  });
+    // Select option
+    options.forEach((option) => {
+      option.addEventListener("click", () => {
+        const value = option.dataset.value;
+        const text = option.textContent;
 
-  // Select option
-  dropdown.querySelectorAll("[data-value]").forEach((option) => {
-    option.addEventListener("click", () => {
-      const value = option.getAttribute("data-value");
-      const text = option.textContent;
+        valueText.textContent = text;
+        valueText.classList.remove("text-gray-400");
 
-      valueText.textContent = text;
-      valueText.classList.remove("text-gray-400");
+        realSelect.value = value;
 
-      realSelect.value = value;
+        dropdown.classList.remove(
+          "h-auto",
+          "pointer-events-auto",
+          "translate-y-0",
+        );
 
-      // Close dropdown
-      dropdown.classList.remove(
-        "h-auto",
-        "pointer-events-auto",
-        "translate-y-0",
-        // "border",
-      );
-      dropdownOption.forEach((e) => {
-        e.classList.add("hidden");
+        options.forEach((el) => el.classList.add("hidden"));
+        arrow.classList.remove("rotate-180");
       });
-      arrow.classList.remove("rotate-180");
     });
-  });
 
-  // Click outside to close
-  document.addEventListener("click", (e) => {
-    if (!trigger.contains(e.target) && !dropdown.contains(e.target)) {
-      dropdown.classList.remove(
-        "h-full",
-        "pointer-events-auto",
-        "translate-y-0",
-        // "border",
-      );
-      dropdownOption.forEach((e) => {
-        e.classList.add("hidden");
-      });
-      arrow.classList.remove("rotate-180");
-    }
+    // Click outside to close
+    document.addEventListener("click", (e) => {
+      if (!container.contains(e.target)) {
+        dropdown.classList.remove(
+          "h-auto",
+          "pointer-events-auto",
+          "translate-y-0",
+        );
+
+        options.forEach((el) => el.classList.add("hidden"));
+        arrow.classList.remove("rotate-180");
+      }
+    });
   });
 }
+
+// function initCustomSelect() {
+//   const trigger = document.getElementById("selectTrigger");
+//   const dropdown = document.getElementById("selectDropdown");
+//   const valueText = document.getElementById("selectValue");
+//   const realSelect = document.getElementById("realSelect");
+//   const arrow = document.getElementById("selectArrow");
+//   const dropdownOption = document.querySelectorAll("[data-option]");
+
+//   if (!trigger || !dropdown) return;
+
+//   // Toggle dropdown
+//   trigger.addEventListener("click", () => {
+//     const isOpen = dropdown.classList.contains("h-auto");
+
+//     dropdown.classList.toggle("h-auto", !isOpen);
+//     dropdown.classList.toggle("pointer-events-auto", !isOpen);
+//     dropdown.classList.toggle("translate-y-0", !isOpen);
+//     // dropdown.classList.toggle("border", !isOpen);
+//     dropdownOption.forEach((e) => {
+//       e.classList.toggle("hidden", isOpen);
+//     });
+
+//     arrow.classList.toggle("rotate-180", !isOpen);
+//   });
+
+//   // Select option
+//   dropdown.querySelectorAll("[data-value]").forEach((option) => {
+//     option.addEventListener("click", () => {
+//       const value = option.getAttribute("data-value");
+//       const text = option.textContent;
+
+//       valueText.textContent = text;
+//       valueText.classList.remove("text-gray-400");
+
+//       realSelect.value = value;
+
+//       // Close dropdown
+//       dropdown.classList.remove(
+//         "h-auto",
+//         "pointer-events-auto",
+//         "translate-y-0",
+//         // "border",
+//       );
+//       dropdownOption.forEach((e) => {
+//         e.classList.add("hidden");
+//       });
+//       arrow.classList.remove("rotate-180");
+//     });
+//   });
+
+//   // Click outside to close
+//   document.addEventListener("click", (e) => {
+//     if (!trigger.contains(e.target) && !dropdown.contains(e.target)) {
+//       dropdown.classList.remove(
+//         "h-auto",
+//         "pointer-events-auto",
+//         "translate-y-0",
+//         // "border",
+//       );
+//       dropdownOption.forEach((e) => {
+//         e.classList.add("hidden");
+//       });
+//       arrow.classList.remove("rotate-180");
+//     }
+//   });
+// }
 
 async function loadPage(pageUrl, pushState = true) {
   try {
@@ -444,7 +507,7 @@ async function loadPage(pageUrl, pushState = true) {
   } catch (error) {
     console.error("Error loading page:", error);
     document.getElementById("content").innerHTML =
-      '<p class="text-center text-red-500">Error loading page. Please try again.</p>';
+      '<p class="w-full p-32 text-xl font-bold text-center text-red-600">Error loading page. Please try again.</p>';
   }
 }
 
