@@ -29,21 +29,6 @@ const textarea = document.querySelectorAll("textarea");
 //   this.value = this.value.replace(/[\r\n]+/g, "");
 // });
 
-// Simple toast notification
-function showToast(message, type = "success") {
-  const toast = document.createElement("div");
-  toast.className = `fixed top-4 right-4 px-4 py-2 rounded-lg text-white z-50 transition-opacity duration-300 ${
-    type === "success" ? "bg-green-500" : "bg-red-500"
-  }`;
-  toast.textContent = message;
-  document.body.appendChild(toast);
-
-  setTimeout(() => {
-    toast.style.opacity = "0";
-    setTimeout(() => document.body.removeChild(toast), 300);
-  }, 3000);
-}
-
 function todaysDate() {
   const today = new Date().toISOString().split("T")[0];
   document.getElementById("date").value = today;
@@ -110,7 +95,7 @@ function updateActiveButtonMobile() {
   const currentPath = window.location.pathname;
   const backgroundCSSactive = "#faf9f7";
   const backgroundCSSinactive = "transparent";
-  const fontWeightCSSactive = "bold";
+  const fontWeightCSSactive = "900";
   const fontWeightCSSinactive = "normal";
   const borderCSSinactive = "1px solid transparent";
   const borderCSSactive = "1px solid var(--primary-color)";
@@ -157,8 +142,12 @@ function updateActiveButton() {
   const currentPath = window.location.pathname;
   const colorCSSactive = "var(--primary-color)";
   const colorCSSinactive = "var(--gray-700)";
-  const fontWeightCSSactive = "bold";
+  const fontWeightCSSactive = "900";
   const fontWeightCSSinactive = "normal";
+  const borderCSSinactive = "1px solid transparent";
+  const borderCSSactive = "1px solid var(--primary-color)";
+  const backgroundCSSactive = "#faf9f7";
+  const backgroundCSSinactive = "transparent";
 
   const pageMap = {
     "/menu": "menu-button",
@@ -172,6 +161,8 @@ function updateActiveButton() {
       //   button.style.borderBottom = "none";
       button.style.fontWeight = fontWeightCSSinactive;
       button.style.color = colorCSSinactive;
+      button.style.border = borderCSSinactive;
+      button.style.backgroundColor = backgroundCSSinactive;
     }
   });
 
@@ -182,6 +173,8 @@ function updateActiveButton() {
       //   activeButton.style.borderBottom = "2px solid #1F2937";
       activeButton.style.fontWeight = fontWeightCSSactive;
       activeButton.style.color = colorCSSactive;
+      activeButton.style.border = borderCSSinactive;
+      activeButton.style.backgroundColor = backgroundCSSactive;
     }
   }
 }
@@ -342,6 +335,10 @@ function initCustomSelect() {
 
         realSelect.value = value;
 
+        // new -----
+        realSelect.dispatchEvent(new Event("input"));
+        // ---------
+
         dropdown.classList.remove(
           "h-auto",
           "pointer-events-auto",
@@ -436,79 +433,12 @@ function initCustomSelect() {
 //   });
 // }
 
-async function loadPage(pageUrl, pushState = true) {
-  try {
-    const cacheBustedUrl = `${pageUrl}?v=${Date.now()}`;
+function setMinDate() {
+  const dateInput = document.querySelector('input[type="date"]');
+  if (!dateInput) return;
 
-    const response = await fetch(pageUrl);
-    if (!response.ok) throw new Error("Page not found");
-
-    const content = await response.text();
-    const contentDiv = document.getElementById("content");
-    contentDiv.innerHTML = content;
-
-    initializeSwiper?.();
-    initCustomSelect?.();
-
-    // Update current page
-    currentPage = pageUrl.split("/").pop().replace(".html", "");
-
-    // Ensure only non-home gets top padding for fixed navbar overlap
-    if (currentPage === "home") {
-      contentDiv.classList.remove("pt-[78px]");
-    } else {
-      contentDiv.classList.add("pt-[78px]");
-    }
-
-    // Update page title
-    const pageName =
-      currentPage === "home"
-        ? "Home"
-        : currentPage.charAt(0).toUpperCase() + currentPage.slice(1);
-    document.title = `${pageName} - Caspar's`;
-
-    // Update URL without full page reload
-    if (pushState) {
-      window.history.pushState(
-        { page: pageUrl },
-        "",
-        getRouteFromPage(pageUrl),
-      );
-    }
-
-    // Close mobile menu
-    closeMobileMenu();
-
-    // Scroll to top
-    window.scrollTo(0, 0);
-
-    setTimeout(() => initMenuNav(), 150);
-
-    // Navbar style behavior depends on page
-    // handleMediaNavbar(mobile);
-
-    const navbar = document.getElementById("navbar");
-    //matchDesktop = window.matchMedia("(min-width: 768px)");
-
-    if (navbar) {
-      if (currentPage === "home") {
-        navbar.style.backgroundColor = "rgba(255,255,255, 0)";
-        navbar.style.color = "white";
-      } else {
-        navbar.style.backgroundColor = "rgba(255,255,255, 1)";
-        navbar.style.color = "black";
-      }
-    }
-
-    // Setup form handlers for the newly loaded content
-    setupFormHandlers();
-    updateActiveButton();
-    updateActiveButtonMobile();
-  } catch (error) {
-    console.error("Error loading page:", error);
-    document.getElementById("content").innerHTML =
-      '<p class="w-full p-32 text-xl font-bold text-center text-red-600">Error loading page. Please try again.</p>';
-  }
+  const today = new Date().toISOString().split("T")[0];
+  dateInput.min = today;
 }
 
 // Toggle Mobile Menu with smooth animation
@@ -597,78 +527,297 @@ function closeMobileMenu() {
   }
 }
 
-// Setup form handlers for dynamically loaded content
-function setupFormHandlers() {
-  // Contact Form Submission
-  const contactForm = document.getElementById("contactForm");
-  if (contactForm) {
-    contactForm.onsubmit = function (e) {
-      e.preventDefault();
+function showToast(type = "success", message = "") {
+  const container = document.getElementById("toastContainer");
 
-      // Get form data
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData);
+  const isSuccess = type === "success";
 
-      // Log form data (in a real application, you would send this to a server)
-      console.log("Contact Form Data:", data);
+  const toast = document.createElement("div");
 
-      // Show success message
-      showToast("Thank you for your message! We will get back to you soon.");
+  toast.className = `
+    flex items-start gap-3 px-4 py-3 rounded-sm shadow-lg
+    text-sm text-white w-[280px]
+    transition-all duration-300
+    ${isSuccess ? "bg-[#735200]" : "bg-red-600"}
+  `;
 
-      // Reset form
-      this.reset();
-    };
+  toast.innerHTML = `
+    <div class="mt-0.5">
+      ${
+        isSuccess
+          ? `<svg width="18" height="18" fill="white" viewBox="0 0 24 24">
+              <path d="M20 6L9 17l-5-5" stroke="white" stroke-width="2" fill="none"/>
+            </svg>`
+          : `<svg width="18" height="18" fill="white" viewBox="0 0 24 24">
+              <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 14h-2v-2h2v2zm0-4h-2V6h2v6z"/>
+            </svg>`
+      }
+    </div>
+
+    <div class="flex-1">
+      ${message}
+    </div>
+
+    <button onclick="this.parentElement.remove()" class="opacity-70 hover:opacity-100">
+      ✕
+    </button>
+  `;
+
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.classList.add("opacity-0", "translate-x-3");
+    setTimeout(() => toast.remove(), 300);
+  }, 3500);
+}
+
+function setErrorMessage(el, error) {
+  if (!error) return;
+
+  if (el.validity.valueMissing) {
+    error.textContent = "This field is required";
+  } else if (el.type === "email" && el.validity.typeMismatch) {
+    error.textContent = "Enter a valid email";
+  } else if (el.validity.tooShort) {
+    error.textContent = `Minimum ${el.minLength} characters`;
+  } else {
+    error.textContent = "Invalid input";
   }
+}
 
-  // Reservation Form Submission
-  const reservationForm = document.getElementById("reservationForm");
-  if (reservationForm) {
-    reservationForm.onsubmit = function (e) {
+function initLiveValidation(form) {
+  const fields = form.querySelectorAll("input, textarea, select");
+
+  fields.forEach((el) => {
+    const error = el.closest("div")?.querySelector(".error-msg");
+
+    el.addEventListener("input", () => {
+      console.log("Valid?", el.checkValidity(), el.name);
+
+      if (el.value.trim() === "") {
+        el.classList.remove("border-red-600");
+        if (error) error.classList.add("hidden");
+        return;
+      }
+
+      if (!el.checkValidity()) {
+        el.classList.add("border-red-600");
+        if (error) {
+          error.classList.remove("hidden");
+          setErrorMessage(el, error);
+        }
+      } else {
+        el.classList.remove("border-red-600");
+        if (error) error.classList.add("hidden");
+      }
+    });
+
+    el.addEventListener("blur", () => {
+      if (!el.checkValidity()) {
+        el.classList.add("border-red-600");
+        if (error) {
+          error.classList.remove("hidden");
+          setErrorMessage(el, error);
+        }
+      }
+    });
+  });
+
+  console.log("ran");
+}
+
+function resetCustomSelect(form) {
+  form.querySelectorAll("[data-select]").forEach((container) => {
+    const valueText = container.querySelector("[data-value-display]");
+    const realSelect = container.querySelector("select");
+    const arrow = container.querySelector("[data-arrow]");
+    const dropdown = container.querySelector("[data-dropdown]");
+
+    if (valueText) {
+      valueText.textContent = "Select an option";
+      valueText.classList.add("text-gray-400");
+    }
+
+    if (realSelect) {
+      realSelect.value = "";
+    }
+
+    if (arrow) {
+      arrow.classList.remove("rotate-180");
+    }
+
+    if (dropdown) {
+      dropdown.classList.remove("h-auto");
+    }
+  });
+}
+
+function initFormSystem() {
+  console.log("Forms found: ", document.querySelectorAll("form").length);
+  document.querySelectorAll("form").forEach((form) => {
+    console.log(form);
+    initLiveValidation(form);
+
+    console.log("made it past initLiveValidation");
+
+    const btn = form.querySelector(".submit-btn");
+    if (!btn) {
+      console.warn("Form missing required elements, skipping...");
+      return;
+    }
+    const text = btn.querySelector(".btn-text");
+    if (!text) {
+      console.warn("Form missing required elements, skipping...");
+      return;
+    }
+    const loader = btn.querySelector(".loader");
+    if (!loader) {
+      console.warn("Form missing required elements, skipping...");
+      return;
+    }
+
+    console.log("here");
+
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      // Get form data
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData);
+      let valid = true;
 
-      // Validate date is in the future
-      const selectedDate = new Date(data.date);
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
+      form.querySelectorAll("input, textarea, select").forEach((el) => {
+        if (!el.checkValidity()) {
+          valid = false;
+          el.dispatchEvent(new Event("blur"));
+        }
+      });
 
-      if (selectedDate < today) {
-        showToast("Please select a future date for your reservation.", "error");
+      if (!valid) {
+        showToast("error", "Please fix the highlighted fields.");
         return;
       }
 
-      // Validate time format
-      if (!data.time) {
-        showToast("Please select a time for your reservation.", "error");
-        return;
+      btn.disabled = true;
+      text.classList.add("hidden");
+      loader.classList.remove("hidden");
+
+      console.log("submit");
+
+      try {
+        console.log("try");
+
+        if (form.dataset.test === "true") {
+          console.log("TEST MODE");
+
+          showToast("success", "Test submission successful.");
+
+          form.reset();
+          resetCustomSelect(form);
+
+          return;
+        }
+
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        });
+
+        if (res.ok) {
+          form.reset();
+          resetCustomSelect(form);
+          showToast("success", "Reservation sent");
+        } else {
+          showToast("error", "Submission failed.");
+        }
+      } catch {
+        showToast("error", "Network error.");
+      } finally {
+        btn.disabled = false;
+        text.classList.remove("hidden");
+        loader.classList.add("hidden");
       }
+    });
+  });
+  console.log("form system code ran");
+}
 
-      // Log reservation data (in a real application, you would send this to a server)
-      console.log("Reservation Data:", data);
+async function loadPage(pageUrl, pushState = true) {
+  try {
+    const cacheBustedUrl = `${pageUrl}?v=${Date.now()}`;
 
-      // Show success message
-      showToast(
-        `Reservation confirmed for ${data.firstName} ${data.lastName} on ${data.date} at ${data.time} for ${data.guests} guest(s). We look forward to seeing you!`,
+    const response = await fetch(pageUrl);
+    if (!response.ok) throw new Error("Page not found");
+
+    const content = await response.text();
+    const contentDiv = document.getElementById("content");
+    contentDiv.innerHTML = content;
+
+    initializeSwiper?.();
+    initCustomSelect?.();
+
+    initFormSystem?.();
+
+    console.log("everything went smoothly");
+
+    // Update current page
+    currentPage = pageUrl.split("/").pop().replace(".html", "");
+
+    // Ensure only non-home gets top padding for fixed navbar overlap
+    if (currentPage === "home") {
+      contentDiv.classList.remove("pt-[78px]");
+    } else {
+      contentDiv.classList.add("pt-[78px]");
+    }
+
+    // Update page title
+    const pageName =
+      currentPage === "home"
+        ? "Home"
+        : currentPage.charAt(0).toUpperCase() + currentPage.slice(1);
+    document.title = `${pageName} - Caspar's`;
+
+    // Update URL without full page reload
+    if (pushState) {
+      window.history.pushState(
+        { page: pageUrl },
+        "",
+        getRouteFromPage(pageUrl),
       );
+    }
 
-      // Reset form
-      this.reset();
+    setMinDate();
 
-      // Load home page after a short delay
-      setTimeout(() => {
-        loadPage("pages/home.html");
-      }, 2000);
-    };
-  }
+    // Close mobile menu
+    closeMobileMenu();
 
-  // Set minimum date for date input (today)
-  const dateInput = document.getElementById("date");
-  if (dateInput) {
-    const today = new Date().toISOString().split("T")[0];
-    dateInput.setAttribute("min", today);
+    // Scroll to top
+    window.scrollTo(0, 0);
+
+    setTimeout(() => initMenuNav(), 150);
+
+    // Navbar style behavior depends on page
+    // handleMediaNavbar(mobile);
+
+    const navbar = document.getElementById("navbar");
+    //matchDesktop = window.matchMedia("(min-width: 768px)");
+
+    if (navbar) {
+      if (currentPage === "home") {
+        navbar.style.backgroundColor = "rgba(255,255,255, 0)";
+        navbar.style.color = "white";
+      } else {
+        navbar.style.backgroundColor = "rgba(255,255,255, 1)";
+        navbar.style.color = "black";
+      }
+    }
+
+    // Setup form handlers for the newly loaded content
+    //setupFormHandlers();
+    updateActiveButton();
+    updateActiveButtonMobile();
+  } catch (error) {
+    console.error("Error loading page:", error);
+    document.getElementById("content").innerHTML =
+      '<p class="w-full p-32 text-xl font-bold text-center text-red-600">Error loading page. Please try again.</p>';
   }
 }
 
@@ -689,6 +838,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // const parallaxBg = document.getElementById("parallaxBg");
 
   loadPage(getPageFromPath(route), false);
+
+  //initFormSystem?.();
 
   // Navbar scroll transparency effect on Home only
   window.addEventListener("scroll", function () {
@@ -727,6 +878,12 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll("textarea").forEach((el) => {
     el.addEventListener("keyup", constrainInput);
   });
+
+  //   setTimeout(() => {
+  //     showToast("Success!");
+  //   }, 2000);
+
+  showToast("success", "Toasty test");
 
   console.log("Restaurant website initialized successfully!");
 });
