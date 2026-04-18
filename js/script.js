@@ -93,7 +93,7 @@ function toggleFAQ(button) {
 
 function updateActiveButtonMobile() {
   const currentPath = window.location.pathname;
-  const backgroundCSSactive = "#faf9f7";
+  const backgroundCSSactive = "var(--bg-2)";
   const backgroundCSSinactive = "transparent";
   const fontWeightCSSactive = "900";
   const fontWeightCSSinactive = "normal";
@@ -146,7 +146,7 @@ function updateActiveButton() {
   const fontWeightCSSinactive = "normal";
   const borderCSSinactive = "1px solid transparent";
   const borderCSSactive = "1px solid var(--primary-color)";
-  const backgroundCSSactive = "#faf9f7";
+  const backgroundCSSactive = "var(--bg-2)";
   const backgroundCSSinactive = "transparent";
 
   const pageMap = {
@@ -170,7 +170,7 @@ function updateActiveButton() {
   if (activeButtonId) {
     const activeButton = document.getElementById(activeButtonId);
     if (activeButton) {
-      //   activeButton.style.borderBottom = "2px solid #1F2937";
+      //   activeButton.style.borderBottom = "2px solid var(--gray-800)";
       activeButton.style.fontWeight = fontWeightCSSactive;
       activeButton.style.color = colorCSSactive;
       activeButton.style.border = borderCSSinactive;
@@ -229,7 +229,7 @@ function initMenuNav() {
       const section = document.getElementById(id);
 
       if (section) {
-        const offset = 125;
+        const offset = 131;
         const top = section.offsetTop - offset;
 
         window.scrollTo({
@@ -366,73 +366,6 @@ function initCustomSelect() {
   });
 }
 
-// function initCustomSelect() {
-//   const trigger = document.getElementById("selectTrigger");
-//   const dropdown = document.getElementById("selectDropdown");
-//   const valueText = document.getElementById("selectValue");
-//   const realSelect = document.getElementById("realSelect");
-//   const arrow = document.getElementById("selectArrow");
-//   const dropdownOption = document.querySelectorAll("[data-option]");
-
-//   if (!trigger || !dropdown) return;
-
-//   // Toggle dropdown
-//   trigger.addEventListener("click", () => {
-//     const isOpen = dropdown.classList.contains("h-auto");
-
-//     dropdown.classList.toggle("h-auto", !isOpen);
-//     dropdown.classList.toggle("pointer-events-auto", !isOpen);
-//     dropdown.classList.toggle("translate-y-0", !isOpen);
-//     // dropdown.classList.toggle("border", !isOpen);
-//     dropdownOption.forEach((e) => {
-//       e.classList.toggle("hidden", isOpen);
-//     });
-
-//     arrow.classList.toggle("rotate-180", !isOpen);
-//   });
-
-//   // Select option
-//   dropdown.querySelectorAll("[data-value]").forEach((option) => {
-//     option.addEventListener("click", () => {
-//       const value = option.getAttribute("data-value");
-//       const text = option.textContent;
-
-//       valueText.textContent = text;
-//       valueText.classList.remove("text-gray-400");
-
-//       realSelect.value = value;
-
-//       // Close dropdown
-//       dropdown.classList.remove(
-//         "h-auto",
-//         "pointer-events-auto",
-//         "translate-y-0",
-//         // "border",
-//       );
-//       dropdownOption.forEach((e) => {
-//         e.classList.add("hidden");
-//       });
-//       arrow.classList.remove("rotate-180");
-//     });
-//   });
-
-//   // Click outside to close
-//   document.addEventListener("click", (e) => {
-//     if (!trigger.contains(e.target) && !dropdown.contains(e.target)) {
-//       dropdown.classList.remove(
-//         "h-auto",
-//         "pointer-events-auto",
-//         "translate-y-0",
-//         // "border",
-//       );
-//       dropdownOption.forEach((e) => {
-//         e.classList.add("hidden");
-//       });
-//       arrow.classList.remove("rotate-180");
-//     }
-//   });
-// }
-
 function setMinDate() {
   const dateInput = document.querySelector('input[type="date"]');
   if (!dateInput) return;
@@ -538,7 +471,7 @@ function showToast(type = "success", message = "") {
     flex items-start gap-3 px-4 py-3 rounded-sm shadow-lg
     text-sm text-white w-[280px]
     transition-all duration-300
-    ${isSuccess ? "bg-[#735200]" : "bg-red-600"}
+    ${isSuccess ? "bg-[var(--primary-color)]" : "bg-red-600"}
   `;
 
   toast.innerHTML = `
@@ -889,10 +822,6 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll("textarea").forEach((el) => {
     el.addEventListener("keyup", constrainInput);
   });
-
-  //   setTimeout(() => {
-  //     showToast("Success!");
-  //   }, 2000);
 
   showToast("success", "Toasty test");
 

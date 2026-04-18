@@ -180,12 +180,12 @@
 
     <!-- Footer -->
     <section
-      class="pt-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
+      class="pt-1 bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent-2)] to-[var(--accent-3)] text-white"
     ></section>
     <footer class="w-full bg-[var(--dark-bg)] text-gray-300 py-10 px-4 md:px-6">
       <div class="max-w-5xl mx-auto flex flex-wrap justify-between gap-6">
         <div
-          class="flex flex-col items-center sm:items-start flex-1 min-w-[180px] sm:flex-[1_1_48%] md:flex-[1_1_22%]"
+          class="select-none flex flex-col items-center sm:items-start flex-1 min-w-[180px] sm:flex-[1_1_48%] md:flex-[1_1_22%]"
         >
           <h2 class="text-2xl font-semibold text-white mb-2">Caspar's</h2>
           <p class="text-gray-400 text-sm text-center sm:text-left">
@@ -194,7 +194,7 @@
         </div>
 
         <div
-          class="flex flex-col items-center sm:items-start flex-1 min-w-[180px] sm:flex-[1_1_48%] md:flex-[1_1_22%]"
+          class="select-none flex flex-col items-center sm:items-start flex-1 min-w-[180px] sm:flex-[1_1_48%] md:flex-[1_1_22%]"
         >
           <h3 class="font-semibold text-white mb-2">Quick Links</h3>
           <ul class="space-y-1 text-gray-300 text-center sm:text-left">
@@ -226,7 +226,7 @@
         <div
           class="flex flex-col items-center sm:items-start flex-1 min-w-[180px] sm:flex-[1_1_48%] md:flex-[1_1_22%]"
         >
-          <h3 class="font-semibold text-white mb-2">Contact</h3>
+          <h3 class="font-semibold text-white mb-2 select-none">Contact</h3>
           <p class="text-gray-400 text-sm">123 Main Street,</p>
           <p class="text-gray-400 text-sm">Austin, TX 78701</p>
           <p class="text-gray-400 text-sm">(512) 555-1234</p>
@@ -241,7 +241,7 @@
         </div>
 
         <div
-          class="flex flex-col items-center sm:items-start flex-1 min-w-[180px] sm:flex-[1_1_48%] md:flex-[1_1_22%]"
+          class="select-none flex flex-col items-center sm:items-start flex-1 min-w-[180px] sm:flex-[1_1_48%] md:flex-[1_1_22%]"
         >
           <h3 class="font-semibold text-white mb-2">Follow Us</h3>
           <div class="flex justify-center sm:justify-start space-x-4">
@@ -251,7 +251,7 @@
           </div>
         </div>
       </div>
-      <div class="mt-8 md:mt-12 text-center text-gray-200 text-sm">
+      <div class="select-none mt-8 md:mt-12 text-center text-gray-200 text-sm">
         &copy; 2026 Caspar's. All rights reserved.
       </div>
     </footer>
@@ -261,374 +261,6 @@
     <script src="js/script.js?v=<?= time() ?>"></script>
   </body>
 </html>
-
-<!-- ===============================
-  FORM SYSTEM (TAILWIND + JS)
-=================================== -->
-
-<!-- ===============================
-1. INPUT HTML VALIDATION ADD-ONS
-(Add per input type)
-=================================== -->
-
-<!-- TEXT INPUT -->
-<!--
-minlength="2"
-maxlength="50"
-pattern="^[A-Za-z\s]+$"
-required
--->
-
-<!-- EMAIL INPUT -->
-<!--
-type="email"
-required
--->
-
-<!-- DATE INPUT -->
-<!--
-type="date"
-required
-min=""   (set via JS)
--->
-
-<!-- TEXTAREA -->
-<!--
-minlength="10"
-maxlength="200"
-required
--->
-
-<!-- PHONE INPUT (optional) -->
-<!--
-type="tel"
-pattern="^[0-9\-\+\s\(\)]{7,20}$"
-inputmode="tel"
--->
-
-<!-- ===============================
-2. TAILWIND VALIDATION STATES
-(Add to existing input/label classes)
-=================================== -->
-
-<!-- INPUT STATES -->
-<!--
-invalid:border-red-500
-valid:border-green-600
-transition-colors duration-200
--->
-
-<!-- LABEL STATES -->
-<!--
-peer-invalid:text-red-500
-peer-valid:text-green-600
--->
-
-<!-- ===============================
-3. JS VALIDATION FUNCTIONS
-=================================== -->
-
-<!-- SET MIN DATE (reservations) -->
-<script>
-  // function setMinDate() {
-  //   const dateInput = document.querySelector('input[type="date"]');
-  //   if (!dateInput) return;
-
-  //   const today = new Date().toISOString().split("T")[0];
-  //   dateInput.min = today;
-  // }
-</script>
-
-<!-- BASIC FORM VALIDATION -->
-<script>
-  // function validateForm(form) {
-  //   const inputs = form.querySelectorAll("input, textarea");
-  //   let valid = true;
-
-  //   inputs.forEach(input => {
-  //     if (!input.checkValidity()) {
-  //       input.classList.add("border-red-500");
-  //       valid = false;
-  //     } else {
-  //       input.classList.remove("border-red-500");
-  //     }
-  //   });
-
-  //   return valid;
-  // }
-</script>
-
-<!-- FORM SUBMIT HOOK (Formspree-safe) -->
-<script>
-  // document.querySelector("form")?.addEventListener("submit", (e) => {
-  //   if (!validateForm(e.target)) {
-  //     e.preventDefault();
-  //   }
-  // });
-</script>
-
-<!-- LIVE ERROR CLEANUP -->
-<script>
-  // document.querySelectorAll("input, textarea").forEach(el => {
-  //   el.addEventListener("input", () => {
-  //     el.classList.remove("border-red-500");
-  //   });
-  // });
-</script>
-
-<!-- ===============================
-4. OPTIONAL UX NOTES
-=================================== -->
-
-<!--
-✔ HTML validation handles:
-- empty fields
-- email format
-- length limits
-
-✔ Tailwind handles:
-- red/green states
-- label feedback
-- visual polish
-
-✔ JS handles:
-- preventing bad submits
-- setting min date
-- cleanup behavior
-
-✔ Formspree handles:
-- backend submission
-- email delivery
--->
-
-<!-- Dropdown here -->
-
-<!-- <div data-select class="relative w-full pt-5">
-    <select name="guestCount" id="guestCount" class="hidden" required>
-        <option value="">Select an option</option>
-        <option value="small">&lt; 10</option>
-        <option value="medium">10-20</option>
-        <option value="large">&gt; 20</option>
-    </select>
-
-    <label for="guestCount" class="cursor-auto absolute text-[var(--primary-color)] left-1 scale-95 top-0 text-xs peer-invalid:text-red-600">
-        Guest Count
-    </label>
-
-    <button type="button" data-trigger class="w-full text-left p-3 border-b border-[#e5e0d8] text-gray-700 flex justify-between items-center focus:outline-none invalid:border-red-600">
-        <span data-value-display class="text-gray-400">
-            Select an option
-        </span>
-
-        <span data-arrow class="transition-transform duration-600">
-            <svg
-            fill="var(--primary-color)"
-            width="24px"
-            height="24px"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            stroke="var(--primary-color)"
-            >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g
-                    id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                ></g>
-                <g id="SVGRepo_iconCarrier">
-                    <path
-                    d="M12 16a1 1 0 0 1-.707-.293L5.636 10.05A1 1 0 0 1 7.05 8.636l4.95 4.95 4.95-4.95a1 1 0 0 1 1.414 1.414l-5.657 5.657A1 1 0 0 1 12 16z"
-                    ></path>
-                </g>
-            </svg>
-        </span>
-    </button>
-
-    <div data-dropdown class="relative w-full m-0 bg-white border-[#e5e0d8] shadow-lg h-0 pointer-events-none transform translate-y-[-20px] transition-all duration-300 z-20">
-        <div data-option data-value="small" class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer">
-            &lt; 10
-        </div>
-        <div data-option data-value="medium" class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer">
-            10-10
-        </div>
-        <div data-option data-value="large" class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer">
-            &gt; 20
-        </div>
-    </div>
-</div> -->
-
-<!-- Dropdown here -->
-
-<!-- =========================================
-  CUSTOM SELECT SYSTEM (MULTIPLE SUPPORT)
-========================================= -->
-
-<!-- =========================================
-1. HTML STRUCTURE (REUSABLE — NO IDS)
-Wrap EACH dropdown with data-select
-========================================= -->
-
-<!-- <div data-select class="relative w-full pt-5">
-
-  Hidden real select (for form submission)
-  <select name="guestCount" class="hidden" required>
-    <option value="">Select an option</option>
-    <option value="small">&lt; 10</option>
-    <option value="medium">10-20</option>
-    <option value="large">&gt; 20</option>
-  </select>
-
-  Label
-  <label class="absolute text-xs text-[var(--primary-color)] top-0 left-1">
-    Guest Count
-  </label>
-
-  Trigger
-  <button
-    type="button"
-    data-trigger
-    class="w-full text-left p-3 border-b border-[#e5e0d8] text-gray-700 flex justify-between items-center focus:outline-none"
-  >
-    <span data-value-display class="text-gray-400">
-      Select an option
-    </span>
-
-    <span data-arrow class="transition-transform duration-300">
-      ▼
-    </span>
-  </button>
-
-  Dropdown
-  <div
-    data-dropdown
-    class="absolute w-full bg-white shadow-lg h-0 pointer-events-none translate-y-[-20px] transition-all duration-300 z-20"
-  >
-    <div data-option data-value="small" class="p-3 hidden hover:bg-[#f3efe6] cursor-pointer">
-      &lt; 10
-    </div>
-    <div data-option data-value="medium" class="p-3 hidden hover:bg-[#f3efe6] cursor-pointer">
-      10-20
-    </div>
-    <div data-option data-value="large" class="p-3 hidden hover:bg-[#f3efe6] cursor-pointer">
-      &gt; 20
-    </div>
-  </div>
-
-</div> -->
-
-<!-- =========================================
-2. REQUIRED DATA ATTRIBUTES (ROLES)
-========================================= -->
-
-<!--
-data-select          → container
-data-trigger         → clickable button
-data-dropdown        → dropdown container
-data-option          → each selectable item
-data-value           → stored value
-data-value-display   → visible text
-data-arrow           → arrow icon
--->
-
-<!-- =========================================
-3. JAVASCRIPT (SUPPORTS MULTIPLE DROPDOWNS)
-========================================= -->
-
-<!-- <script>
-function initCustomSelect() {
-  document.querySelectorAll("[data-select]").forEach((container) => {
-    const trigger = container.querySelector("[data-trigger]");
-    const dropdown = container.querySelector("[data-dropdown]");
-    const valueText = container.querySelector("[data-value-display]");
-    const realSelect = container.querySelector("select");
-    const arrow = container.querySelector("[data-arrow]");
-    const options = container.querySelectorAll("[data-option]");
-
-    if (!trigger || !dropdown) return;
-
-    // Toggle dropdown
-    trigger.addEventListener("click", (e) => {
-      e.stopPropagation();
-
-      const isOpen = dropdown.classList.contains("h-auto");
-
-      dropdown.classList.toggle("h-auto", !isOpen);
-      dropdown.classList.toggle("pointer-events-auto", !isOpen);
-      dropdown.classList.toggle("translate-y-0", !isOpen);
-
-      options.forEach((el) => el.classList.toggle("hidden", isOpen));
-      arrow.classList.toggle("rotate-180", !isOpen);
-    });
-
-    // Select option
-    options.forEach((option) => {
-      option.addEventListener("click", () => {
-        const value = option.dataset.value;
-        const text = option.textContent;
-
-        valueText.textContent = text;
-        valueText.classList.remove("text-gray-400");
-
-        realSelect.value = value;
-
-        dropdown.classList.remove(
-          "h-auto",
-          "pointer-events-auto",
-          "translate-y-0"
-        );
-
-        options.forEach((el) => el.classList.add("hidden"));
-        arrow.classList.remove("rotate-180");
-      });
-    });
-
-    // Click outside to close
-    document.addEventListener("click", (e) => {
-      if (!container.contains(e.target)) {
-        dropdown.classList.remove(
-          "h-auto",
-          "pointer-events-auto",
-          "translate-y-0"
-        );
-
-        options.forEach((el) => el.classList.add("hidden"));
-        arrow.classList.remove("rotate-180");
-      }
-    });
-  });
-}
-</script> -->
-
-<!-- =========================================
-4. HOW TO USE
-========================================= -->
-
-<!--
-✔ Duplicate the entire data-select block anywhere
-✔ No ID changes needed
-✔ JS works automatically for all instances
-✔ Works across pages and dynamic loads
-
-✔ Always call:
-initCustomSelect()
-
-after page load or content swap
--->
-
-<!-- =========================================
-5. COMMON MISTAKES (AVOID THESE)
-========================================= -->
-
-<!--
-❌ Using IDs for multiple dropdowns
-❌ Using document.querySelectorAll globally for options
-❌ Not wrapping in data-select container
-❌ Forgetting to call initCustomSelect() after loading content
--->
-
-<!-- =========================================
-6. OPTIONAL UPGRADES (FUTURE)
-========================================= -->
 
 <!--
 → Close other dropdowns when one opens

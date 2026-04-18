@@ -1,4 +1,6 @@
-<section class="relative overflow-hidden px-8 md:px-12 pt-20 pb-12 mx-auto">
+<section
+  class="select-none relative overflow-hidden px-8 md:px-12 pt-20 pb-12 mx-auto"
+>
   <div
     id="parallaxBg"
     class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0"
@@ -30,10 +32,10 @@
 </section>
 
 <section
-  class="pt-1 md:pt-3 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
+  class="select-none pt-1 md:pt-3 bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent-2)] to-[var(--accent-3)] text-white"
 ></section>
 
-<section class="py-28 px-10">
+<section class="select-none py-28 px-10">
   <div class="max-w-4xl mx-auto px-4 grid md:grid-cols-3 gap-10 text-center">
     <div class="space-y-3">
       <h3 class="text-xl font-medium">Request</h3>
@@ -55,10 +57,10 @@
 </section>
 
 <section
-  class="pt-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
+  class="select-none pt-1 bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent-2)] to-[var(--accent-3)] text-white"
 ></section>
 
-<section class="md:py-20 py-14 bg-[#faf9f7]">
+<section class="select-none md:py-20 py-14 bg-[var(--bg-2)]">
   <div class="max-w-3xl mx-auto px-4">
     <div
       class="bg-white border border-[#e5e0d8] px-10 py-14 md:p-14 space-y-10 shadow-[0_10px_40px_rgba(0,0,0,0.05)]"
@@ -207,121 +209,34 @@
                 <div
                   data-option
                   data-value="guests1-2"
-                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[var(--bg-3)] border border-t-none border-[#e5e0d8] cursor-pointer"
                 >
                   1-2 Guests
                 </div>
                 <div
                   data-option
                   data-value="guests3-4"
-                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[var(--bg-3)] border border-t-none border-[#e5e0d8] cursor-pointer"
                 >
                   3-4 Guests
                 </div>
                 <div
                   data-option
                   data-value="guests5-6"
-                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[var(--bg-3)] border border-t-none border-[#e5e0d8] cursor-pointer"
                 >
                   5-6 Guests
                 </div>
                 <div
                   data-option
                   data-value="guests7+"
-                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[var(--bg-3)] border border-t-none border-[#e5e0d8] cursor-pointer"
                 >
                   7+ Guests
                 </div>
               </div>
               <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
             </div>
-            <!-- <div class="relative w-full pt-5">
-              <select name="partySize" id="realSelect" class="hidden" required>
-                <option value="">Select an option</option>
-                <option value="1-2">1-2 Guests</option>
-                <option value="3-4">3-4 Guests</option>
-                <option value="5-6">5-6 Guests</option>
-                <option value="7+">7+ Guests</option>
-              </select>
-              <label
-                for="realSelect"
-                class="cursor-auto absolute text-[var(--primary-color)] left-1 scale-95 top-0 text-xs"
-              >
-                Party Size
-              </label>
-
-              <button
-                type="button"
-                id="selectTrigger"
-                class="w-full text-left px-3 py-[11.5px] border-b border-[#e5e0d8] text-sm text-gray-700 flex justify-between items-center focus:outline-none"
-              >
-                <span id="selectValue" class="text-gray-400">
-                  Select an option
-                </span>
-
-                <span
-                  id="selectArrow"
-                  class="text-[var(--primary-color)] transition-transform duration-600"
-                >
-                  <svg
-                    fill="var(--primary-color)"
-                    width="24px"
-                    height="24px"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    stroke="var(--primary-color)"
-                  >
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g
-                      id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></g>
-                    <g id="SVGRepo_iconCarrier">
-                      <path
-                        d="M12 16a1 1 0 0 1-.707-.293L5.636 10.05A1 1 0 0 1 7.05 8.636l4.95 4.95 4.95-4.95a1 1 0 0 1 1.414 1.414l-5.657 5.657A1 1 0 0 1 12 16z"
-                      ></path>
-                    </g>
-                  </svg>
-                </span>
-              </button>
-              <div
-                id="selectDropdown"
-                class="relative w-full m-0 bg-white border-[#e5e0d8] shadow-lg h-0 pointer-events-none transform translate-y-[-20px] transition-all duration-300 z-20"
-              >
-                <div
-                  id="dropdownOption"
-                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border-b border-l border-r border-t-none border-[#e5e0d8] cursor-pointer"
-                  data-value="1-2"
-                >
-                  1-2 Guests
-                </div>
-
-                <div
-                  id="dropdownOption"
-                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-b-none border-[#e5e0d8] cursor-pointer"
-                  data-value="3-4"
-                >
-                  3-4 Guests
-                </div>
-
-                <div
-                  id="dropdownOption"
-                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-[#e5e0d8] cursor-pointer"
-                  data-value="5-6"
-                >
-                  5-6 Guests
-                </div>
-
-                <div
-                  id="dropdownOption"
-                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-[#e5e0d8] cursor-pointer"
-                  data-value="7+"
-                >
-                  7+ Guests
-                </div>
-              </div>
-            </div> -->
           </div>
         </div>
         <div class="grid gap-4">
@@ -367,12 +282,6 @@
           </div>
         </div>
 
-        <!-- <textarea
-          rows="4"
-          placeholder="Special requests (optional)"
-          class="w-full border-b border-gray-300 p-3 resize-none focus:outline-none focus:border-[var(--primary-color)]"
-        ></textarea> -->
-
         <!-- Button -->
         <div class="text-center pt-4">
           <button
@@ -390,7 +299,9 @@
   </div>
 </section>
 
-<section class="py-16 text-center bg-gradient-to-b from-[#faf9f7] to-[#ffffff]">
+<section
+  class="select-none py-16 text-center bg-gradient-to-b from-[var(--bg-2)] to-[var(--white)]"
+>
   <div class="max-w-2xl mx-auto px-4 space-y-4">
     <p class="text-gray-500">
       Reservations are limited each evening to ensure quality of service.

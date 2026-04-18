@@ -4,7 +4,7 @@
 <!-- Hero Section -->
 
 <section
-  class="relative h-screen w-full flex items-center justify-center text-center overflow-hidden"
+  class="select-none relative h-screen w-full flex items-center justify-center text-center overflow-hidden"
 >
   <!-- Background Image -->
   <div
@@ -19,13 +19,15 @@
 
   <!-- Content -->
   <div class="relative z-10 max-w-3xl px-6 space-y-6">
-    <p class="text-xs tracking-[0.3em] uppercase text-[#c6a85b]">Caspar’s</p>
+    <p class="text-xs tracking-[0.3em] uppercase text-[var(--accent-3)]">
+      Caspar’s
+    </p>
 
     <h1 class="text-5xl md:text-7xl font-serif text-white leading-tight">
       A Refined Dining Experience
     </h1>
 
-    <div class="w-12 h-[1px] bg-[#c6a85b] mx-auto opacity-70"></div>
+    <div class="w-12 h-[1px] bg-[var(--accent-3)] mx-auto opacity-70"></div>
 
     <p
       class="text-gray-300 text-lg md:text-xl max-w-xl mx-auto leading-relaxed"
@@ -37,7 +39,7 @@
     <div class="pt-4">
       <button
         onclick="loadPage('pages/reservation.html')"
-        class="px-8 py-3 border border-[#c6a85b] text-[#c6a85b] uppercase tracking-[0.15em] text-sm transition hover:bg-[#c6a85b] hover:text-black"
+        class="px-8 py-3 border border-[var(--accent-3)] text-[var(--accent-3)] uppercase tracking-[0.15em] text-sm transition hover:bg-[var(--accent-3)] hover:text-black"
       >
         Reserve a Table
       </button>
@@ -46,12 +48,12 @@
 </section>
 
 <section
-  class="py-2 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
+  class="select-none py-2 bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent-2)] to-[var(--accent-3)] text-white"
 ></section>
 
 <!-- img / text section -->
 <section
-  class="md:py-16 py-0 bg-gradient-to-t from-[#faf9f7] via-[#f3efe6] to-[#eae3d6]"
+  class="select-none md:py-16 py-0 bg-gradient-to-t from-[var(--bg-2)] via-[var(--bg-3)] to-[var(--bg-4)]"
 >
   <div
     class="max-w-6xl mx-auto p-0 md:px-6 grid md:grid-cols-2 gap-16 items-center"
@@ -86,7 +88,9 @@
         A Refined Approach to Dining
       </h2>
 
-      <div class="w-12 h-[1px] bg-[#c6a85b] opacity-70 mx-0 md:mx-0"></div>
+      <div
+        class="w-12 h-[1px] bg-[var(--accent-3)] opacity-70 mx-0 md:mx-0"
+      ></div>
 
       <p class="text-gray-700 leading-relaxed max-w-lg">
         Blending tradition with modern technique, each dish is crafted with
@@ -97,7 +101,9 @@
 </section>
 
 <!-- MENU PREVIEW HERE (SLIDER) -->
-<section class="py-28 bg-gradient-to-b from-[#faf9f7] to-[#ffffff]">
+<section
+  class="select-none py-28 bg-gradient-to-b from-[var(--bg-2)] to-[var(--white)]"
+>
   <div class="max-w-6xl mx-auto px-5 space-y-16">
     <!-- Header -->
     <div class="text-center space-y-4">
@@ -202,7 +208,7 @@
 </section>
 
 <!-- Crafted with intention -->
-<section class="py-24 px-12">
+<section class="select-none py-24 px-12">
   <div class="max-w-5xl mx-auto px-4 space-y-16">
     <!-- Header -->
     <div class="text-center space-y-4">
@@ -269,7 +275,7 @@
 </section>
 
 <!-- parallax -->
-<section class="relative overflow-hidden">
+<section class="select-none relative overflow-hidden">
   <div
     id="parallaxBg"
     class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0"
@@ -277,7 +283,7 @@
   ></div>
 
   <section
-    class="relative py-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
+    class="relative py-1 bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent-2)] to-[var(--accent-3)] text-white"
   ></section>
 
   <div
@@ -299,13 +305,13 @@
   </div>
 
   <section
-    class="relative py-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
+    class="relative py-1 bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent-2)] to-[var(--accent-3)] text-white"
   ></section>
 </section>
 
 <!-- EVENTS / PRIVATE DINING PREVIEW HERE -->
 <section
-  class="py-28 bg-gradient-to-b from-[#ffffff] via-[#f3efe6] to-[#eae3d6]"
+  class="select-none py-28 bg-gradient-to-b from-[var(--white)] via-[var(--bg-3)] to-[var(--bg-4)]"
 >
   <div class="max-w-6xl mx-auto px-6 space-y-20">
     <!-- Header -->
@@ -343,7 +349,9 @@
           Host Your Next Occasion With Us
         </h2>
 
-        <div class="w-12 h-[1px] bg-[#c6a85b] opacity-70 mx-0 md:mx-0"></div>
+        <div
+          class="w-12 h-[1px] bg-[var(--accent-3)] opacity-70 mx-0 md:mx-0"
+        ></div>
 
         <p class="text-gray-700 leading-relaxed max-w-md">
           Whether it’s an intimate dinner or a larger celebration, our space is
@@ -396,7 +404,7 @@
 
 <!-- FAQ -->
 <section
-  class="bg-gradient-to-t from-[#faf9f7] via-[#f3efe6] to-[#eae3d6] py-28 px-6"
+  class="select-none bg-gradient-to-t from-[var(--bg-2)] via-[var(--bg-3)] to-[var(--bg-4)] py-28 px-6"
 >
   <div class="max-w-3xl mx-auto space-y-16">
     <!-- Header -->
@@ -495,7 +503,7 @@
 </section>
 
 <!-- guest experience -->
-<section class="pb-28 pt-16 bg-[#faf9f7]">
+<section class="select-none pb-28 pt-16 bg-[var(--bg-2)]">
   <div class="max-w-5xl mx-auto md:px-4 px-8 space-y-20">
     <!-- Header -->
     <div class="text-center space-y-4">
@@ -562,14 +570,14 @@
 </section>
 
 <!-- parallax -->
-<section class="relative overflow-hidden">
+<section class="select-none relative overflow-hidden">
   <div
     id="parallaxBg"
     class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0"
     style="background-image: url(&quot;logo/download.jpeg&quot;)"
   ></div>
   <section
-    class="relative py-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
+    class="relative py-1 bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent-2)] to-[var(--accent-3)] text-white"
   ></section>
   <div
     class="relative z-10 max-w-3xl md:my-20 mt-0 mb-0 mx-auto p-10 bg-white/80 backdrop-blur-md md:rounded-md rounded-none text-center"
@@ -589,12 +597,12 @@
     </button>
   </div>
   <section
-    class="relative py-1 bg-gradient-to-r from-[var(--primary-color)] via-[#a67c00] to-[#c6a85b] text-white"
+    class="relative py-1 bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent-2)] to-[var(--accent-3)] text-white"
   ></section>
 </section>
 
 <!-- mailing list -->
-<section class="bg-[#faf9f7] py-20 px-6">
+<section class="select-none bg-[var(--bg-2)] py-20 px-6">
   <div class="max-w-2xl mx-auto text-center space-y-10">
     <!-- Header -->
     <div class="space-y-4">

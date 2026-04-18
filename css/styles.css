@@ -1,30 +1,30 @@
 /* Custom Styles for Restaurant Website */
 
 :root {
-  --primary-color: #735200;
-  --dark-bg: #463d2e;
-  --light-bg: #f3f4f6;
-  --border-color: #d1d5db;
+  --primary-color: #735200; /*DONE #735200*/
+  --dark-bg: #463d2e; /*DONE*/
+  --light-bg: #f3f4f6; /*DONE*/
+  --border-color: #d1d5db; /*DONE*/
   --text-color: #111827;
-  --scrollbar-track: #000;
-  --scrollbar-thumb: #9ca3af;
+  --scrollbar-track: #000000; /*DONE*/
+  --scrollbar-thumb: #9ca3af; /*DONE*/
   --scrollbar-thumb-hover: #6b7280;
-  --gray-100: #f3f4f6;
-  --gray-200: #e5e7eb;
-  --gray-800: #1f2937;
-  --white: #ffffff;
-  --animation-color: #735200;
-  --animation-color-2: #f3f4f6;
-  --animation-color-3: #d1d5db;
-
-  --accent-1: #735200;
-  --accent-2: #a67c00;
-  --accent-3: #c6a85b;
-  --bg-1: #ffffff;
-  --bg-2: #faf9f7;
-  --bg-3: #f3efe6;
-  --bg-4: #eae3d6;
-  --menu-nav: #d1d5db;
+  --gray-100: #f3f4f6; /*DONE*/
+  --gray-200: #e5e7eb; /*DONE*/
+  --gray-800: #1f2937; /*DONE*/
+  --white: #ffffff; /*DONE*/
+  --black: #000000; /*DONE*/
+  --animation-color: #735200; /*DONE*/
+  --animation-color-2: #f3f4f6; /*DONE*/
+  --animation-color-3: #d1d5db; /*DONE*/
+  --accent-1: #735200; /*DONE*/
+  --accent-2: #a67c00; /*DONE*/
+  --accent-3: #c6a85b; /*DONE*/
+  --bg-1: #ffffff; /*DONE*/
+  --bg-2: #faf9f7; /*DONE*/
+  --bg-3: #f3efe6; /*DONE*/
+  --bg-4: #eae3d6; /*DONE*/
+  --menu-nav: #d1d5db; /*DONE*/
 }
 
 .primary-bg {
@@ -306,18 +306,6 @@ textarea {
   transition: all 1s ease;
   transform-origin: 0, 0;
 }
-
-/* .menu-open-icon #line1 {
-  transform: translateY(6px) rotate(45deg);
-}
-
-.menu-open-icon #line2 {
-  opacity: 0;
-}
-
-.menu-open-icon #line3 {
-  transform: translateY(-6px) rotate(-45deg);
-} */
 
 .menu-link {
   position: relative;
