@@ -590,6 +590,10 @@ function initLiveValidation(form) {
 
   fields.forEach((el) => {
     const error = el.closest("div")?.querySelector(".error-msg");
+    const selectBtn = el.closest("div")?.querySelector("[data-trigger]");
+    const selectBtnAlt = el
+      .closest("div > div")
+      ?.querySelector("[data-trigger]");
 
     el.addEventListener("input", () => {
       console.log("Valid?", el.checkValidity(), el.name);
@@ -597,11 +601,15 @@ function initLiveValidation(form) {
       if (el.value.trim() === "") {
         el.classList.remove("border-red-600");
         if (error) error.classList.add("hidden");
+        if (selectBtn) selectBtn.classList.remove("border-red-600");
+        if (selectBtnAlt) selectBtnAlt.classList.remove("border-red-600");
         return;
       }
 
       if (!el.checkValidity()) {
         el.classList.add("border-red-600");
+        if (selectBtn) selectBtn.classList.add("border-red-600");
+        if (selectBtnAlt) selectBtnAlt.classList.add("border-red-600");
         if (error) {
           error.classList.remove("hidden");
           setErrorMessage(el, error);
@@ -609,12 +617,15 @@ function initLiveValidation(form) {
       } else {
         el.classList.remove("border-red-600");
         if (error) error.classList.add("hidden");
+        if (selectBtnAlt) selectBtnAlt.classList.remove("border-red-600");
       }
     });
 
     el.addEventListener("blur", () => {
       if (!el.checkValidity()) {
         el.classList.add("border-red-600");
+        if (selectBtn) selectBtn.classList.add("border-red-600");
+        if (selectBtnAlt) selectBtnAlt.classList.add("border-red-600");
         if (error) {
           error.classList.remove("hidden");
           setErrorMessage(el, error);

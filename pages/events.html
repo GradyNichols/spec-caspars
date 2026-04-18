@@ -296,9 +296,11 @@
 
       <!-- Form -->
       <form
-        action="https://formspree.io/f/xaqawajp"
+        action=""
+        data-test="true"
         method="POST"
-        class="space-y-6"
+        class="space-y-6 transition-all duration-300"
+        novalidate
       >
         <!-- Row -->
         <div class="grid md:grid-cols-2 gap-6">
@@ -321,6 +323,7 @@
               >
                 Full Name
               </label>
+              <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
             </div>
           </div>
 
@@ -342,6 +345,7 @@
               >
                 Email Address
               </label>
+              <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
             </div>
           </div>
         </div>
@@ -366,21 +370,28 @@
               >
                 Phone Number
               </label>
+              <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
             </div>
           </div>
 
           <div class="space-y-1">
             <div data-select class="relative w-full pt-5">
-              <select name="guestCount" id="guestCount" class="hidden" required>
+              <select
+                name="guestCount"
+                id="guestCount"
+                class="absolute opacity-0 pointer-events-none"
+                tabindex="-1"
+                required
+              >
                 <option value="">Select an option</option>
                 <option value="small">&lt; 10</option>
-                <option value="medium">10-20</option>
+                <option value="medium">10 - 20</option>
                 <option value="large">&gt; 20</option>
               </select>
 
               <label
                 for="guestCount"
-                class="cursor-auto absolute text-[var(--primary-color)] left-1 scale-95 top-0 text-xs peer-invalid:text-red-600"
+                class="cursor-auto absolute text-[var(--primary-color)] left-1 scale-95 top-0 text-xs"
               >
                 Guest Count
               </label>
@@ -388,7 +399,7 @@
               <button
                 type="button"
                 data-trigger
-                class="w-full text-left p-3 border-b border-[#e5e0d8] text-gray-700 flex justify-between items-center focus:outline-none invalid:border-red-600"
+                class="w-full text-left p-3 border-b border-gray-300 text-gray-700 flex justify-between items-center focus:outline-none"
               >
                 <span data-value-display class="text-gray-400">
                   Select an option
@@ -425,25 +436,26 @@
                 <div
                   data-option
                   data-value="small"
-                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-gray-300 cursor-pointer"
                 >
                   &lt; 10
                 </div>
                 <div
                   data-option
                   data-value="medium"
-                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-gray-300 cursor-pointer"
                 >
                   10-10
                 </div>
                 <div
                   data-option
                   data-value="large"
-                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-gray-300 cursor-pointer"
                 >
                   &gt; 20
                 </div>
               </div>
+              <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
             </div>
             <!-- <div class="relative w-full pt-5">
               <select name="guestCount" id="guestCount" class="hidden" required>
@@ -545,12 +557,19 @@
               >
                 Event Date
               </label>
+              <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
             </div>
           </div>
 
           <div class="space-y-1">
             <div data-select class="relative w-full pt-5">
-              <select name="eventType" id="eventType" class="hidden" required>
+              <select
+                name="eventType"
+                id="eventType"
+                class="absolute opacity-0 pointer-events-none"
+                tabindex="-1"
+                required
+              >
                 <option value="">Select an option</option>
                 <option value="private">Private Dining</option>
                 <option value="event">Event Booking</option>
@@ -619,6 +638,7 @@
                   General Inquiry
                 </div>
               </div>
+              <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
             </div>
             <!-- <div class="relative w-full pt-5">
               <select name="eventType" id="realSelect" class="hidden" required>
@@ -797,6 +817,7 @@
             >
               Event Details
             </label>
+            <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
           </div>
         </div>
 
@@ -804,9 +825,12 @@
         <div class="text-center pt-6">
           <button
             type="submit"
-            class="px-10 py-3 border border-[var(--primary-color)] text-[var(--primary-color)] uppercase tracking-[0.15em] text-sm transition-all duration-300 hover:bg-[var(--primary-color)] hover:text-white"
+            class="submit-btn px-10 py-3 border border-[var(--primary-color)] text-[var(--primary-color)] uppercase tracking-[0.15em] text-sm transition-all duration-300 hover:bg-[var(--primary-color)] hover:text-white"
           >
-            Submit Inquiry
+            <span class="btn-text">Submit Inquiry</span>
+            <span
+              class="loader hidden w-4 h-4 border-2 border-[var(--primary-color)] border-t-transparent rounded-full animate-spin"
+            ></span>
           </button>
         </div>
       </form>
@@ -868,7 +892,7 @@
         action=""
         data-test="true"
         method="POST"
-        class="space-y-6"
+        class="space-y-6 transition-all duration-300"
         novalidate
       >
         <!-- Row -->
@@ -928,23 +952,21 @@
               >
                 <option value="">Select an option</option>
                 <option value="small">&lt; 10</option>
-                <option value="medium">10-20</option>
+                <option value="medium">10 - 20</option>
                 <option value="large">&gt; 20</option>
               </select>
 
               <label
                 for="guestCount1"
-                class="cursor-auto absolute text-[var(--primary-color)] left-1 scale-95 top-0 text-xs peer-invalid:text-red-600"
+                class="cursor-auto absolute text-[var(--primary-color)] left-1 scale-95 top-0 text-xs"
               >
                 Guest Count
               </label>
 
-              <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
-
               <button
                 type="button"
                 data-trigger
-                class="w-full text-left p-3 border-b border-[#e5e0d8] text-gray-700 flex justify-between items-center focus:outline-none invalid:border-red-600"
+                class="w-full text-left p-3 border-b border-gray-300 text-gray-700 flex justify-between items-center focus:outline-none"
               >
                 <span data-value-display class="text-gray-400">
                   Select an option
@@ -976,30 +998,31 @@
 
               <div
                 data-dropdown
-                class="relative w-full m-0 bg-white border-[#e5e0d8] shadow-lg h-0 pointer-events-none transform translate-y-[-20px] transition-all duration-300 z-20"
+                class="relative w-full m-0 bg-white border-gray-300 shadow-lg h-0 pointer-events-none transform translate-y-[-20px] transition-all duration-300 z-20"
               >
                 <div
                   data-option
                   data-value="small"
-                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-gray-300 cursor-pointer"
                 >
                   &lt; 10
                 </div>
                 <div
                   data-option
                   data-value="medium"
-                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-gray-300 cursor-pointer"
                 >
                   10-20
                 </div>
                 <div
                   data-option
                   data-value="large"
-                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-[#e5e0d8] cursor-pointer"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[#f3efe6] border border-t-none border-gray-300 cursor-pointer"
                 >
                   &gt; 20
                 </div>
               </div>
+              <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
             </div>
           </div>
 

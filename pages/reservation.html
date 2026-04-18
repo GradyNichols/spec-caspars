@@ -81,8 +81,10 @@
       <!-- Form -->
       <form
         class="space-y-8"
-        action="https://formspree.io/f/xkokwkzd"
+        action=""
+        data-test="true"
         method="POST"
+        novalidate
       >
         <div class="grid md:grid-cols-2 gap-4">
           <div class="relative w-full pt-5">
@@ -92,6 +94,9 @@
               name="name"
               placeholder=" "
               class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
+              minlength="2"
+              maxlength="50"
+              pattern="^[A-Za-z\s]+$"
               required
             />
             <label
@@ -100,6 +105,7 @@
             >
               Full Name
             </label>
+            <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
           </div>
           <div class="md:mt-0 mt-4">
             <div class="relative w-full pt-5">
@@ -109,6 +115,8 @@
                 id="emailAddress"
                 placeholder=" "
                 class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
+                minlength="6"
+                maxlength="50"
               />
               <label
                 for="emailAddress"
@@ -116,6 +124,7 @@
               >
                 Email Address
               </label>
+              <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
             </div>
           </div>
         </div>
@@ -127,6 +136,7 @@
               name="date"
               id="date"
               value=""
+              min=""
               class="peer appearance-none brightness-100 color-black w-full border-b border-gray-300 px-3 py-[9.5px] focus:outline-none focus:border-[var(--primary-color)]"
               required
             />
@@ -136,10 +146,17 @@
             >
               Reservation Date
             </label>
+            <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
           </div>
           <div class="md:mt-0 mt-4">
             <div data-select class="relative w-full pt-5">
-              <select name="partySize" id="partySize" class="hidden" required>
+              <select
+                name="partySize"
+                id="partySize"
+                class="absolute opacity-0 pointer-events-none"
+                tabindex="-1"
+                required
+              >
                 <option value="">Select an option</option>
                 <option value="guests1-2">1-2 Guests</option>
                 <option value="guests3-4">3-4 Guests</option>
@@ -216,6 +233,7 @@
                   7+ Guests
                 </div>
               </div>
+              <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
             </div>
             <!-- <div class="relative w-full pt-5">
               <select name="partySize" id="realSelect" class="hidden" required>
@@ -312,6 +330,7 @@
               type="time"
               name="reservationTime"
               id="reservationTime"
+              step="1800"
               class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
               required
             />
@@ -321,6 +340,7 @@
             >
               Reservation Time
             </label>
+            <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
           </div>
           <div class="mt-3">
             <div class="relative w-full pt-5 transition-all duration-500">
@@ -330,6 +350,7 @@
                 id="specialRequests"
                 name="specialRequests"
                 class="leading-6 peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)] resize-none overflow-hidden transition-all duration-500"
+                minlength="10"
                 maxlength="500"
                 oninput="autoResize(this)"
                 onpaste="return false;"
@@ -341,6 +362,7 @@
               >
                 Special Requests (optional)
               </label>
+              <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
             </div>
           </div>
         </div>
@@ -355,9 +377,12 @@
         <div class="text-center pt-4">
           <button
             type="submit"
-            class="px-10 py-3 border border-[var(--primary-color)] text-[var(--primary-color)] uppercase tracking-[0.15em] text-sm hover:bg-[var(--primary-color)] hover:text-white transition"
+            class="submit-btn px-10 py-3 border border-[var(--primary-color)] text-[var(--primary-color)] uppercase tracking-[0.15em] text-sm hover:bg-[var(--primary-color)] hover:text-white transition"
           >
-            Submit Request
+            <span class="btn-text">Submit Request</span>
+            <span
+              class="loader hidden w-4 h-4 border-2 border-[var(--primary-color)] border-t-transparent rounded-full animate-spin"
+            ></span>
           </button>
         </div>
       </form>

@@ -194,8 +194,10 @@
 
       <form
         class="space-y-3"
-        action="https://formspree.io/f/maqawabb"
+        action=""
+        data-test="true"
         method="POST"
+        novalidate
       >
         <div class="relative w-full pt-5">
           <input
@@ -204,6 +206,9 @@
             placeholder=" "
             name="name"
             class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
+            minlength="2"
+            maxlength="50"
+            pattern="^[A-Za-z\s]+$"
             required
           />
           <label
@@ -212,12 +217,8 @@
           >
             Full Name
           </label>
+          <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
         </div>
-        <!-- <input
-          type="text"
-          placeholder="Full Name"
-          class="w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
-        /> -->
 
         <div class="relative w-full pt-5">
           <input
@@ -226,6 +227,8 @@
             placeholder=" "
             name="email"
             class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
+            minlength="6"
+            maxlength="50"
             required
           />
           <label
@@ -234,13 +237,8 @@
           >
             Email Address
           </label>
+          <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
         </div>
-
-        <!-- <input
-          type="email"
-          placeholder="Email Address"
-          class="w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
-        /> -->
 
         <div class="relative w-full pt-5 transition-all duration-500">
           <textarea
@@ -249,9 +247,11 @@
             id="message"
             name="message"
             class="leading-6 peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)] resize-none overflow-hidden transition-all duration-500"
+            minlength="10"
             maxlength="500"
             oninput="autoResize(this)"
             required
+            onpaste="return false;"
           ></textarea>
 
           <label
@@ -260,19 +260,18 @@
           >
             Message
           </label>
+          <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
         </div>
-        <!-- <br /> -->
-        <!-- <textarea
-          rows="4"
-          placeholder="Message"
-          class="w-full border-b border-gray-300 p-3 resize-none focus:outline-none focus:border-[var(--primary-color)]"
-        ></textarea> -->
+
         <div class="pt-5">
           <button
             type="submit"
-            class="px-10 py-3 border border-[var(--primary-color)] text-[var(--primary-color)] uppercase tracking-[0.15em] text-sm transition hover:bg-[var(--primary-color)] hover:text-white"
+            class="submit-btn px-10 py-3 border border-[var(--primary-color)] text-[var(--primary-color)] uppercase tracking-[0.15em] text-sm transition hover:bg-[var(--primary-color)] hover:text-white"
           >
-            Send Message
+            <span class="btn-text">Send Message</span>
+            <span
+              class="loader hidden w-4 h-4 border-2 border-[var(--primary-color)] border-t-transparent rounded-full animate-spin"
+            ></span>
           </button>
         </div>
       </form>
