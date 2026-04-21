@@ -143,7 +143,7 @@ function updateActiveButton() {
   const colorCSSactive = "var(--primary-color)";
   const colorCSSinactive = "var(--gray-700)";
   const fontWeightCSSactive = "900";
-  const fontWeightCSSinactive = "normal";
+  const fontWeightCSSinactive = "400";
   const borderCSSinactive = "1px solid transparent";
   const borderCSSactive = "1px solid var(--primary-color)";
   const backgroundCSSactive = "var(--bg-2)";
@@ -161,7 +161,6 @@ function updateActiveButton() {
       //   button.style.borderBottom = "none";
       button.style.fontWeight = fontWeightCSSinactive;
       button.style.color = colorCSSinactive;
-      button.style.border = borderCSSinactive;
       button.style.backgroundColor = backgroundCSSinactive;
     }
   });
@@ -173,7 +172,6 @@ function updateActiveButton() {
       //   activeButton.style.borderBottom = "2px solid var(--gray-800)";
       activeButton.style.fontWeight = fontWeightCSSactive;
       activeButton.style.color = colorCSSactive;
-      activeButton.style.border = borderCSSinactive;
       activeButton.style.backgroundColor = backgroundCSSactive;
     }
   }

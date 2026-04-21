@@ -321,3 +321,16 @@ textarea {
   color: var(--primary-color);
   font-weight: bold;
 }
+
+#menu-button,
+#events-button,
+#contact-button {
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+#menu-button:hover,
+#events-button:hover,
+#contact-button:hover {
+  border: 1px solid rgb(from var(--primary-color) r g b / 0.5);
+}
