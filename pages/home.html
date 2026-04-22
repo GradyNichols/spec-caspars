@@ -20,13 +20,19 @@
     loop
     playsinline
     class="bg-black absolute top-0 left-0 w-full h-full object-cover"
-    poster="/public/images/pexels-valeriya-18330996.jpg"
   >
+    <!-- poster="/public/images/pexels-valeriya-18330996.jpg" -->
     <source src="/public/media/casparsHomeMedia.mp4" type="video/mp4" />
   </video>
 
   <!-- Dark Overlay -->
-  <div class="absolute inset-0 bg-black/50"><!-- Add video here  --></div>
+  <div class="absolute inset-0 bg-[#735200]/25 mix-blend-multiply">
+    <!-- Add video here  -->
+  </div>
+
+  <div class="absolute inset-0 bg-black/50">
+    <!-- Add video here  -->
+  </div>
 
   <!-- Content -->
   <div class="relative z-10 max-w-3xl px-6 space-y-6">
@@ -34,8 +40,10 @@
       Caspar’s
     </p>
 
-    <h1 class="text-5xl md:text-7xl font-serif text-white leading-tight">
-      A Refined Dining Experience
+    <h1
+      class="text-4xl md:text-5xl font-serif text-white font-[600] leading-tight"
+    >
+      Savor the Opulence of Persia
     </h1>
 
     <div class="w-12 h-[1px] bg-[var(--accent-3)] mx-auto opacity-70"></div>
@@ -71,9 +79,9 @@
   >
     <!-- IMAGE (enhanced) -->
     <div class="relative group">
-      <div class="overflow-hidden md:rounded-sm rounded-none">
+      <div class="overflow-hidden md:rounded-md rounded-none">
         <img
-          src="logo/download.jpeg"
+          src="/public/images/kabob-koobideh-persian-beef-kebabs-2.webp"
           alt="Dining Experience"
           class="w-full h-[420px] object-cover transition duration-700 group-hover:scale-105"
         />
@@ -143,7 +151,7 @@
         <div class="swiper-slide group">
           <div class="overflow-hidden rounded-lg">
             <img
-              src="/images/kebab.jpg"
+              src="/public/images/chelo-rice-prep-persian-kabab.webp.webp"
               class="w-full h-[320px] object-cover transition duration-700 group-hover:scale-105"
             />
           </div>
@@ -161,7 +169,7 @@
         <div class="swiper-slide group">
           <div class="overflow-hidden rounded-lg">
             <img
-              src="/images/chicken.jpg"
+              src="/public/images/7816fc07-ab8e-4079-abf7-2d0752e09d7d--66F5011B-F06A-4C2A-BC93-D74B8777A82E.png"
               class="w-full h-[320px] object-cover transition duration-700 group-hover:scale-105"
             />
           </div>
@@ -180,7 +188,7 @@
         <div class="swiper-slide group">
           <div class="overflow-hidden rounded-lg">
             <img
-              src="/images/stew.jpg"
+              src="/public/images/perfectly-grilled-lamb-rib-or-loin-chops-recipe-hero-03-262fe2defc7c491688cb2d363dad3446.jpeg"
               class="w-full h-[320px] object-cover transition duration-700 group-hover:scale-105"
             />
           </div>
@@ -197,7 +205,7 @@
         <div class="swiper-slide group">
           <div class="overflow-hidden rounded-lg">
             <img
-              src="/images/rice.jpg"
+              src="/public/images/ghormeh-sabzi-persian-herb-stew-3.jpg"
               class="w-full h-[320px] object-cover transition duration-700 group-hover:scale-105"
             />
           </div>
@@ -206,6 +214,24 @@
             <h3 class="font-serif text-xl text-gray-800">Ghormeh Sabzi</h3>
             <p class="text-sm text-gray-500">
               Herbs, kidney beans, slow-cooked beef, dried lime
+            </p>
+          </div>
+        </div>
+
+        <div class="swiper-slide group">
+          <div class="overflow-hidden rounded-lg">
+            <img
+              src="/public/images/7816fc07-ab8e-4079-abf7-2d0752e09d7d--66F5011B-F06A-4C2A-BC93-D74B8777A82E.png"
+              class="w-full h-[320px] object-cover transition duration-700 group-hover:scale-105"
+            />
+          </div>
+
+          <div class="pt-4 text-center space-y-1">
+            <h3 class="font-serif text-xl text-gray-800">
+              Zereshk Polo with Chicken
+            </h3>
+            <p class="text-sm text-gray-500">
+              Tender braised chicken with saffron rice and tart barberries
             </p>
           </div>
         </div>
@@ -296,15 +322,19 @@
   <div
     id="parallaxBg"
     class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0"
-    style="background-image: url(&quot;logo/download.jpeg&quot;)"
+    style="background-image: url(/public/images/71K4dEBDO8L.jpg)"
   ></div>
 
+  <div class="absolute inset-0 bg-[#735200]/25 mix-blend-multiply">
+    <!-- Add video here  -->
+  </div>
+
   <section
-    class="relative py-1 bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent-2)] to-[var(--accent-3)] text-white"
+    class="md:py-1 py-[2px] relative bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent-2)] to-[var(--accent-3)] text-white"
   ></section>
 
   <div
-    class="relative z-10 max-w-3xl md:my-20 mt-0 mb-0 mx-auto p-10 bg-white/80 backdrop-blur-md md:rounded-md rounded-none text-center"
+    class="px-10 md:py-10 py-20 relative z-10 max-w-3xl md:my-20 mt-0 mb-0 mx-auto bg-white/80 backdrop-blur-md md:rounded-md rounded-none text-center"
   >
     <h2 class="text-3xl md:text-4xl font-bold text-amber-900 my-4">
       Plan Your Visit
@@ -322,7 +352,7 @@
   </div>
 
   <section
-    class="relative py-1 bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent-2)] to-[var(--accent-3)] text-white"
+    class="md:py-1 py-[2px] relative bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent-2)] to-[var(--accent-3)] text-white"
   ></section>
 </section>
 
@@ -387,7 +417,7 @@
       <!-- IMAGE (RIGHT) -->
       <div class="overflow-hidden rounded-lg group order-1 md:order-2">
         <img
-          src="/images/private-dining.jpg"
+          src="/public/images/pexels-tonive-14885418.jpg"
           class="w-full h-[420px] object-cover transition duration-700 group-hover:scale-105"
         />
       </div>
@@ -642,10 +672,10 @@
   <div
     id="parallaxBg"
     class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0"
-    style="background-image: url(&quot;logo/download.jpeg&quot;)"
+    style="background-image: url(/public/images/pexels-valeriya-27305315.jpg)"
   ></div>
   <section
-    class="relative py-1 bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent-2)] to-[var(--accent-3)] text-white"
+    class="relative md:py-1 py-[2px] bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent-2)] to-[var(--accent-3)] text-white"
   ></section>
   <div
     class="relative z-10 max-w-3xl md:my-20 mt-0 mb-0 mx-auto p-10 bg-white/80 backdrop-blur-md md:rounded-md rounded-none text-center"
@@ -664,52 +694,83 @@
     </button>
   </div>
   <section
-    class="relative py-1 bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent-2)] to-[var(--accent-3)] text-white"
+    class="relative md:py-1 py-[2px] bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent-2)] to-[var(--accent-3)] text-white"
   ></section>
 </section>
 
 <!-- mailing list -->
 <section class="select-none bg-[var(--bg-2)] py-20 px-6">
-  <div class="max-w-2xl mx-auto text-center space-y-10">
-    <!-- Header -->
-    <div class="space-y-4">
-      <p
-        class="text-xs tracking-[0.25em] uppercase text-[var(--primary-color)]"
-      >
-        Updates
+  <div class="max-w-2xl mx-auto space-y-4">
+    <div class="text-center space-y-10">
+      <!-- Header -->
+      <div class="space-y-4">
+        <p
+          class="text-xs tracking-[0.25em] uppercase text-[var(--primary-color)]"
+        >
+          Updates
+        </p>
+
+        <h2 class="text-4xl md:text-5xl font-serif text-amber-900">
+          Stay Connected
+        </h2>
+
+        <div
+          class="w-12 h-[1px] bg-[var(--primary-color)] mx-auto opacity-60"
+        ></div>
+      </div>
+
+      <!-- Description -->
+      <p class="text-gray-600 leading-relaxed max-w-xl mx-auto">
+        Receive exclusive updates, seasonal dishes, and private event
+        invitations.
       </p>
-
-      <h2 class="text-4xl md:text-5xl font-serif text-amber-900">
-        Stay Connected
-      </h2>
-
-      <div
-        class="w-12 h-[1px] bg-[var(--primary-color)] mx-auto opacity-60"
-      ></div>
     </div>
-
-    <!-- Description -->
-    <p class="text-gray-600 leading-relaxed max-w-xl mx-auto">
-      Receive exclusive updates, seasonal dishes, and private event invitations.
-    </p>
-
-    <!-- Form -->
-    <form class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-      <input
-        type="email"
-        placeholder="Email address"
-        class="w-full sm:flex-1 px-4 py-3 border-b border-[#e5e0d8] bg-transparent text-gray-700 focus:outline-none focus:border-[var(--primary-color)] transition"
-      />
-
-      <button
-        type="submit"
-        class="uppercase font-medium tracking-[0.12em] text-sm px-8 py-3 border border-[var(--primary-color)] text-[var(--primary-color)] transition hover:bg-[var(--primary-color)] hover:text-white"
+    <div class="space-y-10">
+      <!-- Form -->
+      <form
+        action=""
+        data-test="true"
+        method="POST"
+        class="transition-all duration-300 flex flex-col sm:flex-row gap-4 justify-center pt-4 px-2"
+        novalidate
       >
-        Subscribe
-      </button>
-    </form>
+        <div class="relative w-full pt-5">
+          <input
+            type="email"
+            placeholder=" "
+            name="email"
+            id="updatesEmail"
+            class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
+            minlength="6"
+            maxlength="50"
+            required
+          />
+          <label
+            for="updatesEmail"
+            class="cursor-auto absolute left-4 top-5 mt-4 text-sm text-gray-400 transition-all duration-300 peer-placeholder-shown:text-sm peer-focus:left-1 peer-focus:scale-95 peer-[&:not(:placeholder-shown)]:left-1 peer-[&:not(:placeholder-shown)]:scale-95 peer-[&:not(:placeholder-shown)]:top-[-1rem] ease-out duration-200 peer-focus:top-[-1rem] peer-focus:text-xs peer-focus:text-[var(--primary-color)] peer-[&:not(:placeholder-shown)]:top-0 peer-[&:not(:placeholder-shown)]:text-xs peer-[&:not(:placeholder-shown)]:text-[var(--primary-color)]"
+          >
+            Email
+          </label>
+          <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
+        </div>
 
-    <!-- subtle note -->
-    <p class="text-xs text-gray-400 pt-4">No spam. Only meaningful updates.</p>
+        <div class="text-center pt-5">
+          <button
+            type="submit"
+            class="md:w-auto w-full submit-btn px-10 py-[13.5px] border border-[var(--primary-color)] text-[var(--primary-color)] uppercase font-medium tracking-[0.12em] text-sm transition-all duration-300 hover:bg-[var(--primary-color)] hover:text-white"
+          >
+            <span class="btn-text">Subscribe</span>
+            <span
+              class="loader hidden w-4 h-4 border-2 border-[var(--primary-color)] border-t-transparent rounded-full animate-spin"
+            ></span>
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="text-center space-y-10">
+      <p class="text-xs text-gray-400 pt-4">
+        No spam. Only meaningful updates.
+      </p>
+    </div>
   </div>
 </section>

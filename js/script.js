@@ -383,7 +383,8 @@ function animateMenuIcon(isOpen) {
 
   if (isOpen) {
     // top — rotating facing down
-    line1.style.transform = "rotate(-45deg) translate(-1px, 2.5px)";
+    // line1.style.transform = "rotate(-45deg) translate(-1px, 2.5px)";
+    line1.style.transform = "rotate(-45deg) translate(-1px, 2.6px)";
     line2.style.opacity = "0";
     // bottom — rotating facing upward
     line3.style.transform = "rotate(45deg) translate(-6px, -7px)";

@@ -300,6 +300,12 @@ textarea {
   transform-box: fill-box;
 }
 
+svg:has(path):hover > path {
+  transition: all 0.4s;
+  transform-origin: 0, 0;
+  stroke: #6b7280;
+}
+
 #line1,
 #line2,
 #line3 {
