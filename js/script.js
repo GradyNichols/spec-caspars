@@ -48,6 +48,10 @@ const routeMap = {
   "/contact.html": "pages/contact.html",
   "/reservation": "pages/reservation.html",
   "/reservation.html": "pages/reservation.html",
+  "/terms": "pages/terms.html",
+  "/terms.html": "pages/terms.html",
+  "/privacy": "pages/privacy.html",
+  "/privacy.html": "pages/privacy.html",
 };
 
 function getRouteFromPage(pageUrl) {
