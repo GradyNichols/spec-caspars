@@ -134,7 +134,7 @@
         <!-- Mobile Navigation -->
         <div
           id="mobileMenu"
-          class="nav-links md:hidden py-2 px-4 space-y-1 text-md"
+          class="nav-links md:hidden py-2 px-4 space-y-1 text-md flex flex-col items-center"
         >
           <button
             onclick="loadPage('pages/menu.html')"
@@ -159,6 +159,20 @@
           >
             Contact
           </button>
+
+          <div
+            class="h-1/2 w-full border-b opacity-50 border-[var(--primary-color)] pt-2"
+          ></div>
+
+          <div class="flex justify-end w-full px-4 pt-2 mt-10">
+            <button
+              onclick="loadPage('pages/reservation.html')"
+              class="brightness-150 px-5 py-2.5 text-xs reservation-btn border border-[var(--primary-color)] text-[var(--primary-color)] transition-all duration-300 hover:bg-[var(--primary-color)] hover:text-white hover:border-transparent tracking-[0.12em] uppercase font-medium"
+              id="reservation-button"
+            >
+              Make a Reservation
+            </button>
+          </div>
         </div>
       </div>
     </nav>

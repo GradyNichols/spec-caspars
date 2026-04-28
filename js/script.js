@@ -685,7 +685,9 @@ function initFormSystem() {
 
 async function loadPage(pageUrl, pushState = true) {
   try {
-    const cacheBustedUrl = `${pageUrl}?v=${Date.now()}`;
+    // const cacheBustedUrl = `${pageUrl}?v=${Date.now()}`;
+
+    console.log("Loading page:", pageUrl);
 
     const response = await fetch(pageUrl);
     if (!response.ok) throw new Error("Page not found");
