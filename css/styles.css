@@ -71,7 +71,10 @@ body {
   font-style: normal;
 }
 
-p {
+p,
+ul,
+ol,
+li {
   font-family: "Cormorant", serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -339,4 +342,12 @@ svg:has(path):hover > path {
 #events-button:hover,
 #contact-button:hover {
   border: 1px solid rgb(from var(--primary-color) r g b / 0.5);
+}
+
+details summary {
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
 }
