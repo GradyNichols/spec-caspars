@@ -89,6 +89,8 @@ html::-webkit-scrollbar {
 input[type="date"],
 input[type="time"] {
   color: var(--dark-bg); /* gray-400 */
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 input[type="date"]::-webkit-datetime-edit,
