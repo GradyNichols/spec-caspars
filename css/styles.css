@@ -354,3 +354,16 @@ details summary {
 details summary::-webkit-details-marker {
   display: none;
 }
+
+.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* 
+class
+
+  fade-up opacity-0 translate-y-8 transition-all duration-700 ease-out
+
+
+*/

@@ -687,7 +687,62 @@ function initFormSystem() {
   console.log("form system code ran");
 }
 
+function initAnimations() {
+  const elements = document.querySelectorAll(".fade-up");
+
+  console.log("Found elements:", elements.length);
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        console.log("Observing:", entry.target);
+
+        if (entry.isIntersecting) {
+          console.log("Animating:", entry.target);
+
+          entry.target.classList.add("animate-in");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+      rootMargin: "0px 0px -100px 0px",
+    },
+  );
+
+  elements.forEach((el) => {
+    observer.observe(el);
+  });
+  // const observer = new IntersectionObserver(
+  //   (entries) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         entry.target.classList.add("animate-in");
+  //         observer.unobserve(entry.target);
+  //       }
+  //     });
+  //   },
+  //   {
+  //     threshold: 0.1,
+  //   },
+  // );
+
+  // document.querySelectorAll(".fade-up").forEach((el) => {
+  //   observer.observe(el);
+  //   console.log("observer observed");
+  // });
+
+  // console.log("Animations initialized");
+}
+
 async function loadPage(pageUrl, pushState = true) {
+  if (pageUrl.startsWith("#")) {
+    const el = document.querySelector(pageUrl);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+    return;
+  }
+
   try {
     // const cacheBustedUrl = `${pageUrl}?v=${Date.now()}`;
 
@@ -697,8 +752,20 @@ async function loadPage(pageUrl, pushState = true) {
     if (!response.ok) throw new Error("Page not found");
 
     const content = await response.text();
+    // const parser = new DOMParser();
+    // const doc = parser.parseFromString(content, "text/html");
     const contentDiv = document.getElementById("content");
+    // contentDiv.innerHTML = doc.body.innerHTML;
     contentDiv.innerHTML = content;
+    console.log("HTML just injected ----");
+
+    // console.log("Container:", contentDiv);
+
+    // console.log("Fade elements: ", contentDiv.querySelectorAll(".fade-up"));
+
+    requestAnimationFrame(() => {
+      initAnimations?.();
+    });
 
     initializeSwiper?.();
     initCustomSelect?.();
@@ -738,9 +805,6 @@ async function loadPage(pageUrl, pushState = true) {
     // Close mobile menu
     closeMobileMenu();
 
-    // Scroll to top
-    window.scrollTo(0, 0);
-
     setTimeout(() => initMenuNav(), 150);
 
     // Navbar style behavior depends on page
@@ -763,6 +827,21 @@ async function loadPage(pageUrl, pushState = true) {
     //setupFormHandlers();
     updateActiveButton();
     updateActiveButtonMobile();
+
+    const hash = window.location.hash;
+
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 50);
+      }
+    }
+    if (!window.location.hash) {
+      // Scroll to top
+      window.scrollTo(0, 0);
+    }
   } catch (error) {
     console.error("Error loading page:", error);
     document.getElementById("content").innerHTML =
@@ -829,6 +908,41 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   showToast("success", "Toasty test");
+
+  // const observer = new IntersectionObserver(
+  //   (entries) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         entry.target.classList.add("animate-in");
+  //         observer.unobserve(entry.target);
+  //       }
+  //     });
+  //   },
+  //   {
+  //     threshold: 0.1,
+  //   },
+  // );
+  // const observer = new IntersectionObserver(
+  //   (entries) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         entry.target.classList.add("animate-in");
+  //         observer.unobserve(entry.target);
+  //       }
+  //     });
+  //   },
+  //   {
+  //     threshold: 0.1,
+  //   },
+  // );
+
+  // document.querySelectorAll(".fade-up").forEach((el) => {
+  //   observer.observe(el);
+  // });
+
+  initAnimations?.();
+
+  console.log(document.querySelectorAll(".fade-up"));
 
   console.log("Restaurant website initialized successfully!");
 });
