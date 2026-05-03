@@ -25,6 +25,8 @@
   --bg-3: #f3efe6; /*DONE*/
   --bg-4: #eae3d6; /*DONE*/
   --menu-nav: #d1d5db; /*DONE*/
+
+  --swiper-pagination-color: #735200;
 }
 
 .primary-bg {
@@ -40,7 +42,7 @@
   background-color: var(--primary-color);
 }
 .primary-hover-text:hover {
-  color: var(--primary-color);
+  color: var(--light-bg);
 }
 .focus-primary-border:focus {
   border-color: var(--primary-color);
