@@ -490,7 +490,7 @@ function showToast(type = "success", message = "") {
       }
     </div>
 
-    <div class="flex-1 mt-0.5">
+    <div class="flex-1 mt-[1px]">
       ${message}
     </div>
 
