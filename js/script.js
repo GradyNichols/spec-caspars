@@ -298,7 +298,7 @@ function initializeSwiper() {
       },
     });
   });
-  console.log("swiper initialized");
+  // console.log("swiper initialized");
 }
 
 function initCustomSelect() {
@@ -532,7 +532,7 @@ function initLiveValidation(form) {
       ?.querySelector("[data-trigger]");
 
     el.addEventListener("input", () => {
-      console.log("Valid?", el.checkValidity(), el.name);
+      // console.log("Valid?", el.checkValidity(), el.name);
 
       if (el.value.trim() === "") {
         el.classList.remove("border-red-600");
@@ -570,7 +570,7 @@ function initLiveValidation(form) {
     });
   });
 
-  console.log("ran");
+  // console.log("ran");
 }
 
 function resetCustomSelect(form) {
@@ -600,30 +600,30 @@ function resetCustomSelect(form) {
 }
 
 function initFormSystem() {
-  console.log("Forms found: ", document.querySelectorAll("form").length);
+  // console.log("Forms found: ", document.querySelectorAll("form").length);
   document.querySelectorAll("form").forEach((form) => {
-    console.log(form);
+    // console.log(form);
     initLiveValidation(form);
 
-    console.log("made it past initLiveValidation");
+    // console.log("made it past initLiveValidation");
 
     const btn = form.querySelector(".submit-btn");
     if (!btn) {
-      console.warn("Form missing required elements, skipping...");
+      // console.warn("Form missing required elements, skipping...");
       return;
     }
     const text = btn.querySelector(".btn-text");
     if (!text) {
-      console.warn("Form missing required elements, skipping...");
+      // console.warn("Form missing required elements, skipping...");
       return;
     }
     const loader = btn.querySelector(".loader");
     if (!loader) {
-      console.warn("Form missing required elements, skipping...");
+      // console.warn("Form missing required elements, skipping...");
       return;
     }
 
-    console.log("here");
+    // console.log("here");
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -646,13 +646,13 @@ function initFormSystem() {
       text.classList.add("hidden");
       loader.classList.remove("hidden");
 
-      console.log("submit");
+      // console.log("submit");
 
       try {
-        console.log("try");
+        // console.log("try");
 
         if (form.dataset.test === "true") {
-          console.log("TEST MODE");
+          console.log("TEST MODE ACTIVE");
 
           showToast("success", "Test submission successful.");
 
@@ -684,21 +684,21 @@ function initFormSystem() {
       }
     });
   });
-  console.log("form system code ran");
+  // console.log("form system code ran");
 }
 
 function initAnimations() {
   const elements = document.querySelectorAll(".fade-up");
 
-  console.log("Found elements:", elements.length);
+  // console.log("Found elements:", elements.length);
 
   const observer = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
-        console.log("Observing:", entry.target);
+        // console.log("Observing:", entry.target);
 
         if (entry.isIntersecting) {
-          console.log("Animating:", entry.target);
+          // console.log("Animating:", entry.target);
 
           entry.target.classList.add("animate-in");
           observer.unobserve(entry.target);
@@ -746,7 +746,7 @@ async function loadPage(pageUrl, pushState = true) {
   try {
     // const cacheBustedUrl = `${pageUrl}?v=${Date.now()}`;
 
-    console.log("Loading page:", pageUrl);
+    // console.log("Loading page:", pageUrl);
 
     const response = await fetch(pageUrl);
     if (!response.ok) throw new Error("Page not found");
@@ -757,7 +757,7 @@ async function loadPage(pageUrl, pushState = true) {
     const contentDiv = document.getElementById("content");
     // contentDiv.innerHTML = doc.body.innerHTML;
     contentDiv.innerHTML = content;
-    console.log("HTML just injected ----");
+    // console.log("HTML just injected ----");
 
     // console.log("Container:", contentDiv);
 
@@ -772,7 +772,7 @@ async function loadPage(pageUrl, pushState = true) {
 
     initFormSystem?.();
 
-    console.log("everything went smoothly");
+    // console.log("everything went smoothly");
 
     // Update current page
     currentPage = pageUrl.split("/").pop().replace(".html", "");
@@ -942,7 +942,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   initAnimations?.();
 
-  console.log(document.querySelectorAll(".fade-up"));
+  // console.log(document.querySelectorAll(".fade-up"));
 
-  console.log("Restaurant website initialized successfully!");
+  // console.log("Restaurant website initialized successfully!");
 });

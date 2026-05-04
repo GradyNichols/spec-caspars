@@ -190,7 +190,7 @@
   </div>
 </section>
 
-<section class="select-none py-20 bg-[#f8f4f2]">
+<section class="select-none py-20 bg-[var(--bg-5)]">
   <div class="max-w-7xl mx-auto md:px-16 px-12 space-y-16 pb-4">
     <!-- Header -->
     <div
@@ -317,7 +317,7 @@
   </div>
 </section>
 
-<section class="select-none py-20 text-center bg-[#f8f4f2]">
+<section class="select-none py-20 text-center bg-[var(--bg-5)]">
   <div
     class="max-w-3xl mx-auto px-4 space-y-6 fade-up opacity-0 transform translate-y-4 transition-all duration-500 ease-out"
   >
@@ -335,12 +335,12 @@
 
 <section
   id="event-inquiry"
-  class="select-none md:py-24 py-14 bg-gradient-to-b from-[#f8f4f2] to-[var(--bg-2)]"
+  class="select-none md:py-24 py-14 bg-gradient-to-b from-[var(--bg-5)] to-[var(--bg-2)]"
 >
   <div class="max-w-4xl mx-auto px-4">
     <!-- Container -->
     <div
-      class="border border-[#e5e0d8] px-10 py-24 md:p-16 bg-white shadow-[0_10px_40px_rgba(0,0,0,0.05)] space-y-12 transition-all duration-500"
+      class="border border-[var(--card-border-color)] px-10 py-24 md:p-16 bg-white shadow-[0_10px_40px_rgba(0,0,0,0.05)] space-y-12 transition-all duration-500"
     >
       <!-- Header -->
       <div
@@ -364,9 +364,10 @@
       </div>
 
       <!-- Form -->
+      <!-- data-test="true" -->
       <form
-        action=""
-        data-test="true"
+        action="https://formspree.io/f/xaqawajp"
+        target="_blank"
         method="POST"
         class="space-y-6 transition-all duration-300"
         novalidate
@@ -500,7 +501,7 @@
 
               <div
                 data-dropdown
-                class="relative w-full m-0 bg-white border-[#e5e0d8] shadow-lg h-0 pointer-events-none transform translate-y-[-20px] transition-all duration-300 z-20"
+                class="relative w-full m-0 bg-white border-[var(--card-border-color)] shadow-lg h-0 pointer-events-none transform translate-y-[-20px] transition-all duration-300 z-20"
               >
                 <div
                   data-option
@@ -575,7 +576,7 @@
               <button
                 type="button"
                 data-trigger
-                class="w-full text-left p-3 border-b border-[#e5e0d8] text-gray-700 flex justify-between items-center focus:outline-none invalid:border-red-600"
+                class="w-full text-left p-3 border-b border-[var(--card-border-color)] text-gray-700 flex justify-between items-center focus:outline-none invalid:border-red-600"
               >
                 <span data-value-display class="text-gray-400">
                   Select an option
@@ -605,26 +606,26 @@
               </button>
               <div
                 data-dropdown
-                class="relative w-full m-0 bg-white border-[#e5e0d8] shadow-lg h-0 pointer-events-none transform translate-y-[-20px] transition-all duration-300 z-20"
+                class="relative w-full m-0 bg-white border-[var(--card-border-color)] shadow-lg h-0 pointer-events-none transform translate-y-[-20px] transition-all duration-300 z-20"
               >
                 <div
                   data-option
                   data-value="private"
-                  class="p-3 text-gray-700 hidden bg-white hover:bg-[var(--bg-3)] border border-t-none border-[#e5e0d8] cursor-pointer"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[var(--bg-3)] border border-t-none border-[var(--card-border-color)] cursor-pointer"
                 >
                   Private Dining
                 </div>
                 <div
                   data-option
                   data-value="event"
-                  class="p-3 text-gray-700 hidden bg-white hover:bg-[var(--bg-3)] border border-t-none border-[#e5e0d8] cursor-pointer"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[var(--bg-3)] border border-t-none border-[var(--card-border-color)] cursor-pointer"
                 >
                   Event Booking
                 </div>
                 <div
                   data-option
                   data-value="general"
-                  class="p-3 text-gray-700 hidden bg-white hover:bg-[var(--bg-3)] border border-t-none border-[#e5e0d8] cursor-pointer"
+                  class="p-3 text-gray-700 hidden bg-white hover:bg-[var(--bg-3)] border border-t-none border-[var(--card-border-color)] cursor-pointer"
                 >
                   General Inquiry
                 </div>

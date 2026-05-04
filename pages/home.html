@@ -26,7 +26,7 @@
   </video>
 
   <!-- Dark Overlay -->
-  <div class="absolute inset-0 bg-[#735200]/25 mix-blend-multiply">
+  <div class="absolute inset-0 bg-[var(--primary-color)]/25 mix-blend-multiply">
     <!-- Add video here  -->
   </div>
 
@@ -310,7 +310,7 @@
     <div class="space-y-12">
       <!-- Item -->
       <div
-        class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 border-b border-[#e5e0d8] pb-8"
+        class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 border-b border-[var(--card-border-color)] pb-8"
       >
         <h3 class="text-2xl font-serif">Authentic Ingredients</h3>
 
@@ -321,7 +321,7 @@
 
       <!-- Item -->
       <div
-        class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 border-b border-[#e5e0d8] pb-8"
+        class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 border-b border-[var(--card-border-color)] pb-8"
       >
         <h3 class="text-2xl font-serif">Timeless Techniques</h3>
 
@@ -472,7 +472,7 @@
 
     <!-- Secondary Row -->
     <div
-      class="grid md:grid-cols-3 gap-8 md:pt-10 pt-16 px-5 border-t border-[#e5e0d8] md:space-y-0 space-y-6"
+      class="grid md:grid-cols-3 gap-8 md:pt-10 pt-16 px-5 border-t border-[var(--card-border-color)] md:space-y-0 space-y-6"
     >
       <div class="space-y-3 text-center">
         <h4
@@ -543,7 +543,7 @@
     <!-- FAQ -->
     <div class="space-y-4 px-6" id="faqContainer">
       <!-- ITEM -->
-      <div class="border-b border-[#e5e0d8]">
+      <div class="border-b border-[var(--card-border-color)]">
         <button
           onclick="toggleFAQ(this)"
           class="w-full flex justify-between items-center py-6 text-left group"
@@ -570,7 +570,7 @@
       </div>
 
       <!-- ITEM -->
-      <div class="border-b border-[#e5e0d8]">
+      <div class="border-b border-[var(--card-border-color)]">
         <button
           onclick="toggleFAQ(this)"
           class="w-full flex justify-between items-center py-6 text-left group"
@@ -597,7 +597,7 @@
       </div>
 
       <!-- ITEM -->
-      <div class="border-b border-[#e5e0d8]">
+      <div class="border-b border-[var(--card-border-color)]">
         <button
           onclick="toggleFAQ(this)"
           class="w-full flex justify-between items-center py-6 text-left group"
@@ -623,7 +623,7 @@
         </div>
       </div>
 
-      <div class="border-b border-[#e5e0d8]">
+      <div class="border-b border-[var(--card-border-color)]">
         <button
           onclick="toggleFAQ(this)"
           class="w-full flex justify-between items-center py-6 text-left group"
@@ -688,7 +688,7 @@
       </div>
 
       <!-- Divider -->
-      <div class="w-16 h-[1px] bg-[#e5e0d8] mx-auto"></div>
+      <div class="w-16 h-[1px] bg-[var(--card-border-color)] mx-auto"></div>
 
       <!-- Quote -->
       <div class="max-w-3xl mx-auto text-center space-y-6">
@@ -702,7 +702,7 @@
       </div>
 
       <!-- Divider -->
-      <div class="w-16 h-[1px] bg-[#e5e0d8] mx-auto"></div>
+      <div class="w-16 h-[1px] bg-[var(--card-border-color)] mx-auto"></div>
 
       <!-- Quote -->
       <div class="max-w-3xl mx-auto text-center space-y-6">
@@ -800,9 +800,10 @@
     <div class="space-y-10">
       <!-- Form -->
       <form
-        action=""
+        action="https://app.us9.list-manage.com/subscribe/post?u=93af7b5fdd2b6a1e99ccde5ff&amp;id=6045773678&amp;f_id=006242e1f0"
         data-test="true"
         method="POST"
+        target="_blank"
         class="transition-all duration-300 flex flex-col sm:flex-row gap-4 justify-center pt-4 px-2"
         novalidate
       >
@@ -810,7 +811,7 @@
           <input
             type="email"
             placeholder=" "
-            name="email"
+            name="EMAIL"
             id="updatesEmail"
             class="peer w-full border-b border-gray-300 p-3 focus:outline-none focus:border-[var(--primary-color)]"
             minlength="6"
@@ -824,6 +825,14 @@
             Email
           </label>
           <p class="error-msg hidden text-red-600 text-xs mt-1"></p>
+          <div aria-hidden="true" style="position: absolute; left: -5000px">
+            <input
+              type="text"
+              name="b_93af7b5fdd2b6a1e99ccde5ff_6045773678"
+              tabindex="-1"
+              value=""
+            />
+          </div>
         </div>
 
         <div class="text-center pt-5">

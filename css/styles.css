@@ -11,6 +11,7 @@
   --scrollbar-thumb-hover: #6b7280;
   --gray-100: #f3f4f6; /*DONE*/
   --gray-200: #e5e7eb; /*DONE*/
+  /* --gray-600: #666666; */
   --gray-800: #1f2937; /*DONE*/
   --white: #ffffff; /*DONE*/
   --black: #000000; /*DONE*/
@@ -24,7 +25,12 @@
   --bg-2: #faf9f7; /*DONE*/
   --bg-3: #f3efe6; /*DONE*/
   --bg-4: #eae3d6; /*DONE*/
+  --bg-5: #f8f4f2;
+  --bg-6: #f9f7f2;
   --menu-nav: #d1d5db; /*DONE*/
+  --tiny-nav-border-color: #d6d0c6;
+  --card-border-color: #e5e0d8;
+  --contact-icon-fill: #aa7942;
 
   --swiper-pagination-color: #735200;
 }
