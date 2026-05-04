@@ -19,7 +19,7 @@
     muted
     loop
     playsinline
-    class="bg-black absolute top-0 left-0 w-full h-full object-cover"
+    class="bg-[var(--dark-bg)] absolute top-0 left-0 w-full h-full object-cover"
   >
     <!-- poster="/public/images/pexels-valeriya-18330996.jpg" -->
     <source src="/public/media/casparsHomeMedia.mp4" type="video/mp4" />
@@ -346,15 +346,16 @@
 
 <!-- parallax -->
 <section class="select-none relative overflow-hidden">
-  <!-- <div
-    id="parallaxBg"
-    class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0"
-    style="
-      background-image: url(/public/images/pexels-vidalbalielojrfotografia-12688961.jpg);
-    "
-  ></div> -->
-
   <div
+    class="parallax-section absolute inset-0 z-0"
+    style="
+      background-image: url(&quot;/public/images/pexels-hasan-huseyin-turan-42224442-36579883.jpg&quot;);
+      background-position: center 75%;
+    "
+    id="parallaxBg"
+  ></div>
+
+  <!-- <div
     id="parallaxBg"
     loading="lazy"
     class="absolute inset-0 bg-cover bg-no-repeat bg-fixed z-0"
@@ -363,7 +364,7 @@
       background-color: var(--black);
       background-position: center 75%;
     "
-  ></div>
+  ></div> -->
 
   <!-- <div class="absolute inset-0 bg-[#735200]/25 mix-blend-multiply">
      Add video here  
@@ -374,7 +375,7 @@
   ></section>
 
   <div
-    class="px-10 md:py-10 py-20 relative z-10 max-w-3xl md:my-20 mt-0 mb-0 mx-auto bg-white/80 backdrop-blur-md md:rounded-md rounded-none text-center"
+    class="px-10 md:py-10 py-20 relative z-10 max-w-3xl md:my-20 mt-0 mb-0 mx-auto bg-white/80 md:backdrop-blur-md backdrop-blur-sm md:rounded-md rounded-none text-center"
   >
     <div
       class="fade-up opacity-0 transform translate-y-4 transition-all duration-500 ease-out"
@@ -720,6 +721,15 @@
 <!-- parallax -->
 <section class="select-none relative overflow-hidden">
   <div
+    class="parallax-section absolute inset-0 z-0"
+    style="
+      background-image: url(&quot;/public/images/pexels-valeriya-27305315.jpg&quot;);
+      background-position: center;
+    "
+    id="parallaxBg"
+  ></div>
+
+  <!-- <div
     id="parallaxBg"
     loading="lazy"
     class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0"
@@ -727,12 +737,12 @@
       background-image: url(/public/images/pexels-valeriya-27305315.jpg);
       background-color: var(--black);
     "
-  ></div>
+  ></div> -->
   <section
     class="relative md:py-1 py-[2px] bg-gradient-to-r from-[var(--primary-color)] via-[var(--accent-2)] to-[var(--accent-3)] text-white"
   ></section>
   <div
-    class="relative z-10 max-w-3xl md:my-20 mt-0 mb-0 mx-auto p-10 bg-white/80 backdrop-blur-md md:rounded-md rounded-none text-center"
+    class="relative z-10 max-w-3xl md:my-20 mt-0 mb-0 mx-auto p-10 bg-white/80 md:backdrop-blur-md backdrop-blur-sm md:rounded-md rounded-none text-center"
   >
     <div
       class="fade-up opacity-0 transform translate-y-4 transition-all duration-500 ease-out"

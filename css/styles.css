@@ -363,17 +363,19 @@ details summary::-webkit-details-marker {
 }
 
 .parallax-section {
-  min-height: 85vh;
+  min-height: 102%;
   height: clamp(300px, 50vh, 600px);
   background-position: center top;
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
+  /* background-size: 100% auto; */
   background-attachment: scroll;
+  background-color: var(--dark-bg);
 }
 
 @media (min-width: 768px) {
   .parallax-section {
-    min-height: 70vh;
+    min-height: 100%;
     height: clamp(500px, 80vh, 900px);
     background-size: cover;
     background-position: center;
