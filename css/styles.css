@@ -362,10 +362,21 @@ details summary::-webkit-details-marker {
   transform: translateY(0) !important;
 }
 
-/* 
-class
+.parallax-section {
+  min-height: 85vh;
+  height: clamp(300px, 50vh, 600px);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-attachment: scroll;
+}
 
-  fade-up opacity-0 translate-y-8 transition-all duration-700 ease-out
-
-
-*/
+@media (min-width: 768px) {
+  .parallax-section {
+    min-height: 70vh;
+    height: clamp(500px, 80vh, 900px);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+}
