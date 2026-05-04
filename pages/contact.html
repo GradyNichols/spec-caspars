@@ -1,7 +1,17 @@
 <section
   class="select-none relative overflow-hidden px-8 md:px-12 pt-20 pb-12 mx-auto"
 >
+  <!-- stays: bg-[var(--black)] bg-[url(&quot;/public/images/pexels-snowfly09-34069577.jpg&quot;)] absolute inset-0 bg-no-repeat z-0
+     desktop: md:bg-cover md:bg-center md:bg-fixed md:h-[80vh]
+     mobile: bg-[center_top] bg-[length:100%_auto] bg-scroll h-[50vh]
+-->
+
   <div
+    id="parallaxBg"
+    class="bg-[var(--black)] bg-[url(&quot;/public/images/pexels-snowfly09-34069577.jpg&quot;)] absolute inset-0 bg-no-repeat z-0 md:bg-cover md:bg-center md:bg-fixed md:h-[80vh] bg-[center_top] bg-[length:100%_auto] bg-scroll h-[50vh]"
+  ></div>
+
+  <!-- <div
     id="parallaxBg"
     class="absolute inset-0 bg-cover bg-no-repeat bg-fixed z-0"
     style="
@@ -9,7 +19,7 @@
       background-color: var(--black);
       background-position: center 50%;
     "
-  ></div>
+  ></div> -->
 
   <div
     class="relative z-10 max-w-3xl md:mt-10 md:mb-10 mt-0 mb-0 mx-auto mt-0 p-10 bg-white/80 backdrop-blur-md rounded-md text-center space-y-6"
