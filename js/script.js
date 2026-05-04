@@ -494,7 +494,7 @@ function showToast(type = "success", message = "") {
       ${message}
     </div>
 
-    <button onclick="this.parentElement.remove()" class="opacity-70 hover:opacity-100">
+    <button onclick="this.parentElement.remove()" class="opacity-70 hover:opacity-100 mt-[1px]">
       ✕
     </button>
   `;
