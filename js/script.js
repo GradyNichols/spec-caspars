@@ -907,7 +907,7 @@ document.addEventListener("DOMContentLoaded", function () {
     el.addEventListener("keyup", constrainInput);
   });
 
-  showToast("success", "Toasty test");
+  // showToast("success", "Toasty test");
 
   // const observer = new IntersectionObserver(
   //   (entries) => {
